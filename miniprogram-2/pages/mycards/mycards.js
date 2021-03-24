@@ -5,14 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    openid: 'wx9a3377455576ee6a'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this
+    wx.request({
+      url: 'http://127.0.0.1:8000/wx/user/getUserDiscountCard?openid=' + that.data.openid,
+      method: "GET",
+      success: function (res) {
+        that.setData({
+          card: res.data.data
+        })
+        console.log(res.data.data)
+      }
+    })
   },
 
   /**

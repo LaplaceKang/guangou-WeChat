@@ -1,137 +1,118 @@
 <!--pages/campus/campus.wxml-->
-<view class = "container">
-  <van-notice-bar
-  left-icon="volume-o"
-  text="1.预定后不接受退改。2.场地不可用于单位、团体或个人举行的比赛、团建、拓展、培训等商业活动。3.如有疑问请致电。"
-/>
+<view class="container">
+  <van-notice-bar left-icon="volume-o" text="{{venue.information}}" />
 
-<view class="img1" style="display:justify-content;margin-top">
-<van-image
-  width="16rem"
-  height="10rem"
-  src="/images/4.jpg"
-  fit="fill"
-/>
-</view>
-
-<view class="list-title">
-<view  class="left">北邮体育馆
-<view>
-<van-tag round type="primary">足球</van-tag>
-<van-tag round type="success">篮球</van-tag>
-<van-tag round type="danger">网球</van-tag>
-<van-tag round type="warning">跆拳道</van-tag>
-</view>
-</view>
-<view   class="right">
-  <van-icon name="phone" size="50rpx"/>
-</view>
-</view>
-
-<view class="list-title">
-<view  class="left">石景山区八宝山地铁站A口 向北100米 MVP训练场</view>
-<view   class="right">
-  <van-icon name="location" size="50rpx"/>
-</view>
-</view>
-
-<view class = "container">
-<van-tabs active="{{ active }}" bind:change="onChange">
-  <van-tab title="篮球">
-<view class="img1" style="display:justify-content;margin-top">
-<van-image
-  width="16rem"
-  height="10rem"
-  src="/images/4.jpg"
-  fit="fill"
-/>
-</view>
-<view class = "ziti1">
-    营业时间：
+  <view class="img1" style="display:justify-content;margin-top">
+    <van-image width="16rem" height="10rem" src="/images/4.jpg" fit="fill" />
   </view>
-  <view class = "ziti2">
-    <view>周一到周五 18：30~21：00</view>
-    <view>周六到周日 11：30~20：30</view>
+
+  <view class="list-title">
+    <view class="left">{{venuename}}
+      <view>
+        <van-tag round type="primary" wx:for="{{courttype}}">{{item.courttypename}}</van-tag>
+      </view>
+    </view>
+    <view class="right">
+      <van-icon name="phone" size="50rpx" />
+    </view>
   </view>
-  </van-tab>
-  <van-tab title="足球"></van-tab>
-  <van-tab title="乒乓球"></van-tab>
-  <van-tab title="排球"></van-tab>
-  <van-tab title="羽毛球"></van-tab>
-</van-tabs>
-</view>
 
-<view class="list-title">
-<view  class="left">场馆优惠</view>
-<view   class="right">
-  <van-icon name="arrow-down" size="50rpx"/>
-</view>
-</view>
-
-<van-cell center icon="vip-card" title=" 篮球次卡" value="25/次起" label=" 10次 20次 40次" />
-<van-cell center icon="vip-card" title=" 充值卡" label=" 充值赠送储值" />
-
-<view class = "container">
-<view class = "ziti1">场地设施 ：</view>
-<van-icon name="location" size="80rpx" />\t\t\t\t\t
-<van-icon name="shopping-cart"size="80rpx" />\t
-<van-icon name="friends"size="80rpx" />\t
-<van-icon name="label" size="80rpx"/>\t
-<view class = "ziti2">停车场\t饮品\t更衣室\t洗浴室\t</view>
-</view>
-
-<view class = "container">
-<view class = "ziti1">
-   场地规格 ：
+  <view class="list-title">
+    <view class="left">{{venue.address}}</view>
+    <view class="right">
+      <van-icon name="location" size="50rpx" />
+    </view>
   </view>
-  <view class = "ziti2">
-    足球场是有一块11人标准场、两块7人场，真草皮；篮球场是标准室外场。
+
+  <view class="container">
+    <van-tabs active="{{ active }}" bind:change="onChange">
+      <van-tab title="篮球">
+        <view class="img1" style="display:justify-content;margin-top">
+          <van-image width="16rem" height="10rem" src="/images/4.jpg" fit="fill" />
+        </view>
+        <view class="ziti1">
+          营业时间：
+        </view>
+        <view class="ziti2">
+          <view>周一到周五 18：30~21：00</view>
+          <view>周六到周日 11：30~20：30</view>
+        </view>
+      </van-tab>
+      <van-tab title="足球"></van-tab>
+      <van-tab title="乒乓球"></van-tab>
+      <van-tab title="排球"></van-tab>
+      <van-tab title="羽毛球"></van-tab>
+    </van-tabs>
   </view>
-</view>
 
-
-<view class = "container">
-<view class = "ziti1">
-  课程服务 ：
+  <view class="container">
+  <!-- <view class="list-title"> -->
+    <view class="ziti1">场馆优惠：</view>
+    <!-- <view class="right">
+      <van-icon name="arrow-down" size="50rpx" />
+    </view> -->
   </view>
-  
-  <van-card
-  thumb="/images/3.jpg">  
-<view slot="title">
-  <view class="classname" style="display:flex;">
-<view class="flex-view-item">
-  篮球启蒙\t\t
-</view>
-<view class="flex-view-item">
-  <view class="ziti3">2000元/2月</view>
-</view>
-</view>
-</view>
-<view slot="desc">
-  零基础，幼儿园中、大班
-  1小时/次，10课时
-</view>
-</van-card>
 
-<van-card
-  thumb="/images/3.jpg">  
-<view slot="title">
-  <view class="classname" style="display:flex;">
-<view class="flex-view-item">
-  篮球启蒙\t\t
-</view>
-<view class="flex-view-item">
-  <view class="ziti3">2000元/2月</view>
-</view>
-</view>
-</view>
-<view slot="desc">
-  零基础，幼儿园中、大班
-  1小时/次，10课时
-</view>
-</van-card>
-</view>
+  <van-cell center icon="vip-card" title=" 篮球次卡" value="25/次起" label=" 10次 20次 40次" />
+  <van-cell center icon="vip-card" title=" 充值卡" label=" 充值赠送储值" />
+
+  <view class="container">
+    <view class="ziti1">场地设施 ：</view>
+    <van-icon name="location" size="80rpx" />\t\t\t\t\t
+    <van-icon name="shopping-cart" size="80rpx" />\t
+    <van-icon name="friends" size="80rpx" />\t
+    <van-icon name="label" size="80rpx" />\t
+    <view class="ziti2">停车场\t饮品\t更衣室\t洗浴室\t</view>
+  </view>
+
+  <view class="container">
+    <view class="ziti1">
+      场地规格 ：
+    </view>
+    <view class="ziti2">
+      {{venue.specifications}}
+    </view>
+  </view>
+
+
+  <view class="container">
+    <view class="ziti1">
+      课程服务 ：
+    </view>
+
+    <van-card thumb="/images/3.jpg">
+      <view slot="title">
+        <view class="classname" style="display:flex;">
+          <view class="flex-view-item">
+            篮球启蒙\t\t
+          </view>
+          <view class="flex-view-item">
+            <view class="ziti3">2000元/2月</view>
+          </view>
+        </view>
+      </view>
+      <view slot="desc">
+        零基础，幼儿园中、大班
+        1小时/次，10课时
+      </view>
+    </van-card>
+
+    <van-card thumb="/images/3.jpg">
+      <view slot="title">
+        <view class="classname" style="display:flex;">
+          <view class="flex-view-item">
+            篮球启蒙\t\t
+          </view>
+          <view class="flex-view-item">
+            <view class="ziti3">2000元/2月</view>
+          </view>
+        </view>
+      </view>
+      <view slot="desc">
+        零基础，幼儿园中、大班
+        1小时/次，10课时
+      </view>
+    </van-card>
+  </view>
 </view>
 <van-button type="primary" size="large" color="black">大号按钮</van-button>
-
-

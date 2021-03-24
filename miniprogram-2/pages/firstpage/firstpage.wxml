@@ -1,154 +1,102 @@
 <view class="classname" style="display:flex;">
-<view class="flex-view-item">
-  <view class="flex-row" style="display:flex;">
-    <view class="flex-view-item">
-    <van-icon name="location" /> </view>
-    <view class="flex-view-item">
-  <navigator url="/pages/location/location">
-  <view>北京</view>
-</navigator></view>
-</view></view>
-<view class="flex-view-item">
-  <view>
-<van-search value="{{ value }}" placeholder="请输入搜索关键词" />
-</view>
-</view>
+  <view class="flex-view-item">
+    <view class="flex-row" style="display:flex;">
+      <view class="flex-view-item">
+        <van-icon name="location" />
+      </view>
+      <view class="flex-view-item">
+        <navigator url="/pages/location/location">
+          <view>北京</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class="flex-view-item">
+    <view>
+      <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
+    </view>
+  </view>
 </view>
 
-<van-grid column-num="5">
-  <van-grid-item
-    icon="photo-o"
-    text="篮球"
-  />
-  <van-grid-item
-    icon="photo-o"
-    link-type="navigateTo"
-    url="/pages/stadium/stadium"
-    text="足球"
-  />
-    <van-grid-item icon="photo-o" text="网球" wx:for="{{ 8 }}" />
-</van-grid>
+<!-- <view class="allCourtType">
+  <view wx:for="{{courttype}}" data-index="{{index}}" bindtap="toStadium">
+    <view class="oneCourtType">
+      <image class="courtTypeImg" src="../../images/icon/orange/{{item['courttypename']}}.png" />
+      <view class="courtTypeText">{{item['courttypename']}}</view>
+    </view>
+  </view>
+</view> -->
+
+<!-- 中间金刚区目录图标区域 -->
+<view class="second-module-allicon">
+  <scroll-view class="nav-bar" scroll-x bindscroll="scroll">
+    <!-- 使用flex布局实现横向滚动，在scroll-view里加一层容器包裹，才会出现滚动效果 -->
+    <view class="nav-bar-wrap">
+      <block wx:for="{{courttype}}" wx:key='key'>
+        <view class="nav-bar-item" bindtap="toStadium" data-index="{{index}}">
+          <image src="../../images/icon/orange/{{item['courttypename']}}.png" />
+          <text>{{item['courttypename']}}</text>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+  <!-- 模拟进度条 -->
+  <view class="slider">
+    <view class="slider-inside .slider-inside-location" style="left:{{left}}"></view>
+  </view>
+</view>
+
+
+
+
 <view class="img1" style="display:justify-content;margin-top">
-<van-image
-  width="14rem"
-  height="8rem"
-  src="/images/3.jpg"
-  fit="fill"
-  alt="wenben"
-/>
+  <van-image width="14rem" height="8rem" src="" fit="fill" alt="wenben" src="../../../../images/ad/1.jpeg"/>
 </view>
 
-<view class = "contain">
-<view class = "container">
-  <view class = "ziti1">
-    课程广告1
+<view class="contain">
+  <view class="container">
+    <view class="ziti1">
+      课程广告1
+    </view>
+    <view class="ziti2">
+      1月15-20日 充值优惠
+    </view>
   </view>
-  <view class = "ziti2">
-    1月15-20日 充值优惠
-  </view>
-</view></view>
+</view>
 
-<van-card
-  tag=""
-  desc="\n"
-  thumb="/images/3.jpg">  
-<view slot="title">
-  <navigator url="/pages/campus/campus">
-   <view>北京邮电大学体育馆</view>
-  </navigator>
+<view wx:for="{{venue}}" data-index="{{index}}" bindtap="toCampus">
+  <van-card tag="" desc="\n" thumb="../../../../images/venue/{{item['venuename']}}.jpeg" thumb-mode="aspectFill">
+    <view slot="title">
+      {{item['venuename']}}
+    </view>
+    <view slot="tags">
+      <text>\n</text>
+      <van-tag round type="primary" wx:for="{{item['courttype']}}"> {{item.courttypename}} </van-tag>
+    </view>
+    <view slot="bottom">
+      <van-icon name="location" />
+      <text>{{item['addressshort']}}</text>
+    </view>
+    <view slot="footer">
+      <text>{{item['distance']}}</text>
+      <text wx:if="{{item['lowestprice']}}">\n{{item['lowestprice']}}元起</text>
+    </view>
+  </van-card>
+  <van-divider />
 </view>
-<view slot="tags">
-<text>\n</text>
-<van-tag round type="primary"> 足球 </van-tag>
-<van-tag round type="success"> 篮球 </van-tag>
-<van-tag round type="warning"> 滑冰</van-tag>
-</view>
-<view slot="bottom">
-  <van-icon name="location" />
-  <text>畅春园</text>
-</view>
-  <view slot="footer">
-    <text>1500m</text>
-  </view>
-</van-card>
-<van-divider/>
-<van-card
-  tag=""
-  desc="\n"
-  thumb="/images/3.jpg">  
-<view slot="title">
- 首都体育大学体育馆
-</view>
-<view slot="tags">
-<text>\n</text>
-<van-tag round type="primary"> 足球 </van-tag>
-<van-tag round type="success"> 篮球 </van-tag>
-</view>
-<view slot="bottom">
-  <van-icon name="location" />
-  <text>畅春园</text>
-</view>
-  <view slot="footer">
-    <text>1500m</text>
-  </view>
-</van-card>
-<van-divider/>
-<van-card
-  tag=""
-  desc="\n"
-  thumb="/images/3.jpg">  
-<view slot="title">
-  北京师范大学体育馆
-</view>
-<view slot="tags">
-<text>\n</text>
-<van-tag round type="primary"> 足球 </van-tag>
-<van-tag round type="success"> 篮球 </van-tag>
-<van-tag round type="danger"> 乒乓球 </van-tag>
-<van-tag round type="warning"> 跆拳道</van-tag>
-</view>
-<view slot="bottom">
-  <van-icon name="location" />
-  <text>畅春园</text>
-</view>
-  <view slot="footer">
-    <text>1500m</text>
-  </view>
-</van-card>
 
-<van-divider/>
-<van-card
-  tag=""
-  desc="\n"
-  thumb="/images/3.jpg">  
-<view slot="title">
-  中国人民大学体育馆
-</view>
-<view slot="tags">
-<text>\n</text>
-<van-tag round type="primary"> 足球 </van-tag>
-<van-tag round type="success"> 篮球 </van-tag>
-<van-tag round type="danger"> 乒乓球 </van-tag>
-<van-tag round type="warning"> 跆拳道</van-tag>
-</view>
-<view slot="bottom">
-  <van-icon name="location" />
-  <text>畅春园</text>
-</view>
-  <view slot="footer">
-    <text>1500m</text>
-  </view>
-</van-card>
 
-<van-tabbar >
-  <van-tabbar-item icon="wap-home" >首页</van-tabbar-item>
+
+<van-tabbar>
+  <van-tabbar-item icon="wap-home">首页</van-tabbar-item>
   <van-tabbar-item icon="search">
     <navigator url="/pages/course/course">
-   <view>课程</view>
-  </navigator></van-tabbar-item>
-  <van-tabbar-item icon="manager" url = "/pages/index/index">
+       <view>课程</view>
+    </navigator>
+  </van-tabbar-item>
+  <van-tabbar-item icon="manager" url="/pages/index/index">
     <navigator url="/pages/index/index">
-   <view>我的</view>
-  </navigator>
-</van-tabbar-item>
+       <view>我的</view>
+    </navigator>
+  </van-tabbar-item>
 </van-tabbar>

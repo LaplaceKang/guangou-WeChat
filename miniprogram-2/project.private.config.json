@@ -1,0 +1,47 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/mycards/mycards",
+          "pathName": "pages/mycards/mycards",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/collection/collection",
+          "pathName": "pages/collection/collection",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/firstpage/firstpage",
+          "pathName": "pages/firstpage/firstpage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/stadium/stadium",
+          "pathName": "pages/stadium/stadium",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/campus/campus",
+          "pathName": "pages/campus/campus",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

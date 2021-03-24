@@ -7,7 +7,8 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    openid: 'wx9a3377455576ee6c'
   },
   // 事件处理函数
   bindViewTap() {
@@ -15,40 +16,21 @@ Page({
       url: '../logs/logs'
     })
   },
+  /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad() {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
+    var that = this
+    wx.request({
+      url: 'http://127.0.0.1:8000/wx/user/getUserInfo?openid=' + that.data.openid,
+      method: "GET",
+      success: function (res) {
+        that.setData({
+          checkintimes: res.data.data.checkintimes,
+          nickname: res.data.data.nickname,
         })
+        console.log(res.data)
       }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
     })
   }
 })

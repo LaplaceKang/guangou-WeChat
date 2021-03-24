@@ -1,8 +1,15 @@
 <!--pages/mycards/mycards.wxml-->
-<van-cell center 
+<!-- <van-cell center 
 icon="vip-card"
-title=" 篮球40+20次卡" value="剩余35次" label=" MVP体育馆" />
+title="     篮球40+20次卡" value="剩余35次" label=" MVP体育馆" /> -->
 
-<van-cell center 
-icon="vip-card"
-title=" 5000元送800元充值卡" value="剩余5200元" label=" 奥林匹克公园" />
+<view wx:for="{{card}}" data-index="{{index}}">
+  <view wx:if="{{item['remainingprice']!=null}}">
+    <van-cell center icon="vip-card" title="{{item['discountcardname']}}" value="剩余{{item['remainingprice']}}元"
+      label="{{item['courtname']}}" />
+  </view>
+  <view wx:if="{{item['remainingtimes']!=null}}">
+    <van-cell center icon="vip-card" title="{{item['discountcardname']}}" value="剩余{{item['remainingtimes']}}次"
+      label="{{item['courtname']}}" />
+  </view>
+</view>

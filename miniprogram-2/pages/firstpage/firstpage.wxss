@@ -1,27 +1,129 @@
 /* pages/firstpage/firstpage.wxss */
-.classname{
+.classname {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
+
 .img1 {
-  margin-top:10rpx;
-  display:flex;
+  margin-top: 10rpx;
+  display: flex;
   justify-content: center;
 }
-.container{
-  background-color:#E0E0E0;
+
+.container {
+  background-color: #E0E0E0;
   width: 14rem;
-  margin-top:1rpx;
+  margin-top: 1rpx;
 }
-.contain{
-  display:flex;
+
+.contain {
+  display: flex;
   justify-content: center;
 }
-.ziti1{
+
+.ziti1 {
   font-weight: bold;
-  font-size:small;
+  font-size: small;
 }
-.ziti2{
-  font-size:smaller;
+
+.ziti2 {
+  font-size: smaller;
+}
+
+.allCourtType {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: black;
+}
+
+.oneCourtType {
+  display: flex;
+  flex-direction: column;
+  width: 125rpx;
+  height: 125rpx;
+  align-items: center;
+  margin: 20rpx 0 10rpx 0;
+}
+
+.courtTypeImg {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.courtTypeText {
+  font-size: small;
+  color: white;
+}
+
+
+/* 图标模块 */
+.second-module-allicon{
+  background: black;
+  position: relative;
+  height: 380rpx;
+  overflow : hidden;
+}
+
+scroll-view {
+  white-space: nowrap;
+}
+/* 去除滚动条 */
+/* ::-webkit-scrollbar {
+  display:none;
+  width:0;
+  height:0;
+  color:transparent;
+} */
+.nav-bar-wrap {
+  display: flex;
+  flex-flow: column wrap;    /* 金刚区排序方式*/
+  height: 330rpx;
+}
+
+.nav-bar-item {
+  width: 125rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 28rpx;
+}
+
+.nav-bar-item image {
+  display: block;
+  height: 88rpx;
+  width: 88rpx;
+  margin: 0;
+}
+
+.nav-bar-item text {
+  margin-top: 8rpx;
+  line-height: 34rpx;
+  color:white;
+  font-size: 24rpx;
+}
+
+.slider {
+  position: absolute;
+  bottom: 20rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 68rpx;
+  height: 6rpx;
+  border-radius: 30rpx;
+  background: #eee;
+}
+
+.slider-inside {
+  transform: translateX(-100%);
+  width: 40rpx;
+  height: 100%;
+  border-radius: 30rpx;
+  background-color: rgb(255, 149, 2);
+}
+/* 滑块滑动模拟 */
+.slider-inside-location {
+  position: absolute;
+  left: 60.48%;
 }

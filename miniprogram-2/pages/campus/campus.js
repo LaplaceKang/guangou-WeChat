@@ -6,12 +6,34 @@ Page({
   data: {
 
   },
-  
+  //获取总场馆信息
+  getVenueDetail() {
+    var that = this
+    wx.request({
+      url: 'http://127.0.0.1:8000/wx/venue/getVenueDetail?venueid=' + that.data.venueid + '&courttypeid=' + that.data.courttype[0].courttypeid,
+      method: "GET",
+      success: function (res) {
+        that.setData({
+          venue: res.data.data
+        })
+        console.log(res.data)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this
+    console.log(options)
+    that.setData({
+      courttype: JSON.parse(options.courttype),
+      venuename: options.venuename,
+      venueid: options.venueid,
+      longitude: options.longitude,
+      latitude: options.latitude
+    })
+    this.getVenueDetail()
   },
 
   /**

@@ -6,145 +6,48 @@
   <van-dropdown-item value="{{ value4 }}" options="{{ option4 }}" />
 </van-dropdown-menu>
 
-<van-card
-  tag=""
-  desc="\n"
-  thumb="/images/3.jpg">  
-<view slot="title">
-  北京大学体育馆
+<view wx:for="{{venue}}" data-index="{{index}}">
+  <van-card tag="" desc="\n" thumb="../../../../images/venue/{{item['venuename']}}.jpeg" thumb-mode="aspectFill">
+    <view slot="title">
+      {{item['venuename']}}
+    </view>
+    <view slot="tags">
+      <text>\n</text>
+      <van-tag round type="primary" wx:for="{{item['courttype']}}"> {{item['courttypename']}} </van-tag>
+      <!-- <van-tag round type="success"> 篮球 </van-tag> 
+          <van-tag round type="danger"> 乒乓球 </van-tag>
+          <van-tag round type="warning"> 跆拳道</van-tag>  -->
+    </view>
+    <view slot="bottom">
+      <van-icon name="location" />
+      <text>{{item['addressshort']}}</text>
+    </view>
+    <view slot="footer">
+      <text>{{item['distance']}}</text>
+      <text wx:if="{{item['lowestprice']}}">\n{{item['lowestprice']}}元起</text>
+    </view>
+  </van-card>
+  <van-divider />
 </view>
-<view slot="tags">
-<text>\n</text>
-<van-tag round type="primary"> 足球 </van-tag>
-<van-tag round type="success"> 篮球 </van-tag>
-<van-tag round type="danger"> 乒乓球 </van-tag>
-<van-tag round type="warning"> 跆拳道</van-tag>
-</view>
-<view slot="bottom">
-  <van-icon name="location" />
-  <text>畅春园</text>
-</view>
+
+
+<!-- <van-card tag="" desc="\n" thumb="/images/3.jpg">
+  <view slot="title">
+    北京大学体育馆
+  </view>
+  <view slot="tags">
+    <text>\n</text>
+    <van-tag round type="primary"> 足球 </van-tag>
+    <van-tag round type="success"> 篮球 </van-tag>
+    <van-tag round type="danger"> 乒乓球 </van-tag>
+    <van-tag round type="warning"> 跆拳道</van-tag>
+  </view>
+  <view slot="bottom">
+    <van-icon name="location" />
+    <text>畅春园</text>
+  </view>
   <view slot="footer">
     <text>1500m</text>
   </view>
 </van-card>
-<van-divider/>
-
-<van-card
-  tag=""
-  desc="\n"
-  thumb="/images/3.jpg">  
-<view slot="title">
-  首都体育大学体育馆
-</view>
-<view slot="tags">
-<text>\n</text>
-<van-tag round type="primary"> 足球 </van-tag>
-<van-tag round type="success"> 篮球 </van-tag>
-<van-tag round type="danger"> 乒乓球 </van-tag>
-<van-tag round type="warning"> 跆拳道</van-tag>
-</view>
-<view slot="bottom">
-  <van-icon name="location" />
-  <text>畅春园</text>
-</view>
-  <view slot="footer">
-    <text>1500m</text>
-  </view>
-</van-card>
-<van-divider/>
-
-<van-card
-  tag=""
-  desc="\n"
-  thumb="/images/3.jpg">  
-<view slot="title">
-  中国人民大学体育馆
-</view>
-<view slot="tags">
-<text>\n</text>
-<van-tag round type="primary"> 足球 </van-tag>
-<van-tag round type="success"> 篮球 </van-tag>
-<van-tag round type="danger"> 乒乓球 </van-tag>
-</view>
-<view slot="bottom">
-  <van-icon name="location" />
-  <text>畅春园</text>
-</view>
-  <view slot="footer">
-    <text>1500m</text>
-  </view>
-</van-card>
-<van-divider/>
-
-<van-card
-  tag=""
-  desc="\n"
-  thumb="/images/3.jpg">  
-<view slot="title">
-  北京邮电大学体育馆
-</view>
-<view slot="tags">
-<text>\n</text>
-<van-tag round type="primary"> 足球 </van-tag>
-<van-tag round type="success"> 篮球 </van-tag>
-<van-tag round type="danger"> 乒乓球 </van-tag>
-<van-tag round type="warning"> 跆拳道</van-tag>
-</view>
-<view slot="bottom">
-  <van-icon name="location" />
-  <text>畅春园</text>
-</view>
-  <view slot="footer">
-    <text>1500m</text>
-  </view>
-</van-card>
-<van-divider/>
-
-<van-card
-  tag=""
-  desc="\n"
-  thumb="/images/3.jpg">  
-<view slot="title">
-  建筑大学体育馆
-</view>
-<view slot="tags">
-<text>\n</text>
-<van-tag round type="primary"> 足球 </van-tag>
-<van-tag round type="success"> 篮球 </van-tag>
-<van-tag round type="danger"> 乒乓球 </van-tag>
-</view>
-<view slot="bottom">
-  <van-icon name="location" />
-  <text>畅春园</text>
-</view>
-  <view slot="footer">
-    <text>1500m</text>
-  </view>
-</van-card>
-<van-divider/>
-
-
-<van-card
-  tag=""
-  desc="\n"
-  thumb="/images/3.jpg">  
-<view slot="title">
-  北京师范大学体育馆
-</view>
-<view slot="tags">
-<text>\n</text>
-<van-tag round type="primary"> 足球 </van-tag>
-<van-tag round type="success"> 篮球 </van-tag>
-<van-tag round type="danger"> 乒乓球 </van-tag>
-</view>
-<view slot="bottom">
-  <van-icon name="location" />
-  <text>畅春园</text>
-</view>
-  <view slot="footer">
-    <text>1500m</text>
-  </view>
-</van-card>
-<van-divider/>
-
+<van-divider /> -->
