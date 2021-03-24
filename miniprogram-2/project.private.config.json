@@ -39,6 +39,12 @@
         {
           "name": "pages/campus/campus",
           "pathName": "pages/campus/campus",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/book/book",
+          "pathName": "pages/book/book",
           "scene": null
         }
       ]
