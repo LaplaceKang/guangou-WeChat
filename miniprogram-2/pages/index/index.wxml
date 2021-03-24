@@ -16,12 +16,8 @@
   <van-button plain type="default" block>切换角色</van-button>
 
   <van-tabbar>
-    <van-tabbar-item icon="wap-home">
-      <navigator url="/pages/firstpage/firstpage">
-         <view>首页</view>
-      </navigator>
-    </van-tabbar-item>
-    <van-tabbar-item icon="search">课程</van-tabbar-item>
+    <van-tabbar-item icon="wap-home" bindtap='toFirst'>首页</van-tabbar-item>
+    <van-tabbar-item icon="search" bindtap='toCourse'>课程</van-tabbar-item>
     <van-tabbar-item icon="manager">我的</van-tabbar-item>
   </van-tabbar>
 
