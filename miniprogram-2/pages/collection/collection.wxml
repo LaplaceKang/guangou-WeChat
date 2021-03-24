@@ -10,7 +10,7 @@
         </view>
         <view slot="tags">
           <text>\n</text>
-          <van-tag round type="primary" wx:for="{{item['courttype']}}"> {{item}} </van-tag>
+          <van-tag round type="primary" wx:for="{{item['courttype']}}"> {{item.courttypename}} </van-tag>
           <!-- <van-tag round type="success"> 篮球 </van-tag> 
           <van-tag round type="danger"> 乒乓球 </van-tag>
           <van-tag round type="warning"> 跆拳道</van-tag>  -->
