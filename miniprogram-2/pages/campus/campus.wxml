@@ -3,14 +3,13 @@
   <van-notice-bar left-icon="volume-o" text="{{venue.information}}" />
 
 
-<swiper>
- <swiper-item wx:for="{{imgUrls}}">
-  <image src='{{item}}' width="10rem"
-  height="16rem" class = "img1" style="display:justify-content;margin-top"/>
- </swiper-item>
-</swiper>
+  <swiper>
+    <swiper-item wx:for="{{imgUrls}}">
+      <image src='{{item}}' width="10rem" height="16rem" class="img1" style="display:justify-content;margin-top" />
+    </swiper-item>
+  </swiper>
 
-<!--
+  <!--
 <view class="img1" style="display:justify-content;margin-top">
 <van-image
   width="16rem"
@@ -20,26 +19,26 @@
 />
 </view>
 -->
-<view class="list-title">
-<view  class="left">北邮体育馆
-<view>
-<van-tag round type="primary">足球</van-tag>
-<van-tag round type="success">篮球</van-tag>
-<van-tag round type="danger">网球</van-tag>
-<van-tag round type="warning">跆拳道</van-tag>
-</view>
-</view>
-<view   class="right">
-  <van-icon name="phone" size="50rpx"/>
-</view>
-</view>
+  <view class="list-title">
+    <view class="left">北邮体育馆
+      <view>
+        <van-tag round type="primary">足球</van-tag>
+        <van-tag round type="success">篮球</van-tag>
+        <van-tag round type="danger">网球</van-tag>
+        <van-tag round type="warning">跆拳道</van-tag>
+      </view>
+    </view>
+    <view class="right">
+      <van-icon name="phone" size="50rpx" />
+    </view>
+  </view>
 
-<view class="list-title">
-<view  class="left">石景山区八宝山地铁站A口 向北100米 MVP训练场</view>
-<view   class="right">
-  <van-icon name="location" size="50rpx"/>
-</view>
-</view>
+  <view class="list-title">
+    <view class="left">石景山区八宝山地铁站A口 向北100米 MVP训练场</view>
+    <view class="right">
+      <van-icon name="location" size="50rpx" />
+    </view>
+  </view>
 
   <view class="list-title">
     <view class="left">{{venuename}}
@@ -81,7 +80,7 @@
   </view>
 
   <view class="container">
-  <!-- <view class="list-title"> -->
+    <!-- <view class="list-title"> -->
     <view class="ziti1">场馆优惠：</view>
     <!-- <view class="right">
       <van-icon name="arrow-down" size="50rpx" />
@@ -110,66 +109,64 @@
   </view>
 
 
-<van-card
-  thumb="/images/3.jpg">  
-<view slot="title">
-  <view class="classname" style="display:flex;">
-<view class="flex-view-item">
-  篮球启蒙\t\t
-</view>
-<view class="flex-view-item">
-  <view class="ziti3">2000元/2月</view>
-</view>
-</view>
-</view>
-<view slot="desc">
-  零基础，幼儿园中、大班
-  1小时/次，10课时
-</view>
-</van-card>
-</view>
-</view>
+  <van-card thumb="/images/3.jpg">
+    <view slot="title">
+      <view class="classname" style="display:flex;">
+        <view class="flex-view-item">
+          篮球启蒙\t\t
+        </view>
+        <view class="flex-view-item">
+          <view class="ziti3">2000元/2月</view>
+        </view>
+      </view>
+    </view>
+    <view slot="desc">
+      零基础，幼儿园中、大班
+      1小时/次，10课时
+    </view>
+  </van-card>
+
 
 <van-button type="primary" size="large" color="black" bindtap="toOrder">去预定</van-button>
 
-  <view class="container">
-    <view class="ziti1">
-      课程服务 ：
-    </view>
-
-    <van-card thumb="/images/3.jpg">
-      <view slot="title">
-        <view class="classname" style="display:flex;">
-          <view class="flex-view-item">
-            篮球启蒙\t\t
-          </view>
-          <view class="flex-view-item">
-            <view class="ziti3">2000元/2月</view>
-          </view>
-        </view>
-      </view>
-      <view slot="desc">
-        零基础，幼儿园中、大班
-        1小时/次，10课时
-      </view>
-    </van-card>
-
-    <van-card thumb="/images/3.jpg">
-      <view slot="title">
-        <view class="classname" style="display:flex;">
-          <view class="flex-view-item">
-            篮球启蒙\t\t
-          </view>
-          <view class="flex-view-item">
-            <view class="ziti3">2000元/2月</view>
-          </view>
-        </view>
-      </view>
-      <view slot="desc">
-        零基础，幼儿园中、大班
-        1小时/次，10课时
-      </view>
-    </van-card>
+<view class="container">
+  <view class="ziti1">
+    课程服务 ：
   </view>
+
+  <van-card thumb="/images/3.jpg">
+    <view slot="title">
+      <view class="classname" style="display:flex;">
+        <view class="flex-view-item">
+          篮球启蒙\t\t
+        </view>
+        <view class="flex-view-item">
+          <view class="ziti3">2000元/2月</view>
+        </view>
+      </view>
+    </view>
+    <view slot="desc">
+      零基础，幼儿园中、大班
+      1小时/次，10课时
+    </view>
+  </van-card>
+
+  <van-card thumb="/images/3.jpg">
+    <view slot="title">
+      <view class="classname" style="display:flex;">
+        <view class="flex-view-item">
+          篮球启蒙\t\t
+        </view>
+        <view class="flex-view-item">
+          <view class="ziti3">2000元/2月</view>
+        </view>
+      </view>
+    </view>
+    <view slot="desc">
+      零基础，幼儿园中、大班
+      1小时/次，10课时
+    </view>
+  </van-card>
+</view>
 </view>
 <van-button type="primary" size="large" color="black">大号按钮</van-button>
