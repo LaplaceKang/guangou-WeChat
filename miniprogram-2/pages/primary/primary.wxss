@@ -1,0 +1,35 @@
+/* pages/primary/primary.wxss */
+.list-title {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.ziti1{
+  font-size:medium;
+  font-weight:bold;
+}
+.ziti2{
+  color:red;
+  font-size:small;
+}
+.ziti3{
+  font-size:small;
+}
+.container{
+  padding:30rpx;
+}
+.box1{
+  font-size:medium;
+  background-color:#f0c893;
+  padding:35rpx;
+  line-height:20rpx;
+}
+.line{
+  line-height: 2rpx;
+}
+.box2{
+  font-size:medium;
+  background-color:#A9F5F2;
+  padding:35rpx;
+  line-height:20rpx;
+}

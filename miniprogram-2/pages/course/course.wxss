@@ -1,0 +1,5 @@
+/* pages/course/course.wxss */
+.ziti{
+    font-weight: bold;
+    font-size:medium;
+}

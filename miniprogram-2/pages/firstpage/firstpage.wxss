@@ -1,0 +1,27 @@
+/* pages/firstpage/firstpage.wxss */
+.classname{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.img1 {
+  margin-top:10rpx;
+  display:flex;
+  justify-content: center;
+}
+.container{
+  background-color:#E0E0E0;
+  width: 14rem;
+  margin-top:1rpx;
+}
+.contain{
+  display:flex;
+  justify-content: center;
+}
+.ziti1{
+  font-weight: bold;
+  font-size:small;
+}
+.ziti2{
+  font-size:smaller;
+}

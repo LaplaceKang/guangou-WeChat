@@ -1,0 +1,38 @@
+<view class="container">
+<text>\n</text>
+<van-cell-group>
+  <van-field
+    label="姓名："
+    border="{{ false }}"
+    bind:change="onChange"
+  />
+</van-cell-group>
+<text>\n</text>
+<van-cell-group>
+  <van-field
+    label="身份："
+    placeholder="学生/教职工"
+    bind:change="onChange"
+  />
+</van-cell-group>
+<text>\n</text>
+<van-cell-group>
+  <van-field
+    center
+    label="学号/教工号："
+    border="{{ false }}"
+    bind:change="onChange"
+  />
+</van-cell-group>
+<text>\n</text>
+<van-cell-group>
+  <van-field
+    center
+    label="上传学生卡/教师卡正面照:"
+    right-icon = "photo"
+  />
+  <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
+</van-cell-group>
+
+
+</view>

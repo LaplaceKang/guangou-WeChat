@@ -1,0 +1,46 @@
+{
+  "pages":[
+    "pages/firstpage/firstpage",
+    "pages/index/index",
+    "pages/certification/certification",
+    "pages/collection/collection",
+    "pages/mycards/mycards",
+    "pages/stadium/stadium",
+    "pages/location/location",
+    "pages/campus/campus",
+    "pages/course/course",
+    "pages/primary/primary",
+    "pages/senior/senior"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "馆够",
+    "navigationBarTextStyle":"white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "./miniprogram/miniprogram_npm/weapp/button/index",
+    "van-cell": "./miniprogram/miniprogram_npm//weapp/cell/index",
+    "van-cell-group": "./miniprogram/miniprogram_npm/weapp/cell-group/index",
+    "van-tabbar": "./miniprogram/miniprogram_npm/weapp/tabbar/index",
+    "van-tabbar-item": "./miniprogram/miniprogram_npm/weapp/tabbar-item/index",
+    "van-icon": "./miniprogram/miniprogram_npm/weapp/icon/index",
+    "van-field": "./miniprogram/miniprogram_npm/weapp/field/index",
+    "van-image": "./miniprogram/miniprogram_npm/weapp/image/index",
+    "van-uploader": "./miniprogram/miniprogram_npm/weapp/uploader/index",
+    "van-tab": "./miniprogram/miniprogram_npm/weapp/tab/index",
+    "van-tabs": "./miniprogram/miniprogram_npm/weapp/tabs/index",
+    "van-card": "./miniprogram/miniprogram_npm/weapp/card/index",
+    "van-tag": "./miniprogram/miniprogram_npm/weapp/tag/index",
+    "van-search": "./miniprogram/miniprogram_npm/weapp/search/index",
+    "van-grid": "./miniprogram/miniprogram_npm/weapp/grid/index",
+    "van-grid-item": "./miniprogram/miniprogram_npm/weapp/grid-item/index",
+    "van-divider": "./miniprogram/miniprogram_npm/weapp/divider/index",
+    "van-index-bar": "./miniprogram/miniprogram_npm/weapp/index-bar/index",
+    "van-index-anchor": "./miniprogram/miniprogram_npm/weapp/index-anchor/index",
+    "van-dropdown-menu": "./miniprogram/miniprogram_npm/weapp/dropdown-menu/index",
+    "van-dropdown-item": "./miniprogram/miniprogram_npm/weapp/dropdown-item/index",
+    "van-notice-bar": "./miniprogram/miniprogram_npm/weapp/notice-bar/index"
+  }
+}

@@ -1,0 +1,83 @@
+<!--pages/primary/primary.wxml-->
+<view class="list-title">
+<view  class="left">
+  <view class="ziti1">足球基础训练课程</view>
+  <view class="ziti2">￥1300/10次</view>
+</view>
+<view   class="right">
+  <van-icon name="star-o" size="50rpx"/>
+</view>
+</view>
+
+<view class="list-title">
+<view  class="left">
+  <view class="ziti1">招收人群</view>
+  <view class="ziti3">零基础，10-18岁青少年</view>
+</view>
+<view   class="right">
+  <van-icon name="phone" size="50rpx"/>
+</view>
+</view>
+
+<view class="container">
+  <view class="ziti1">招收人群:</view>
+  <text decode="{{true}}" class="line">&emsp;</text>
+  <view class="box1"><view class="ziti3">① 国际足球运动规则</view></view>
+  <text decode="{{true}}" class="line">&emsp;</text>
+  <view class="box1"><view class="ziti3">② 运动战防守步伐要领</view></view>
+  <text decode="{{true}}" class="line">&emsp;</text>
+  <view class="box1"><view class="ziti3">③ 高低位运球和行进间传球的技术要领</view></view>
+  <text decode="{{true}}" class="line">&emsp;</text>
+  <view class="box1"><view class="ziti3">④ 行进间变相过人技术</view></view>
+  <text decode="{{true}}" class="line">&emsp;</text>
+  <view class="box1"><view class="ziti3">⑤ 全场紧逼防守与联防技术</view></view>
+</view>
+
+<view class="container">
+  <view class="ziti1">训练效果:</view>
+  <text decode="{{true}}" class="line">&emsp;</text>
+  <view class="box2"><view class="ziti3">
+    <van-icon name="checked" size="40rpx"/>
+    国际足球运动规则</view></view>
+  <text decode="{{true}}" class="line">&emsp;</text>
+  <view class="box2"><view class="ziti3">
+    <van-icon name="checked" size="40rpx"/>
+     运动战防守步伐要领</view></view>
+  <text decode="{{true}}" class="line">&emsp;</text>
+  <view class="box2"><view class="ziti3">
+    <van-icon name="checked" size="40rpx"/>
+     高低位运球和行进间传球的技术要领</view></view>
+  <text decode="{{true}}" class="line">&emsp;</text>
+</view>
+
+<view class="container">
+<view class="ziti1">教师风采:</view>
+<text decode="{{true}}" class="line">&emsp;</text>
+<van-icon name="manager" size="80rpx" />\t
+<van-icon name="manager" size="80rpx" />\t
+<van-icon name="manager" size="80rpx" />\t
+<van-icon name="manager" size="80rpx" />\t
+<view class = "ziti3">派老师\t派老师\t派老师\t派老师\t</view>
+</view>
+
+<view class="container">
+<view class="ziti1">时间安排：</view>
+<view class="ziti3">
+  <view>2次/周，2小时/次。共10次课程</view>
+  <view>1月20日开始，周六周日上午10-11点</view>
+</view>
+</view>
+
+<view class="list-title">
+<view  class="left">
+  <view class="ziti1">上课地点</view>
+  <view class="ziti3">北京市海淀区常春新区南一门，人民大学灯光篮球场（校医院旁）</view>
+</view>
+<view   class="right">
+  <van-icon name="location" size="50rpx"/>
+</view>
+</view>
+
+
+
+

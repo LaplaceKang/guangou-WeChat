@@ -1,0 +1,154 @@
+<view class="classname" style="display:flex;">
+<view class="flex-view-item">
+  <view class="flex-row" style="display:flex;">
+    <view class="flex-view-item">
+    <van-icon name="location" /> </view>
+    <view class="flex-view-item">
+  <navigator url="/pages/location/location">
+  <view>北京</view>
+</navigator></view>
+</view></view>
+<view class="flex-view-item">
+  <view>
+<van-search value="{{ value }}" placeholder="请输入搜索关键词" />
+</view>
+</view>
+</view>
+
+<van-grid column-num="5">
+  <van-grid-item
+    icon="photo-o"
+    text="篮球"
+  />
+  <van-grid-item
+    icon="photo-o"
+    link-type="navigateTo"
+    url="/pages/stadium/stadium"
+    text="足球"
+  />
+    <van-grid-item icon="photo-o" text="网球" wx:for="{{ 8 }}" />
+</van-grid>
+<view class="img1" style="display:justify-content;margin-top">
+<van-image
+  width="14rem"
+  height="8rem"
+  src="/images/3.jpg"
+  fit="fill"
+  alt="wenben"
+/>
+</view>
+
+<view class = "contain">
+<view class = "container">
+  <view class = "ziti1">
+    课程广告1
+  </view>
+  <view class = "ziti2">
+    1月15-20日 充值优惠
+  </view>
+</view></view>
+
+<van-card
+  tag=""
+  desc="\n"
+  thumb="/images/3.jpg">  
+<view slot="title">
+  <navigator url="/pages/campus/campus">
+   <view>北京邮电大学体育馆</view>
+  </navigator>
+</view>
+<view slot="tags">
+<text>\n</text>
+<van-tag round type="primary"> 足球 </van-tag>
+<van-tag round type="success"> 篮球 </van-tag>
+<van-tag round type="warning"> 滑冰</van-tag>
+</view>
+<view slot="bottom">
+  <van-icon name="location" />
+  <text>畅春园</text>
+</view>
+  <view slot="footer">
+    <text>1500m</text>
+  </view>
+</van-card>
+<van-divider/>
+<van-card
+  tag=""
+  desc="\n"
+  thumb="/images/3.jpg">  
+<view slot="title">
+ 首都体育大学体育馆
+</view>
+<view slot="tags">
+<text>\n</text>
+<van-tag round type="primary"> 足球 </van-tag>
+<van-tag round type="success"> 篮球 </van-tag>
+</view>
+<view slot="bottom">
+  <van-icon name="location" />
+  <text>畅春园</text>
+</view>
+  <view slot="footer">
+    <text>1500m</text>
+  </view>
+</van-card>
+<van-divider/>
+<van-card
+  tag=""
+  desc="\n"
+  thumb="/images/3.jpg">  
+<view slot="title">
+  北京师范大学体育馆
+</view>
+<view slot="tags">
+<text>\n</text>
+<van-tag round type="primary"> 足球 </van-tag>
+<van-tag round type="success"> 篮球 </van-tag>
+<van-tag round type="danger"> 乒乓球 </van-tag>
+<van-tag round type="warning"> 跆拳道</van-tag>
+</view>
+<view slot="bottom">
+  <van-icon name="location" />
+  <text>畅春园</text>
+</view>
+  <view slot="footer">
+    <text>1500m</text>
+  </view>
+</van-card>
+
+<van-divider/>
+<van-card
+  tag=""
+  desc="\n"
+  thumb="/images/3.jpg">  
+<view slot="title">
+  中国人民大学体育馆
+</view>
+<view slot="tags">
+<text>\n</text>
+<van-tag round type="primary"> 足球 </van-tag>
+<van-tag round type="success"> 篮球 </van-tag>
+<van-tag round type="danger"> 乒乓球 </van-tag>
+<van-tag round type="warning"> 跆拳道</van-tag>
+</view>
+<view slot="bottom">
+  <van-icon name="location" />
+  <text>畅春园</text>
+</view>
+  <view slot="footer">
+    <text>1500m</text>
+  </view>
+</van-card>
+
+<van-tabbar >
+  <van-tabbar-item icon="wap-home" >首页</van-tabbar-item>
+  <van-tabbar-item icon="search">
+    <navigator url="/pages/course/course">
+   <view>课程</view>
+  </navigator></van-tabbar-item>
+  <van-tabbar-item icon="manager" url = "/pages/index/index">
+    <navigator url="/pages/index/index">
+   <view>我的</view>
+  </navigator>
+</van-tabbar-item>
+</van-tabbar>

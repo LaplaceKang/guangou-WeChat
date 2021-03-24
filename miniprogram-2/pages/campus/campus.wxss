@@ -1,0 +1,41 @@
+/* pages/campus/campus.wxss */
+.img1 {
+  margin-top:10rpx;
+  display:flex;
+  justify-content: center;
+}
+.container{
+  padding:20rpx;
+  line-height:25px;
+}
+
+.list-title {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.line{
+    margin: 0 auto;
+    background-color: #272727;
+}
+.ziti1{
+  font-weight: bold;
+  font-size:medium;
+}
+.ziti2{
+  font-size:small;
+}
+.color1{
+  background-color: #AE0000;
+}
+.ziti3{
+  color:red;
+  text-align:right;
+padding-right:30rpx;
+}
+.classname{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}

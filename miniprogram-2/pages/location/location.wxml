@@ -1,0 +1,54 @@
+<!--pages/location/location.wxml-->
+<view class = "container">
+<view>当前定位</view>
+<van-button round type="info" type="default">北京</van-button>
+<view>热门城市</view>
+<van-button round type="info" type="default">北京</van-button>
+<van-button round type="info" type="default">上海</van-button>
+<van-button round type="info" type="default">广州</van-button>
+<van-button round type="info" type="default">深圳</van-button>
+<van-button round type="info" type="default">成都</van-button>
+<van-button round type="info" type="default">武汉</van-button>
+
+<van-index-bar>
+  <view>
+    <van-index-anchor index="A" />
+    <van-cell title="阿坝" />
+    <van-cell title="安康" />
+    <van-cell title="鞍山" />
+  </view>
+
+  <view>
+    <van-index-anchor index="B" />
+    <van-cell title="白山" />
+    <van-cell title="保定" />
+    <van-cell title="宝鸡" />
+    <van-cell title="北京" />
+    <van-cell title="本溪" />
+  </view>
+
+  <view>
+    <van-index-anchor index="C" />
+    <van-cell title="长春" />
+    <van-cell title="长沙" />
+    <van-cell title="长治" />
+    <van-cell title="潮州" />
+    <van-cell title="成都" />
+    <van-cell title="赤峰" />
+    <van-cell title="重庆" />
+  </view>
+</van-index-bar>
+
+<view>
+    <van-index-anchor index="D" />
+    <van-cell title="大连" />
+    <van-cell title="丹东" />
+    <van-cell title="大庆" />
+    <van-cell title="东莞" />
+  </view>
+  <view>
+    <van-index-anchor index="E" />
+    <van-cell title="鄂尔多斯" />
+  </view>
+
+</view>

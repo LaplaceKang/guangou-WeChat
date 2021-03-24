@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<view class="container">
+  <van-cell
+  is-link
+  title="爱运动的小刘"
+  link-type="navigateTo"
+  url="/pages/certification/certification"
+  center 
+icon="checked"
+value="您已在馆够打卡5次" label=" 校内认证"
+/>
+<text>\n</text>
+<van-cell title="我的订单" is-link />
+<van-cell title="我的课程" is-link />
+<van-cell title="我的卡包" is-link 
+url="/pages/mycards/mycards"
+/>
+<van-cell title="我的活动" is-link />
+<text>\n</text>
+<van-cell title="我的收藏" is-link
+url="/pages/collection/collection" />
+<text>\n</text>
+<van-cell title="客服" is-link value="XXXXX" />
+<van-cell title="版本号" is-link value="1.1.1" />
+<text>\n</text>
+<van-button plain type="default" block>切换角色</van-button>
+
+<van-tabbar >
+  <van-tabbar-item icon="wap-home">
+   <navigator url="/pages/firstpage/firstpage">
+   <view>首页</view>
+  </navigator>
+  </van-tabbar-item>
+  <van-tabbar-item icon="search">课程</van-tabbar-item>
+  <van-tabbar-item icon="manager">我的</van-tabbar-item>
+</van-tabbar>
+
+</view>

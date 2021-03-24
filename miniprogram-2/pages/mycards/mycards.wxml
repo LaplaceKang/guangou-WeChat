@@ -1,0 +1,8 @@
+<!--pages/mycards/mycards.wxml-->
+<van-cell center 
+icon="vip-card"
+title=" 篮球40+20次卡" value="剩余35次" label=" MVP体育馆" />
+
+<van-cell center 
+icon="vip-card"
+title=" 5000元送800元充值卡" value="剩余5200元" label=" 奥林匹克公园" />

@@ -1,0 +1,120 @@
+<!--pages/collection/collection.wxml-->
+
+<van-tabs swipeable>
+  <van-tab title="场地">
+    <van-card
+  tag=""
+  desc="\n"
+  thumb="/images/3.jpg"
+>  
+<view slot="title">
+  MVP训练场
+</view>
+
+<view slot="tags">
+<text>\n</text>
+<van-tag round type="primary"> 足球 </van-tag>
+<van-tag round type="success"> 篮球 </van-tag>
+<van-tag round type="danger"> 乒乓球 </van-tag>
+<van-tag round type="warning"> 跆拳道</van-tag>
+</view>
+<view slot="bottom">
+  <van-icon name="location" />
+  <text>畅春园</text>
+</view>
+  <view slot="footer">
+    <text>1500m</text>
+  </view>
+</van-card>
+<van-divider/>
+<van-card
+  tag=""
+  desc="\n"
+  thumb="/images/3.jpg"
+>  
+<view slot="title">
+  MVP训练场
+</view>
+<view slot="tags">
+<text>\n</text>
+<van-tag round type="primary"> 足球 </van-tag>
+<van-tag round type="success"> 篮球 </van-tag>
+<van-tag round type="danger"> 乒乓球 </van-tag>
+</view>
+<view slot="bottom">
+  <van-icon name="location" />
+  <text>畅春园</text>
+</view>
+  <view slot="footer">
+    <text>1500m</text>
+  </view>
+</van-card>
+<van-divider/>
+<van-card
+  desc="\n"
+  thumb="/images/3.jpg"
+>  
+<view slot="title">
+  MVP训练场
+</view>
+<view slot="tags">
+<text>\n</text>
+<van-tag round type="primary"> 足球 </van-tag>
+<van-tag round type="success"> 篮球 </van-tag>
+</view>
+<view slot="bottom">
+  <van-icon name="location" />
+  <text>畅春园</text>
+</view>
+  <view slot="footer">
+    <text>1500m</text>
+  </view>
+</van-card>
+</van-tab>
+
+
+<van-tab title="课程">
+<van-card
+  thumb="/images/3.jpg">  
+<view slot="title">
+  跆拳道对教班
+</view>
+<view slot="desc">
+  零基础，幼儿园中、大班
+  1小时/次，10课时
+</view>
+<view slot="bottom">
+  <van-icon name="location" />
+  <text>MVP运动馆</text>
+</view>
+  <view slot="footer">
+    <text>1500m</text>
+  </view>
+</van-card>
+ 
+<van-divider/>
+<van-card
+  tag=""
+  desc="\n"
+  thumb="/images/3.jpg"
+>  
+<view slot="title">
+  MVP训练场
+</view>
+<view slot="tags">
+<text>\n</text>
+<van-tag round type="primary"> 足球 </van-tag>
+<van-tag round type="success"> 篮球 </van-tag>
+<van-tag round type="danger"> 乒乓球 </van-tag>
+<van-tag round type="warning"> 跆拳道</van-tag>
+</view>
+<view slot="bottom">
+  <van-icon name="location" />
+  <text>畅春园</text>
+</view>
+  <view slot="footer">
+    <text>1500m</text>
+  </view>
+</van-card>
+</van-tab>
+</van-tabs>

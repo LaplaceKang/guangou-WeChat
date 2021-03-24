@@ -1,0 +1,9 @@
+{
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "馆够",
+    "navigationBarTextStyle":"white"
+  },
+  "usingComponents": {}
+}
