@@ -1,0 +1,28 @@
+/* pages/used/used.wxss */
+/* pages/detailed/detailed.wxss */
+.list-title {
+  display: flex;
+  justify-content: space-between;
+}
+.classname{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.container{
+  padding:20px;
+  line-height: 25px;
+}
+.grey{
+  font-size:small;
+  color:#BDBDBD;
+}
+.small{
+  font-size:small;
+}
+.red{
+  color:#FF0000;
+}
+.bold{
+  font-weight: bold;
+}

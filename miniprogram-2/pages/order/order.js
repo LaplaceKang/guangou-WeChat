@@ -1,28 +1,20 @@
-// pages/firstpage/firstpage.js
+// pages/order/order.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls:[
-     "/images/3.jpg",
-     "/images/3.jpg",
-     "/images/3.jpg"
-    ]
-   },
-   //事件处理函数
-toupper:function(){
-console.log("触发了toupper");
-},
-  toCourse: function(event) {
-  wx.navigateTo({ //跳转页面
-        url: '/pages/course/course'
-      })
+
   },
-  toMy: function(event) {
+  toUse: function(event) {
     wx.navigateTo({ //跳转页面
-          url: '/pages/index/index'
+          url: '/pages/used/used'
+        })
+    },
+  toOrder: function(event) {
+    wx.navigateTo({ //跳转页面
+          url: '/pages/detailed/detailed'
         })
     },
   /**

@@ -4,9 +4,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+       imgUrls:[
+        "/images/4.jpg",
+        "/images/4.jpg",
+        "/images/4.jpg"
+       ]
+      },
+      //事件处理函数
+  toupper:function(){
+  console.log("触发了toupper");
   },
-  
+  toOrder: function(event) {
+    wx.navigateTo({ //跳转页面
+          url: '/pages/book/book'
+        })
+    },
   /**
    * 生命周期函数--监听页面加载
    */

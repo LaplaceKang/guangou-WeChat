@@ -5,6 +5,14 @@
   text="1.预定后不接受退改。2.场地不可用于单位、团体或个人举行的比赛、团建、拓展、培训等商业活动。3.如有疑问请致电。"
 />
 
+<swiper>
+ <swiper-item wx:for="{{imgUrls}}">
+  <image src='{{item}}' width="10rem"
+  height="16rem" class = "img1" style="display:justify-content;margin-top"/>
+ </swiper-item>
+</swiper>
+
+<!--
 <view class="img1" style="display:justify-content;margin-top">
 <van-image
   width="16rem"
@@ -13,7 +21,7 @@
   fit="fill"
 />
 </view>
-
+-->
 <view class="list-title">
 <view  class="left">北邮体育馆
 <view>
@@ -132,6 +140,7 @@
 </van-card>
 </view>
 </view>
-<van-button type="primary" size="large" color="black">大号按钮</van-button>
+
+<van-button type="primary" size="large" color="black" bindtap="toOrder">去预定</van-button>
 
 

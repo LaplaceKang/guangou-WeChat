@@ -1,0 +1,184 @@
+<!--pages/order/order.wxml-->
+<van-tabs>
+<van-tab title="全部">
+<view class="container" bindtap='toUse'>
+<view class="list-title">
+<view  class="left">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-icon name="shop-o" size="40rpx" color="black"/></view>
+<view class="flex-view-item"><view class = "ziti2">MVP训练馆</view></view>
+<view class="flex-view-item"><van-icon name="arrow" size="30rpx" color="black"/></view>
+</view></view>
+<view class="right"><view class="red">待支付</view></view>
+</view>
+
+<view class="list-title">
+<view  class="left"><van-tag type="primary">1月13日</van-tag></view>
+<view class="right">¥40.0</view>
+</view>
+
+<view class="container">
+ <view class="list-title">
+<view  class="left">篮球 A2场馆 17：00-18：00</view>
+<view class="right"><view class="grey">x1</view></view>
+</view>
+<view class="list-title">
+<view  class="left">篮球 A2场馆 18：00-19：00</view>
+<view class="right"><view class="grey">x1</view></view>
+</view>
+</view>
+
+<view class="list-title">
+<view  class="left"><view class="red">03:45后取消</view></view>
+<view class="right">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-button color="#D8D8D8" round type="info"  size="small">取消订单</van-button></view>
+<view class="flex-view-item"><van-button color="#FF8000" round type="info"  size="small">去支付</van-button></view>
+</view>
+</view>
+</view>
+</view>
+
+<view class="container" bindtap='toUse'>
+<view class="list-title">
+<view  class="left">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-icon name="shop-o" size="40rpx" color="black"/></view>
+<view class="flex-view-item"><view class = "ziti2">MVP训练馆</view></view>
+<view class="flex-view-item"><van-icon name="arrow" size="30rpx" color="black"/></view>
+</view></view>
+<view class="right"><view class="green">待使用</view></view>
+</view>
+
+<view class="list-title">
+<view  class="left"><van-tag type="primary">1月12日</van-tag></view>
+<view class="right">¥40.0</view>
+</view>
+
+<view class="container">
+ <view class="list-title">
+<view  class="left">篮球 A2场馆 17：00-18：00</view>
+<view class="right"><view class="grey">x1</view></view>
+</view>
+<view class="list-title">
+<view  class="left">篮球 A2场馆 18：00-19：00</view>
+<view class="right"><view class="grey">x1</view></view>
+</view>
+</view>
+
+<view class="list-title">
+<view  class="left"> </view>
+<view class="right">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-button color="#D8D8D8" round type="info"  size="small">取消订单</van-button></view>
+<view class="flex-view-item"><van-button color="#64FE2E" round type="info"  size="small">出示进场码</van-button></view>
+</view>
+</view>
+</view>
+</view>
+
+<view class="container" bindtap='toUse'>
+<view class="list-title">
+<view  class="left">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-icon name="shop-o" size="40rpx" color="black"/></view>
+<view class="flex-view-item"><view class = "ziti2">MVP训练馆</view></view>
+<view class="flex-view-item"><van-icon name="arrow" size="30rpx" color="black"/></view>
+</view></view>
+<view class="right"><view class="grey">已使用</view></view>
+</view>
+
+<view class="list-title">
+<view  class="left"><van-tag type="primary">1月11日</van-tag></view>
+<view class="right">¥40.0</view>
+</view>
+
+<view class="container">
+ <view class="list-title">
+<view  class="left">篮球 A2场馆 17：00-18：00</view>
+<view class="right"><view class="grey">x1</view></view>
+</view>
+<view class="list-title">
+<view  class="left">篮球 A2场馆 18：00-19：00</view>
+<view class="right"><view class="grey">x1</view></view>
+</view>
+</view>
+
+<view class="list-title">
+<view  class="left"> </view>
+<view class="right"><van-button color="#848484" round type="info"  size="small">写评价</van-button></view>
+</view>
+</view>
+
+<view class="container">
+<view class="list-title">
+<view  class="left">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-icon name="shop-o" size="40rpx" color="black"/></view>
+<view class="flex-view-item"><view class = "ziti2">MVP训练馆</view></view>
+<view class="flex-view-item"><van-icon name="arrow" size="30rpx" color="black"/></view>
+</view></view>
+<view class="right"><view class="grey">已使用</view></view>
+</view>
+
+<view class="list-title">
+<view  class="left"><van-tag type="primary">1月11日</van-tag></view>
+<view class="right">¥40.0</view>
+</view>
+
+<view class="container">
+ <view class="list-title">
+<view  class="left">篮球 A2场馆 17：00-18：00</view>
+<view class="right"><view class="grey">x1</view></view>
+</view>
+<view class="list-title">
+<view  class="left">篮球 A2场馆 18：00-19：00</view>
+<view class="right"><view class="grey">x1</view></view>
+</view>
+</view>
+
+<view class="list-title">
+<view  class="left"> </view>
+<view class="right"><van-button color="#848484" round type="info"  size="small">写评价</van-button></view>
+</view>
+</view>
+</van-tab>
+<van-tab title="待使用">待使用</van-tab>
+<van-tab title="已使用">已使用</van-tab>
+<van-tab title="课程">
+  
+<view class="container"  bindtap='toOrder'>
+<view class="list-title">
+<view  class="left">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-icon name="shop-o" size="40rpx" color="black"/></view>
+<view class="flex-view-item"><view class = "ziti2">MVP训练馆</view></view>
+<view class="flex-view-item"><van-icon name="arrow" size="30rpx" color="black"/></view>
+</view></view>
+<view class="right"><view class="green">已支付</view></view>
+</view>
+
+<view class="list-title">
+<view  class="left"><van-tag type="primary">5月30日</van-tag></view>
+<view class="right">¥2000</view>
+</view>
+
+<view class="container">
+游泳启蒙
+<view class="small">零基础，幼儿园中、大班。2次/周，1小时/次；</view>
+</view>
+
+<view class="list-title">
+<view  class="left"> </view>
+<view class="right">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-button color="#D8D8D8" round type="info"  size="small">取消订单</van-button></view>
+<view class="flex-view-item"><van-button color="#64FE2E" round type="info"  size="small">查看更多</van-button></view>
+</view>
+</view>
+</view>
+</view>
+
+
+</van-tab>
+</van-tabs>

@@ -32,7 +32,16 @@ Page({
     value3:'x',
     value4:'y'
   },
-
+  toFirst: function(event) {
+    wx.navigateTo({ //跳转页面
+          url: '/pages/firstpage/firstpage'
+        })
+    },
+    toMy: function(event) {
+      wx.navigateTo({ //跳转页面
+            url: '/pages/index/index'
+          })
+      },
   /**
    * 生命周期函数--监听页面加载
    */

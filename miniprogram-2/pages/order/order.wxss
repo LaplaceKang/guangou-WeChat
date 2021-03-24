@@ -1,0 +1,26 @@
+/* pages/order/order.wxss */
+.classname{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.container{
+  padding:20px;
+}
+.list-title {
+  display: flex;
+  justify-content: space-between;
+}
+.red{
+  color:#FF0040;
+}
+.grey{
+  color:#848484;
+}
+.green{
+  color:#64FE2E;
+}
+.small{
+  color:#848484;
+  font-size:small;
+}

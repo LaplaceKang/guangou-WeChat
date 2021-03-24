@@ -10,8 +10,10 @@ icon="checked"
 value="您已在馆够打卡5次" label=" 校内认证"
 />
 <text>\n</text>
-<van-cell title="我的订单" is-link />
-<van-cell title="我的课程" is-link />
+<van-cell title="我的订单" is-link 
+url="/pages/order/order"/>
+<van-cell title="我的课程" is-link 
+url="/pages/order/order"/>
 <van-cell title="我的卡包" is-link 
 url="/pages/mycards/mycards"
 />
@@ -26,12 +28,8 @@ url="/pages/collection/collection" />
 <van-button plain type="default" block>切换角色</van-button>
 
 <van-tabbar >
-  <van-tabbar-item icon="wap-home">
-   <navigator url="/pages/firstpage/firstpage">
-   <view>首页</view>
-  </navigator>
-  </van-tabbar-item>
-  <van-tabbar-item icon="search">课程</van-tabbar-item>
+  <van-tabbar-item icon="wap-home" bindtap='toFirst'>首页</van-tabbar-item>
+  <van-tabbar-item icon="search" bindtap='toCourse'>课程</van-tabbar-item>
   <van-tabbar-item icon="manager">我的</van-tabbar-item>
 </van-tabbar>
 

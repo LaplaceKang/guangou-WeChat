@@ -1,0 +1,49 @@
+<!--pages/book/book.wxml-->
+<van-dropdown-menu>
+  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+  <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+</van-dropdown-menu>
+
+<van-notice-bar left-icon="volume-o"
+  text="预定规则：如需全场请预定首字母相同的场地，如A1、A2。最多连续预定2小时。如需大型活动或连续预约，请来电咨询。预定成功，有效期一天前可免费取消预定。有效期24小时内。"
+/>
+
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="1月11日">
+ <!--下面是表格-->
+
+ <view class='table-module'>
+  <!-- 左侧固定 -->
+  <view class='left-policy-type'>
+    <view class='empty-box'></view>
+    <view wx:for="{{fruitTypeList}}" class='left-col-list' wx:key="{{index}}">
+      <view style="font-size:28rpx;  color: rebeccapurple;font-weight:bolder">{{item.typeName}}</view>
+    </view>
+  </view>
+  <!-- 右侧表格滚动 -->
+  <scroll-view class="scroll-box" scroll-x="true">
+    <view class="scroll-view-item" wx:for="{{fruitList}}" wx:for-index="bigindex" wx:key="{{index}}">
+      <view class='company-name'>
+        <view class="ziti1">{{item.name}}</view>
+        <view>五人制真草</view>
+      </view>
+      <view wx:for="{{item.list}}" wx:for-item="cell" data-bigindex="{{bigindex}}" data-index='{{index}}' class='price-box' wx:key="{{index2}}">
+        <view class="price" wx:if="{{cell.price != '40'}}"></view>
+        <view class="price"  wx:else>¥{{cell.price}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+  </van-tab>
+  <van-tab title="1月12日">内容 2</van-tab>
+  <van-tab title="1月13日">
+<van-dialog id="van-dialog" />
+  </van-tab>
+  <van-tab title="1月14日">内容 4</van-tab>
+</van-tabs>
+ 
+<view class="container">
+  <text class="ziti1">合计：¥40</text>
+  <van-button type="primary"  color="black" bindtap="toOrder">确认预定</van-button>
+</view>
