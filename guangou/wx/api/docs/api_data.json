@@ -1,5 +1,33 @@
 [
   {
+    "type": "get",
+    "url": "/wx/venue/getCourtFacility",
+    "title": "根据场馆id获取其设施类型",
+    "name": "_venue_getCourtFacility",
+    "group": "Court",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "courtid",
+            "description": "<p>场馆id(如：2)</p>"
+          }
+        ]
+      }
+    },
+    "sampleRequest": [
+      {
+        "url": "/wx/venue/getCourtFacility"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "wx/venue.py",
+    "groupTitle": "Court"
+  },
+  {
     "success": {
       "fields": {
         "Success 200": [
@@ -23,8 +51,8 @@
     "url": "",
     "version": "0.0.0",
     "filename": "wx/api/docs/main.js",
-    "group": "F___________Django_guangou_wx_api_docs_main_js",
-    "groupTitle": "F___________Django_guangou_wx_api_docs_main_js",
+    "group": "F_________________guangou_WeChat_guangou_wx_api_docs_main_js",
+    "groupTitle": "F_________________guangou_WeChat_guangou_wx_api_docs_main_js",
     "name": ""
   },
   {

@@ -42,3 +42,43 @@ padding-right:30rpx;
 .img{
   width:80%
 }
+
+.nav-bar-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:  wrap ;
+  justify-content: flex-start;
+  height: 330rpx;
+}
+.nav-bar-item {
+  width: 125rpx;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  padding-top: 28rpx; */
+}
+
+.allCourtType {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.oneCourtType {
+  display: flex;
+  flex-direction: column;
+  width: 125rpx;
+  height: 125rpx;
+  align-items: center;
+  margin: 20rpx 0 10rpx 0;
+}
+
+.courtTypeImg {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.courtTypeText {
+  font-size: small;
+  color:rgb(137, 137, 137)
+}

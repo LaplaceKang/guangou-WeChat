@@ -33,31 +33,6 @@
   font-size: smaller;
 }
 
-.allCourtType {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  background-color: black;
-}
-
-.oneCourtType {
-  display: flex;
-  flex-direction: column;
-  width: 125rpx;
-  height: 125rpx;
-  align-items: center;
-  margin: 20rpx 0 10rpx 0;
-}
-
-.courtTypeImg {
-  width: 100rpx;
-  height: 100rpx;
-}
-
-.courtTypeText {
-  font-size: small;
-  color: white;
-}
 
 
 /* 图标模块 */

@@ -1,4 +1,8 @@
 // pages/campus/campus.js
+import {
+  Map_Facility
+} from '../../utils/typeMap.js'
+
 Page({
   /**
    * 页面的初始数据
@@ -22,11 +26,26 @@ Page({
       method: "GET",
       success: function (res) {
         that.setData({
-          venue: res.data.data
+          venue: res.data.data.venue,
+          court:res.data.data.court
         })
+        that.getCourtFaility()
         console.log(res.data)
       }
     })
+  },
+  //获取场馆的场地设施信息
+  getCourtFaility(){
+    let that=this
+    let court=that.data.court
+    court.facilityname=[]
+    for (let i = 1; i <= court.facilityid.length; i++) {
+      court.facilityname.push(Map_Facility[i+''])
+      that.setData({
+        court:court
+      })
+    }
+    // console.log(court)
   },
   /**
    * 生命周期函数--监听页面加载

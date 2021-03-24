@@ -186,22 +186,50 @@ def getVenueDetail(request: HttpRequest):
     # print(venue.information)
 
     court=models.Court.objects.filter(venueid=venueid,courttypeid=courttypeid).values('courtid','specifications')
-    court=list(court)[0]
+    court=list(court)[0] #第一个场馆
     # print(court)
 
     # models.CourtDiscountCard.objects.filter(courtid=court['courtid']).values('discountcardname','specifications')
-    facilityid=models.CourtCourtFacility.objects.filter(courtid=court['courtid']).values('facilityid')
-    facilityid=list(facilityid)
-    # print(facility)
-    facility=[]
-    for i in facilityid:
-        facilityOne=models.CourtFacility.objects.filter(facilityid=i['facilityid']).values('facilityname','facilityicon')
-        facility.append(list(facilityOne)[0])
+    facility=models.CourtCourtFacility.objects.filter(courtid=court['courtid']).values('facilityid')
+    facility=list(facility) #场馆设施ID，具体名称在Map中查找
+    facilityid=[]
+    for i in facility:
+        facilityid.append(i['facilityid'])
 
+    res_venue={'information': venue.information,'address': venue.address, 'phonenumber': venue.phonenumber,}
+    res_court={'specifications':court['specifications'],'facilityid':facilityid}
     # print(facility)
-    res['data'] = {'information': venue.information, 'address': venue.address, 'phonenumber': venue.phonenumber,'specifications':court['specifications'],'facility':facility}
-
+    res['data'] = {'venue':res_venue,'court':res_court}
 
     res['code'] = 1
     res['message'] = 'success'
     return JsonResponse(res)
+
+
+
+"""
+ @api {get} /wx/venue/getCourtFacility 根据场馆id获取其设施类型
+ @apiName /venue/getCourtFacility
+ @apiGroup Court
+
+ @apiParam {int} courtid 场馆id(如：2)
+
+ @apiSampleRequest /wx/venue/getCourtFacility
+"""
+# @csrf_exempt
+# def getCourtFacility(request: HttpRequest):
+#     res = {'data': []}
+#     if request.method != 'GET':
+#         res['code'] = 0
+#         res['message'] = "bad request"
+#         return JsonResponse(res)
+#     courtid = request.GET.get("courtid")
+
+#     facility=models.CourtCourtFacility.objects.filter(courtid=courtid).values("facilityid")
+#     facility=list(facility)
+#     # print(facility)
+#     res['data']=facility
+
+#     res['code'] = 1
+#     res['message'] = 'success'
+#     return JsonResponse(res)

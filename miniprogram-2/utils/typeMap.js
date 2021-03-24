@@ -29,6 +29,21 @@ const Map_CourtType = {
   27: '综合操房'
 }
 
+//场馆设施类型
+const Map_Facility = {
+  1: '停车场',
+  2: '光纤',
+  3: '更衣室',
+  4: '浴室',
+  5: '商品部',
+  6: '新风系统',
+  7: '中央空调',
+  8: '厕所',
+  9: 'WIFI',
+}
+
+
 export {
-  Map_CourtType
+  Map_CourtType,
+  Map_Facility
 }
