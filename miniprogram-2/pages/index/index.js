@@ -11,6 +11,16 @@ Page({
     openid: 'wx9a3377455576ee6c'
   },
   // 事件处理函数
+  toFirst: function(event) {
+    wx.navigateTo({ //跳转页面
+          url: '/pages/firstpage/firstpage'
+        })
+    },
+    toCourse: function(event) {
+      wx.navigateTo({ //跳转页面
+            url: '/pages/course/course'
+          })
+      },
   bindViewTap() {
     wx.navigateTo({
       url: '../logs/logs'

@@ -1,0 +1,106 @@
+<!--pages/used/used.wxml-->
+<!--pages/detailed/detailed.wxml-->
+<view class="container">
+<view class="list-title">
+<view  class="left">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-icon name="manager-o" size="70rpx"/></view>
+<view class="flex-view-item">
+<view>刘先生</view>
+<view>153****8888</view>
+</view>
+</view>
+</view>
+<view   class="right"><van-icon name="edit" size="50rpx"/></view>
+</view></view>
+
+<view class="container">
+<view class="list-title">
+<view  class="left">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-icon name="wap-home-o" size="70rpx"/></view>
+<view class="flex-view-item">
+<view class="small">MVP训练馆</view>
+<view class="grey">石景山区八宝山地铁站A口</view></view></view></view>
+<view   class="right"><van-icon name="arrow" size="50rpx"/></view>
+</view>
+
+<view class="list-title">
+<view  class="left">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-icon name="photo-o" size="70rpx"/></view>
+<view class="flex-view-item">
+<view class="small">场馆地图</view></view></view></view>
+<view   class="right"><van-icon name="arrow" size="50rpx"/></view>
+</view>
+</view>
+
+
+<view class="container">
+<view class="list-title">
+<view  class="left"><van-tag type="primary">5月30日</van-tag></view>
+<view class="right"><view class="grey">已使用</view></view>
+</view>
+<view class="container">
+<view class="list-title">
+<view  class="left">篮球 A2场馆 17：00-18：00</view>
+<view class="right"><view class="grey">¥20</view></view>
+</view>
+<view class="list-title">
+<view  class="left">篮球 A2场馆 18：00-19：00</view>
+<view class="right"><view class="grey">¥20</view></view>
+</view>
+
+<view class="list-title">
+<view  class="left">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-icon name="cash-on-deliver" size="50rpx" color="red"/></view>
+<view class="flex-view-item">优惠</view>
+</view>
+</view>
+<view class="right"><view class="red">-¥0</view></view>
+</view>
+<view class="list-title">
+<view  class="left"></view>
+<view class="right"><view class="bold">应付： ¥40.0</view></view>
+</view>
+
+
+
+
+
+
+
+
+<view class="grey">订单编号：150994841</view>
+<view class="grey">下单时间：2021-01-14 10：00：00</view>
+<view class="grey">支付方式：微信余额</view>
+<view class="list-title">
+<view  class="left"> </view>
+<view class="right">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-button color="#D8D8D8" round type="info"  size="small">评价</van-button></view>
+<view class="flex-view-item"><van-button color="#64FE2E" round type="info"  size="small">再来一单</van-button></view>
+</view></view></view>
+</view></view>
+
+
+
+
+
+<view class="container">
+<view class = "bold">温馨提示：</view>
+
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><view class = "grey">有效期：</view></view>
+<view class="flex-view-item"><view class = "small">仅限预定日期当日使用。</view></view>
+</view>
+
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><view class = "grey">取消规则：</view></view>
+<view class="flex-view-item"><view class = "small">
+遵守场馆使用纪律。如破坏场馆设施照价赔偿。发票问题请咨询前台。
+该场地仅支持12小时前退订。
+非合作用户禁止使用场地进行教学、培训等盈利性质的活动。
+</view></view>
+</view></view>

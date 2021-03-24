@@ -127,16 +127,9 @@
 <van-divider/>  
 
 <van-tabbar >
-  <van-tabbar-item icon="wap-home" >
-    <navigator url="/pages/firstpage/firstpage">
-   <view>首页</view>
-  </navigator></van-tabbar-item>
+  <van-tabbar-item icon="wap-home"bindtap='toFirst' >首页</van-tabbar-item>
   <van-tabbar-item icon="search">课程</van-tabbar-item>
-  <van-tabbar-item icon="manager" url = "/pages/index/index">
-    <navigator url="/pages/index/index">
-   <view>我的</view>
-  </navigator>
-</van-tabbar-item>
+  <van-tabbar-item icon="manager" bindtap='toMy'>我的</van-tabbar-item>
 </van-tabbar>
 
 

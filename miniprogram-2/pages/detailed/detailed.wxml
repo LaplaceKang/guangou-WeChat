@@ -1,0 +1,110 @@
+<!--pages/detailed/detailed.wxml-->
+<view class="container">
+<view class="list-title">
+<view  class="left">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-icon name="manager-o" size="70rpx"/></view>
+<view class="flex-view-item">
+<view>刘先生</view>
+<view>153****8888</view>
+</view>
+</view>
+</view>
+<view   class="right"><van-icon name="edit" size="50rpx"/></view>
+</view></view>
+
+<view class="container">
+<view class="list-title">
+<view  class="left">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-icon name="wap-home-o" size="70rpx"/></view>
+<view class="flex-view-item">
+<view class="small">人民大学灯光篮球场（校医院旁）</view>
+<view class="grey">北京市海淀区常春新区南一门</view></view></view></view>
+<view   class="right"><van-icon name="arrow" size="50rpx"/></view>
+</view>
+
+<view class="list-title">
+<view  class="left">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-icon name="photo-o" size="70rpx"/></view>
+<view class="flex-view-item">
+<view class="small">场馆地图</view></view></view></view>
+<view   class="right"><van-icon name="arrow" size="50rpx"/></view>
+</view>
+
+<view class="list-title">
+<view  class="left">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-icon name="phone" size="70rpx"/></view>
+<view class="flex-view-item">
+<view class="small">派老师</view>
+<view class="grey">153****8888</view></view></view></view>
+<view   class="right"><van-icon name="arrow" size="50rpx"/></view>
+</view>
+</view>
+
+<view class="container">
+<van-tag type="primary">5月30日</van-tag>
+
+<view class="container">
+<view class="list-title">
+<view  class="left">足球训练课程</view>
+<view class="right"><view class="grey">¥1500</view></view>
+</view>
+<view class="grey">2次/周，2小时/次。共10次课程。</view>
+<view class="grey">1月20日开始，周六周日每上午9-11点。</view>
+<view class="list-title">
+<view  class="left">
+  <view class="classname" style="display:flex;">
+  <view class="flex-view-item"><van-icon name="bill" color="#FF0000" /></view>
+  <view class="flex-view-item">优惠</view>
+  </view>
+</view>
+<view class="right"><view class="red">-¥0</view></view>
+</view>
+<view class="list-title">
+<view  class="left"></view>
+<view class="right">¥1500.0</view>
+</view>
+<view class="grey">订单编号：150994841</view>
+<view class="grey">下单时间：2021-01-14 10：00：00</view>
+<view class="grey">支付方式：微信余额</view>
+</view>
+</view>
+
+<view class="container">
+<view class = "bold">温馨提示：</view>
+
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><view class = "grey">有效期：</view></view>
+<view class="flex-view-item"><view class = "small">仅限预定日期当日使用。</view></view>
+</view>
+
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><view class = "grey">取消规则：</view></view>
+<view class="flex-view-item"><view class = "small">在预定时间前24小时以外可免费取消预定，预定时间前24小时内，不可取消。</view></view>
+</view>
+
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><view class = "grey">使用规则：</view></view>
+<view class="flex-view-item"><view class = "small">遵守场馆使用纪律。如破坏场馆设施照价赔偿。发票问题请咨询前台。</view></view>
+</view>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -85,18 +85,8 @@
   <van-divider />
 </view>
 
-
-
-<van-tabbar>
-  <van-tabbar-item icon="wap-home">首页</van-tabbar-item>
-  <van-tabbar-item icon="search">
-    <navigator url="/pages/course/course">
-       <view>课程</view>
-    </navigator>
-  </van-tabbar-item>
-  <van-tabbar-item icon="manager" url="/pages/index/index">
-    <navigator url="/pages/index/index">
-       <view>我的</view>
-    </navigator>
-  </van-tabbar-item>
+<van-tabbar >
+  <van-tabbar-item icon="wap-home" >首页</van-tabbar-item>
+  <van-tabbar-item icon="search"bindtap='toCourse'>课程</van-tabbar-item>
+  <van-tabbar-item icon="manager" bindtap='toMy'>我的</van-tabbar-item>
 </van-tabbar>

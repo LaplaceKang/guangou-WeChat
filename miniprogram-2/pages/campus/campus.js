@@ -4,7 +4,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+       imgUrls:[
+        "/images/4.jpg",
+        "/images/4.jpg",
+        "/images/4.jpg"
+       ]
+      },
+      //事件处理函数
+  toupper:function(){
+  console.log("触发了toupper");
   },
   //获取总场馆信息
   getVenueDetail() {

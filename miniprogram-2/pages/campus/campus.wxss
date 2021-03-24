@@ -39,3 +39,6 @@ padding-right:30rpx;
   flex-wrap: wrap;
   align-items: center;
 }
+.img{
+  width:80%
+}

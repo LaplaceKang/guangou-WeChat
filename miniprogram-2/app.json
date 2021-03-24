@@ -10,7 +10,12 @@
     "pages/campus/campus",
     "pages/course/course",
     "pages/primary/primary",
-    "pages/senior/senior"
+    "pages/senior/senior",
+    "pages/submit/submit",
+    "pages/order/order",
+    "pages/detailed/detailed",
+    "pages/used/used",
+    "pages/book/book"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -41,6 +46,8 @@
     "van-index-anchor": "./miniprogram/miniprogram_npm/weapp/index-anchor/index",
     "van-dropdown-menu": "./miniprogram/miniprogram_npm/weapp/dropdown-menu/index",
     "van-dropdown-item": "./miniprogram/miniprogram_npm/weapp/dropdown-item/index",
-    "van-notice-bar": "./miniprogram/miniprogram_npm/weapp/notice-bar/index"
+    "van-notice-bar": "./miniprogram/miniprogram_npm/weapp/notice-bar/index",
+    "van-dialog": "./miniprogram/miniprogram_npm/weapp/dialog/index",
+    "van-switch": "./miniprogram/miniprogram_npm/weapp/switch/index"
   }
 }

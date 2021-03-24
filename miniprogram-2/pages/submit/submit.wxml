@@ -1,0 +1,108 @@
+<!--pages/submit/submit.wxml-->
+<view class="list-title2">
+<view  class="left">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item">
+  <van-icon name="manager-o" size="70rpx"/>
+</view>
+<view class="flex-view-item">
+<view>刘先生</view>
+<view>153****8888</view>
+</view>
+</view>
+</view>
+<view   class="right">
+  <van-icon name="edit" size="50rpx"/>
+</view>
+</view>
+
+<view class="container">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-icon name="shop-o" size="40rpx" color="black"/></view>
+<view class="flex-view-item"><view class = "ziti2">MVP训练馆</view></view>
+<view class="flex-view-item"><van-icon name="arrow" size="30rpx" color="black"/></view>
+</view>
+<van-tag type="primary">1月13日</van-tag>
+
+<view class="list-title2">
+<view  class="left">篮球 A2场馆 18：00-19：00</view>
+<view class="right"><view class="ziti3">¥20</view></view>
+</view>
+<view class="list-title2">
+<view  class="left">篮球 A2场馆 19：00-20：00</view>
+<view class="right"><view class="ziti3">¥20</view></view>
+</view>
+<view class="list-title2">
+<view  class="left">
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-icon name="cash-on-deliver" size="50rpx" color="red"/></view>
+<view class="flex-view-item">优惠</view>
+</view>
+</view>
+<view class="right"><view class="ziti4">-¥0</view></view>
+</view>
+<view class="list-title2">
+  <view  class="left"></view>
+<view class="right"><view class="ziti4">应付： ¥40.0</view></view>
+</view>
+
+
+</view>
+
+
+
+
+
+
+
+<view class="container">
+<view class = "ziti1">支付方式：</view>
+
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-icon name="vip-card-o" size="70rpx" color="#A1D9F3"/></view>
+<view class="flex-view-item">
+<view class = "ziti2">场馆次卡支付</view>
+</view>
+</view>
+
+<view class="list-title">
+<view  class="left">
+<view style="display:flex;">
+<view class="flex-view-item"><van-icon name="wechat" size="70rpx"color="#3DFA5D"/></view>
+<view class="flex-view-item"><view class = "ziti2" >微信支付</view></view>
+</view>
+</view>
+<view class="right"><van-icon name="checked" size="50rpx"/></view>
+</view>
+
+
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><van-icon name="card" size="70rpx"  color="#B9C0BA"/></view>
+<view class="flex-view-item">
+<view class = "ziti2">银行卡支付</view>
+</view>
+</view>
+
+</view>
+
+<view class="container">
+<view class = "ziti1">温馨提示：</view>
+
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><view class = "ziti3">有效期：</view></view>
+<view class="flex-view-item"><view class = "ziti2">仅限预定日期当日使用。</view></view>
+</view>
+
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><view class = "ziti3">取消规则：</view></view>
+<view class="flex-view-item"><view class = "ziti2">在预定时间前24小时以外可免费取消预定，预定时间前24小时内，不可取消。</view></view>
+</view>
+
+<view class="classname" style="display:flex;">
+<view class="flex-view-item"><view class = "ziti3">使用规则：</view></view>
+<view class="flex-view-item"><view class = "ziti2">遵守场馆使用纪律。如破坏场馆设施照价赔偿。发票问题请咨询前台。</view></view>
+</view>
+
+</view>
+
+<van-button type="primary" size="large" color="#FF9136" bindtap="toOrder">提交订单</van-button>
