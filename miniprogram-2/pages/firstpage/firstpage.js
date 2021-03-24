@@ -21,6 +21,11 @@ Page({
         "text": "我的"
       }
     ],
+    imgUrls: [
+      "/images/3.jpg",
+      "/images/3.jpg",
+      "/images/3.jpg"
+    ],
     venue: [],
     longitude: 116.346352,
     latitude: 39.960501,
@@ -95,26 +100,20 @@ Page({
       left, //模拟滑块滑动 根据css设置 距离左边的百分比
     })
   },
-    imgUrls:[
-     "/images/3.jpg",
-     "/images/3.jpg",
-     "/images/3.jpg"
-    ]
-   },
-   //事件处理函数
-toupper:function(){
-console.log("触发了toupper");
-},
-  toCourse: function(event) {
-  wx.navigateTo({ //跳转页面
-        url: '/pages/course/course'
-      })
+  //事件处理函数
+  toupper: function () {
+    console.log("触发了toupper");
   },
-  toMy: function(event) {
+  toCourse: function (event) {
     wx.navigateTo({ //跳转页面
-          url: '/pages/index/index'
-        })
-    },
+      url: '/pages/course/course'
+    })
+  },
+  toMy: function (event) {
+    wx.navigateTo({ //跳转页面
+      url: '/pages/index/index'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
