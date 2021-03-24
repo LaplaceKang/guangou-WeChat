@@ -3,6 +3,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  background-color: black;
+  justify-content: center;
 }
 
 .img1 {

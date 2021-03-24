@@ -1,20 +1,12 @@
-<view class="classname" style="display:flex;">
-  <view class="flex-view-item">
-    <view class="flex-row" style="display:flex;">
-      <view class="flex-view-item">
-        <van-icon name="location" />
-      </view>
-      <view class="flex-view-item">
-        <navigator url="/pages/location/location">
-          <view>北京</view>
-        </navigator>
-      </view>
-    </view>
+<view class="classname">
+  <view class="flex-row" style="display:flex;">
+    <van-icon name="location" color="white" />
+    <navigator url="/pages/location/location">
+      <view style="color:white">北京</view>
+    </navigator>
   </view>
-  <view class="flex-view-item">
-    <view>
-      <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
-    </view>
+  <view>
+    <van-search value="{{ value }}" placeholder="请输入搜索关键词" shape="round" background="black" />
   </view>
 </view>
 
@@ -50,7 +42,7 @@
 
 
 <view class="img1" style="display:justify-content;margin-top">
-  <van-image width="14rem" height="8rem" src="" fit="fill" alt="wenben" src="../../../../images/ad/1.jpeg"/>
+  <van-image width="14rem" height="8rem" src="" fit="fill" alt="wenben" src="../../../../images/ad/1.jpeg" />
 </view>
 
 <view class="contain">
@@ -85,8 +77,8 @@
   <van-divider />
 </view>
 
-<van-tabbar >
-  <van-tabbar-item icon="wap-home" >首页</van-tabbar-item>
-  <van-tabbar-item icon="search"bindtap='toCourse'>课程</van-tabbar-item>
+<van-tabbar>
+  <van-tabbar-item icon="wap-home">首页</van-tabbar-item>
+  <van-tabbar-item icon="search" bindtap='toCourse'>课程</van-tabbar-item>
   <van-tabbar-item icon="manager" bindtap='toMy'>我的</van-tabbar-item>
 </van-tabbar>
