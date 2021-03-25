@@ -67,18 +67,24 @@ padding-right:30rpx;
 .oneCourtType {
   display: flex;
   flex-direction: column;
-  width: 125rpx;
-  height: 125rpx;
+  width: 134rpx;
+  height: 140rpx;
   align-items: center;
-  margin: 20rpx 0 10rpx 0;
+  margin: 20rpx 0 -20rpx 0;
+  /* border: 1rpx solid black; */
 }
 
 .courtTypeImg {
-  width: 100rpx;
-  height: 100rpx;
+  padding: 10rpx;
+  width: 48rpx;
+  height: 48rpx;
+  background-color: rgb(232, 232, 232);
+  border:3rpx solid rgb(173, 173, 173);
+  border-radius:50%;
+  overflow: hidden;
 }
 
 .courtTypeText {
-  font-size: small;
+  font-size: 24rpx;
   color:rgb(137, 137, 137)
 }
