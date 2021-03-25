@@ -28,7 +28,7 @@ Page({
     ],
     venue: [],
     longitude: 116.346352,
-    latitude: 39.960501,
+    latitude: 39.970601,
     cityid: 1,
     page: 1,
     left: 0.6048 // 初始化滑块位置
@@ -44,8 +44,8 @@ Page({
           venue: that.data.venue.concat(res.data.data),
           showAll: res.data.showAll
         })
-        console.log(res.data)
-        console.log(res.data.showAll)
+        // console.log(res.data)
+        // console.log(res.data.showAll)
       }
     })
   },

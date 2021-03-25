@@ -57,7 +57,7 @@
 </view>
 
 <view wx:for="{{venue}}" data-index="{{index}}" bindtap="toCampus">
-  <van-card tag="" desc="\n" thumb="../../../../images/venue/{{item['venuename']}}.jpeg" thumb-mode="aspectFill">
+  <van-card thumb="../../../../images/venue/{{item['venuename']}}.jpeg" thumb-mode="aspectFill">
     <view slot="title">
       {{item['venuename']}}
     </view>

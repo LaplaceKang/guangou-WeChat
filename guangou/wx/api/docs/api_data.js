@@ -1,9 +1,9 @@
 define({ "api": [
   {
     "type": "get",
-    "url": "/wx/venue/getCourtFacility",
-    "title": "根据场馆id获取其设施类型",
-    "name": "_venue_getCourtFacility",
+    "url": "/wx/court/getCourtDetail",
+    "title": "根据总场馆id与运动类型id获取其具体信息",
+    "name": "_Court_getCourtDetail",
     "group": "Court",
     "parameter": {
       "fields": {
@@ -12,19 +12,26 @@ define({ "api": [
             "group": "Parameter",
             "type": "int",
             "optional": false,
-            "field": "courtid",
-            "description": "<p>场馆id(如：2)</p>"
+            "field": "venueid",
+            "description": "<p>总场馆ID(如：1)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "courttypeid",
+            "description": "<p>运动类型ID</p>"
           }
         ]
       }
     },
     "sampleRequest": [
       {
-        "url": "/wx/venue/getCourtFacility"
+        "url": "/wx/court/getCourtDetail"
       }
     ],
     "version": "0.0.0",
-    "filename": "wx/venue.py",
+    "filename": "wx/court.py",
     "groupTitle": "Court"
   },
   {
@@ -329,13 +336,6 @@ define({ "api": [
             "optional": false,
             "field": "venueid",
             "description": "<p>总场馆ID(如：1)</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": false,
-            "field": "courttypeid",
-            "description": "<p>运动类型ID</p>"
           }
         ]
       }

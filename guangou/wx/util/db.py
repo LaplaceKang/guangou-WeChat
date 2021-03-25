@@ -102,8 +102,9 @@ def VenueCourtType(venueid):
         venueid=venueid).values('courttypeid')  # 总场馆的运动类型
     courttype = []
     for j in list(courttypeid):
-        courttypeOne={'courttypeid':j['courttypeid'],'courttypename':Map_CourtType[j['courttypeid']]}
-        courttype.append(courttypeOne) # 将所有运动类型放入数组中
+        courttypeOne = {'courttypeid': j['courttypeid'],
+                        'courttypename': Map_CourtType[j['courttypeid']]}
+        courttype.append(courttypeOne)  # 将所有运动类型放入数组中
     return courttype
 
 
@@ -120,23 +121,29 @@ def openidToCollectedVenue(openid):
     venue = venueidToVenue(venueID)
     return venue
 
+
 '''
 根据总场馆id获取最低价格
 '''
+
+
 def venueidToLowestPrice(venueid):
     try:
         lowestprice = models.Court.objects.filter(venueid=venueid).order_by(
             'lowestprice').first().lowestprice  # 去子场馆找出最低价格
     except AttributeError:
-        lowestprice='' #有的场馆还没设置价格
+        lowestprice = ''  # 有的场馆还没设置价格
         return lowestprice
     else:
         return math.floor(lowestprice)
 
+
 '''
 总场馆信息列表展示
 '''
-def showVenueList(venueSortedID,pageNum,page,res,data):
+
+
+def showVenueList(venueSortedID, pageNum, page, res, data):
     res['showAll'] = 0
     for index in range(pageNum*(page-1), pageNum*page):
         if index > len(venueSortedID)-1:  # 如果查询的数量超过已有数量
@@ -147,8 +154,29 @@ def showVenueList(venueSortedID,pageNum,page,res,data):
         courttype = VenueCourtType(venueInf.venueid)  # 获取总场馆运动类型
         res_venue = {'venueid': venueInf.venueid, 'venuename': venueInf.venuename,
                      'addressshort': venueInf.addressshort, 'longitude': venueInf.longitude, 'latitude': venueInf.latitude, 'courttype': courttype}
-        res_venue['distance'] = str(
-            round(venueSortedID[index]['distance']))+'m'  # 返回距离信息
-        lowestprice=venueidToLowestPrice(venueInf.venueid)#获取最低价格
+        res_distance = venueSortedID[index]['distance']  # 场馆距离
+        if res_distance < 1000:  # 小于1000m
+            res_venue['distance'] = str(round(res_distance))+'m'
+        elif res_distance < 10000:  # 保留一位小数
+            res_venue['distance'] = str(round(res_distance/1000, 1))+'km'
+        else:  # 取整
+            res_venue['distance'] = str(round(res_distance/1000))+'km'
+        lowestprice = venueidToLowestPrice(venueInf.venueid)  # 获取最低价格
         res_venue['lowestprice'] = lowestprice
         data.append(res_venue)
+
+
+"""
+ 根据场馆id获取场馆设施
+ courtid 场馆id(如：2)
+"""
+
+
+def getCourtFacility(courtid):
+    facility = models.CourtCourtFacility.objects.filter(
+        courtid=courtid).values('facilityid')
+    facility = list(facility)  # 场馆设施ID，具体名称在Map中查找
+    facilityid = []
+    for i in facility:
+        facilityid.append(i['facilityid'])
+    return facilityid

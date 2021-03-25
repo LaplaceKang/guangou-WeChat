@@ -4,7 +4,7 @@
 <van-tabs swipeable>
   <van-tab title="场地">
     <view wx:for="{{venue}}" data-index="{{index}}">
-      <van-card tag="" desc="\n" thumb="/images/3.jpg">
+      <van-card thumb="../../../../images/venue/{{item['venuename']}}.jpeg" thumb-mode="aspectFill">
         <view slot="title">
           {{item['venuename']}}
         </view>

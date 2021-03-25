@@ -165,7 +165,6 @@ def filterCourtType(request: HttpRequest):
  @apiGroup Venue
 
  @apiParam {int} venueid 总场馆ID(如：1)
- @apiParam {int} courttypeid 运动类型ID
 
  @apiSampleRequest /wx/venue/getVenueDetail
 """
@@ -178,28 +177,27 @@ def getVenueDetail(request: HttpRequest):
         res['message'] = "bad request"
         return JsonResponse(res)
     venueid = request.GET.get("venueid")
-    courttypeid = request.GET.get("courttypeid")
 
     # venue=models.Venue.objects.filter(venueid=venueid).values('information','address','phonenumber')
     # venue=list(venue)
     venue=models.Venue.objects.get(venueid=venueid)
     # print(venue.information)
 
-    court=models.Court.objects.filter(venueid=venueid,courttypeid=courttypeid).values('courtid','specifications')
-    court=list(court)[0] #第一个场馆
-    # print(court)
+   
+    
 
+    # res_court=getCourtDetail(court['courtid'])
     # models.CourtDiscountCard.objects.filter(courtid=court['courtid']).values('discountcardname','specifications')
-    facility=models.CourtCourtFacility.objects.filter(courtid=court['courtid']).values('facilityid')
-    facility=list(facility) #场馆设施ID，具体名称在Map中查找
-    facilityid=[]
-    for i in facility:
-        facilityid.append(i['facilityid'])
+    # facility=models.CourtCourtFacility.objects.filter(courtid=court['courtid']).values('facilityid')
+    # facility=list(facility) #场馆设施ID，具体名称在Map中查找
+    # facilityid=[]
+    # for i in facility:
+    #     facilityid.append(i['facilityid'])
 
     res_venue={'information': venue.information,'address': venue.address, 'phonenumber': venue.phonenumber,}
-    res_court={'specifications':court['specifications'],'facilityid':facilityid}
+    
     # print(facility)
-    res['data'] = {'venue':res_venue,'court':res_court}
+    res['data'] = {'venue':res_venue}
 
     res['code'] = 1
     res['message'] = 'success'
@@ -207,16 +205,7 @@ def getVenueDetail(request: HttpRequest):
 
 
 
-"""
- @api {get} /wx/venue/getCourtFacility 根据场馆id获取其设施类型
- @apiName /venue/getCourtFacility
- @apiGroup Court
 
- @apiParam {int} courtid 场馆id(如：2)
-
- @apiSampleRequest /wx/venue/getCourtFacility
-"""
-# @csrf_exempt
 # def getCourtFacility(request: HttpRequest):
 #     res = {'data': []}
 #     if request.method != 'GET':

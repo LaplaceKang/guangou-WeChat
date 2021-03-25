@@ -1,6 +1,7 @@
 from django.urls import path
 from . import user
 from . import venue
+from . import court
 
 urlpatterns = [
         path('user/addUser',user.addUser,name='addUser'),
@@ -15,4 +16,5 @@ urlpatterns = [
         path('venue/getCourtType',venue.getCourtType,name='getCourtType'),
         path('venue/filterCourtType',venue.filterCourtType,name='filterCourtType'),
         path('venue/getVenueDetail',venue.getVenueDetail,name='getVenueDetail'),
+        path('court/getCourtDetail',court.getCourtDetail,name='getCourtDetail'),
 ]
