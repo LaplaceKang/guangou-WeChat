@@ -1,6 +1,9 @@
-// pages/mycards/mycards.js
-Page({
+//导入要请求的DjangoURL
+import {
+  DjangoURL
+} from '../../utils/util.js'
 
+Page({
   /**
    * 页面的初始数据
    */
@@ -14,7 +17,7 @@ Page({
   onLoad: function (options) {
     var that = this
     wx.request({
-      url: 'http://127.0.0.1:8000/wx/user/getUserDiscountCard?openid=' + that.data.openid,
+      url: DjangoURL+'wx/user/getUserDiscountCard?openid=' + that.data.openid,
       method: "GET",
       success: function (res) {
         that.setData({

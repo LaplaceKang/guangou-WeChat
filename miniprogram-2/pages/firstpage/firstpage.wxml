@@ -26,8 +26,8 @@
     <view class="nav-bar-wrap">
       <block wx:for="{{courttype}}" wx:key='key'>
         <view class="nav-bar-item" bindtap="toStadium" data-index="{{index}}">
-          <image src="../../images/icon/orange/{{item['courttypename']}}.png" />
-          <text>{{item['courttypename']}}</text>
+          <image src="../../images/icon/orange/{{item['eName']}}.png" />
+          <text>{{item['name']}}</text>
         </view>
       </block>
     </view>
@@ -57,7 +57,7 @@
 </view>
 
 <view wx:for="{{venue}}" data-index="{{index}}" bindtap="toCampus">
-  <van-card thumb="../../../../images/venue/{{item['venuename']}}.jpeg" thumb-mode="aspectFill">
+  <van-card thumb="../../../../images/venue/{{item['venueid']}}.jpeg" thumb-mode="aspectFill">
     <view slot="title">
       {{item['venuename']}}
     </view>

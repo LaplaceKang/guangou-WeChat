@@ -61,8 +61,8 @@
             <view class="allCourtType">
               <view wx:for="{{court.facilityname}}">
                 <view class="oneCourtType">
-                  <image class="courtTypeImg" src="../../images/icon/场馆设施/{{item}}.png" />
-                  <view class="courtTypeText">{{item}}</view>
+                  <image class="courtTypeImg" src="../../images/icon/facility/{{item[1]}}.png" />
+                  <view class="courtTypeText">{{item[0]}}</view>
                 </view>
               </view>
             </view>

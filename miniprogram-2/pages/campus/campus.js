@@ -3,6 +3,10 @@ import Toast from '../../miniprogram/miniprogram_npm/weapp/toast/toast';
 import {
   Map_Facility
 } from '../../utils/typeMap.js'
+//导入要请求的DjangoURL
+import {
+  DjangoURL
+} from '../../utils/util.js'
 
 Page({
   /**
@@ -25,7 +29,7 @@ Page({
   getVenueDetail() {
     var that = this
     wx.request({
-      url: 'http://127.0.0.1:8000/wx/venue/getVenueDetail?venueid=' + that.data.venueid + '&courttypeid=' + that.data.courttype[0].courttypeid,
+      url: DjangoURL+'wx/venue/getVenueDetail?venueid=' + that.data.venueid + '&courttypeid=' + that.data.courttype[0].courttypeid,
       method: "GET",
       success: function (res) {
         that.setData({
@@ -40,16 +44,17 @@ Page({
   getCourtDetail(courtTypeIndex) {
     let that = this
     wx.request({
-      url: 'http://127.0.0.1:8000/wx/court/getCourtDetail?venueid=' + that.data.venueid + '&courttypeid=' + that.data.courttype[courtTypeIndex].courttypeid,
+      url: DjangoURL+'wx/court/getCourtDetail?venueid=' + that.data.venueid + '&courttypeid=' + that.data.courttype[courtTypeIndex].courttypeid,
       method: "GET",
       success: function (res) {
         let court = res.data.data.court
         court.facilityname = []
-        for (let i = 1; i <= court.facilityid.length; i++) {
-          court.facilityname.push(Map_Facility[i + ''])
+        for (let i = 0; i < court.facilityid.length; i++) {
+          //根据facilityid的值来添加，而不是下标
+          court.facilityname.push(Map_Facility[court.facilityid[i] + ''])
         }
         that.data.allCourt[courtTypeIndex] = court
-        console.log(court)
+        // console.log(court)
         that.setData({
           court: court,
           showLoading: false

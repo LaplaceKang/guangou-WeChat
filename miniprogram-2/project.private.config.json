@@ -45,6 +45,25 @@
         {
           "name": "pages/book/book",
           "pathName": "pages/book/book",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/order/order",
+          "pathName": "pages/order/order",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/primary/primary",
+          "pathName": "pages/primary/primary",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/submit/submit",
+          "pathName": "pages/submit/submit",
+          "query": "",
           "scene": null
         }
       ]

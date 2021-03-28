@@ -1,6 +1,9 @@
-// index.js
 // 获取应用实例
 const app = getApp()
+//导入要请求的DjangoURL
+import {
+  DjangoURL
+} from '../../utils/util.js'
 
 Page({
   data: {
@@ -28,7 +31,7 @@ Page({
   onLoad() {
     var that = this
     wx.request({
-      url: 'http://127.0.0.1:8000/wx/user/getUserInfo?openid=' + that.data.openid,
+      url: DjangoURL+'wx/user/getUserInfo?openid=' + that.data.openid,
       method: "GET",
       success: function (res) {
         that.setData({

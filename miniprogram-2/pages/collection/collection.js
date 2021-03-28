@@ -1,6 +1,9 @@
-// pages/collection/collection.js
-Page({
+//导入要请求的DjangoURL
+import {
+  DjangoURL
+} from '../../utils/util.js'
 
+Page({
   /**
    * 页面的初始数据
    */
@@ -14,7 +17,7 @@ Page({
   getVenue:function(){
     var that = this
     wx.request({
-      url: 'http://127.0.0.1:8000/wx/user/getUserCollectedVenue?openid=' + that.data.openid+'&longitude=' + that.data.longitude+'&latitude='+ that.data.latitude+'&page='+ that.data.page,
+      url: DjangoURL+'wx/user/getUserCollectedVenue?openid=' + that.data.openid+'&longitude=' + that.data.longitude+'&latitude='+ that.data.latitude+'&page='+ that.data.page,
       method: "GET",
       success: function (res) {
         that.setData({

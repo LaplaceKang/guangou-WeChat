@@ -1,5 +1,7 @@
-// pages/stadium/stadium.js
-// var typeMap = require('../../utils/typeMap.js');
+//导入要请求的DjangoURL
+import {
+  DjangoURL
+} from '../../utils/util.js'
 import {
   Map_CourtType
 } from '../../utils/typeMap.js'
@@ -56,7 +58,7 @@ Page({
   getVenue: function () {
     var that = this
     wx.request({
-      url: 'http://127.0.0.1:8000/wx/venue/filterCourtType?cityid=' + that.data.cityid + '&courttypeid=' + that.data.courttypeid + '&longitude=' + that.data.longitude + '&latitude=' + that.data.latitude,
+      url: DjangoURL+'wx/venue/filterCourtType?cityid=' + that.data.cityid + '&courttypeid=' + that.data.courttypeid + '&longitude=' + that.data.longitude + '&latitude=' + that.data.latitude,
       method: "GET",
       success: function (res) {
         that.setData({

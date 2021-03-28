@@ -1,4 +1,12 @@
-// pages/firstpage/firstpage.js
+//导入要请求的DjangoURL（可作为全局变量）
+import {
+  DjangoURL
+} from '../../utils/util.js'
+//导入场馆运动类型
+import {
+  Map_CourtType
+} from '../../utils/typeMap.js'
+
 Page({
   /**
    * 页面的初始数据
@@ -37,14 +45,14 @@ Page({
   getVenue() {
     var that = this
     wx.request({
-      url: 'http://127.0.0.1:8000/wx/venue/getIndexVenue?cityid=' + that.data.cityid + '&longitude=' + that.data.longitude + '&latitude=' + that.data.latitude + '&page=' + that.data.page,
+      url: DjangoURL+'wx/venue/getIndexVenue?cityid=' + that.data.cityid + '&longitude=' + that.data.longitude + '&latitude=' + that.data.latitude + '&page=' + that.data.page,
       method: "GET",
       success: function (res) {
         that.setData({
           venue: that.data.venue.concat(res.data.data),
           showAll: res.data.showAll
         })
-        // console.log(res.data)
+        console.log(res.data)
         // console.log(res.data.showAll)
       }
     })
@@ -53,13 +61,19 @@ Page({
   getCourtType() {
     var that = this
     wx.request({
-      url: 'http://127.0.0.1:8000/wx/venue/getCourtType?cityid=' + that.data.cityid,
+      url: DjangoURL+'wx/venue/getCourtType?cityid=' + that.data.cityid,
       method: "GET",
       success: function (res) {
+        let courtType=res.data.data
+        for(let i=0;i<res.data.data.length;i++){
+          //根据courttypeid的值来增加，而不是下标
+          courtType[i]['name']=Map_CourtType[courtType[i].courttypeid+''][0]
+          courtType[i]['eName']=Map_CourtType[courtType[i].courttypeid+''][1]
+        }
         that.setData({
-          courttype: res.data.data
+          courttype: courtType
         })
-        console.log(res.data)
+        // console.log(courtType)
       }
     })
   },

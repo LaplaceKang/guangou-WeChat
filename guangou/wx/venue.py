@@ -94,10 +94,10 @@ def getCourtType(request: HttpRequest):
     courtType = list(courtType)  # queryset转list，便于操作
     # print(courtType)
 
-    for i in courtType:
-        i['courttypename'] = Map_CourtType[i['courttypeid']]
-        data.append(i)
-
+    # for i in courtType:
+    #     i['courttypename'] = Map_CourtType[i['courttypeid']]
+    #     data.append(i)
+    res['data']=courtType
     res['code'] = 1
     res['message'] = 'success'
     return JsonResponse(res)
