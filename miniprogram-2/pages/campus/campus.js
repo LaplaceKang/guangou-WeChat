@@ -1,4 +1,5 @@
 import Toast from '../../miniprogram/miniprogram_npm/weapp/toast/toast';
+import Dialog from '../../miniprogram/miniprogram_npm/weapp/dialog/dialog';
 import {
   Map_Facility
 } from '../../utils/typeMap.js'
@@ -18,7 +19,8 @@ Page({
       "/images/4.jpg"
     ],
     selectCourtIndex: 0,
-    showLoading: true
+    showLoading: true,
+    court: []
   },
   //事件处理函数
   toupper: function () {
@@ -28,12 +30,13 @@ Page({
   getVenueDetail() {
     var that = this
     wx.request({
-      url: DjangoURL+'wx/venue/getVenueDetail?venueid=' + that.data.venueid + '&courttypeid=' + that.data.courttype[0].courttypeid,
+      url: DjangoURL + 'wx/venue/getVenueDetail?venueid=' + that.data.venueid + '&courttypeid=' + that.data.courttype[0].courttypeid,
       method: "GET",
       success: function (res) {
         that.setData({
           venue: res.data.data.venue
         })
+        that.data.venue.information = res.data.data.venue.information.replaceAll("\\n", "\n") //数据库存的\n变成JSON数据时会变成\\n
         that.getCourtDetail(0)
         // console.log(res.data)
       }
@@ -43,20 +46,22 @@ Page({
   getCourtDetail(courtTypeIndex) {
     let that = this
     wx.request({
-      url: DjangoURL+'wx/court/getCourtDetail?venueid=' + that.data.venueid + '&courttypeid=' + that.data.courttype[courtTypeIndex].courttypeid,
+      url: DjangoURL + 'wx/court/getCourtDetail?venueid=' + that.data.venueid + '&courttypeid=' + that.data.courttype[courtTypeIndex].courttypeid,
       method: "GET",
       success: function (res) {
-        let court = res.data.data.court
-        court.facilityname = []
-        for (let i = 0; i < court.facilityid.length; i++) {
-          //根据facilityid的值来添加，而不是下标
-          court.facilityname.push(Map_Facility[court.facilityid[i] + ''])
+        console.log(res.data.data)
+        let court = res.data.data
+        for (let k = 0; k < court.length; k++) {
+          court[k].facilityname = []
+          for (let i = 0; i < court[k].facilityid.length; i++) {
+            //根据facilityid的值来添加，而不是下标
+            court[k].facilityname.push(Map_Facility[court[k].facilityid[i] + ''])
+          }
         }
         that.data.allCourt[courtTypeIndex] = court
-        // console.log(court)
         that.setData({
           court: court,
-          showLoading: false//隐藏加载中Toast
+          showLoading: false //隐藏加载中Toast
         })
       }
     })
@@ -78,6 +83,14 @@ Page({
       })
     }
   },
+  //显示总场馆提示信息
+  showInformation() {
+    let that = this
+    Dialog.alert({
+      message: that.data.venue.information
+    })
+    // console.log(that.data.venue.facilityname)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -98,10 +111,9 @@ Page({
       message: '加载中...',
       forbidClick: true,
       loadingType: 'spinner',
-      duration:0,
+      duration: 0,
     });
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

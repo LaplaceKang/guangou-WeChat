@@ -1,7 +1,7 @@
-//数据库中 \n，转json后会变成\\n，所以不会换行。但是你看不到，因为前端拿到的时候这个都是\n。
-var nFilter = function(text){
+//数据库中 \n，转json后会变成\\n，所以不会换行。但是你看不到，因为前端拿到的时候这个都是\\n显示为\n。
+var filter_N = function(text){
   if(text){
-    console.log(text);
+    // console.log(text);
     var pattern = "\\\\n";
     var target = "\n";
     var reg = getRegExp(pattern, "g");
@@ -9,6 +9,19 @@ var nFilter = function(text){
   }
 }
 
+var filter_delN = function(text){
+  if(text){
+    // console.log(text);
+    var pattern = "\\\\n";
+    var target = "";
+    var reg = getRegExp(pattern, "g");
+    // console.log(text.replace(reg, target))
+    return text.replace(reg, target);
+  }
+}
+
+
 module.exports = {
-  filter_N:nFilter,
+  filter_N:filter_N,
+  filter_delN:filter_delN,
 }

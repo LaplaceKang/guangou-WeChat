@@ -30,7 +30,7 @@ var defaultOptions = {
   beforeClose: null,
   transition: 'scale',
   customStyle: '',
-  messageAlign: '',
+  messageAlign: 'left',
   overlayStyle: '',
   confirmButtonText: '确认',
   cancelButtonText: '取消',

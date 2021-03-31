@@ -1,8 +1,9 @@
 <!--导入换行wxs模块-->
-<wxs src="../../utils/filter.wxs" module="nFilter"/>
+<wxs src="../../utils/filter.wxs" module="filterTool" />
 
 <view class="container">
-  <van-notice-bar left-icon="volume-o" text="{{venue.information}}" />
+  <van-notice-bar left-icon="volume-o" text="{{filterTool.filter_delN(venue.information)}}" bindtap="showInformation" />
+  <van-dialog id="van-dialog" />
   <swiper>
     <swiper-item wx:for="{{imgUrls}}">
       <image src='{{item}}' width="10rem" height="16rem" class="img1" style="display:justify-content;margin-top" />
@@ -38,86 +39,77 @@
   </view>
 
   <view class="container">
-    <van-tabs active="{{ active }}" bind:change="onChange" bind:click="selectCourtType">
+    <van-tabs active="{{ active }}" bind:change="selectCourtType">
+      <!-- 一个总场馆有多个运动类型 -->
       <view wx:for="{{courttype}}">
         <van-tab title="{{item.courttypename}}">
-          <view class="img1" style="display:justify-content;margin-top">
-            <van-image width="16rem" height="10rem" src="/images/4.jpg" fit="fill" />
-          </view>
-          <view class="container">
-            <view class="ziti1">
-              营业时间：
-            </view>
-            <view class="ziti2">
-              <text decode='true'>{{nFilter.filter_N(court.businesstime)}}</text>
-            </view>
-            <view class="ziti1">场馆优惠：</view>
-          </view>
-
-          <van-cell center icon="vip-card" title=" 篮球次卡" value="25/次起" label=" 10次 20次 40次" />
-          <van-cell center icon="vip-card" title=" 充值卡" label=" 充值赠送储值" />
-
-          <view class="container">
-            <view class="ziti1">场地设施 ：</view>
-            <view class="allCourtType">
-              <view wx:for="{{court.facilityname}}">
-                <view class="oneCourtType">
-                  <image class="courtTypeImg" src="../../images/icon/facility/{{item[1]}}.png" />
-                  <view class="courtTypeText">{{item[0]}}</view>
+          <van-tabs active="{{ active }}" bind:change="selectCourtChild">
+            <!-- 同一个运动类型有多个场馆 -->
+            <view wx:for="{{court}}">
+              <van-tab title="{{item.courtname}}" type="card">
+                <view class="img1" style="display:justify-content;margin-top">
+                  <van-image width="16rem" height="10rem" src="/images/4.jpg" fit="fill" />
                 </view>
-              </view>
-            </view>
-          </view>
-
-          <view class="container">
-            <view class="ziti1">
-              场地规格 ：
-            </view>
-            <view class="ziti2">
-              {{court.specifications}}
-            </view>
-          </view>
-
-          <view class="container">
-            <view class="ziti1">
-              课程服务 ：
-            </view>
-
-            <van-card thumb="/images/3.jpg">
-              <view slot="title">
-                <view class="classname" style="display:flex;">
-                  <view class="flex-view-item">
-                    篮球启蒙\t\t
+                <view class="container">
+                  <view class="ziti1">
+                    营业时间：
                   </view>
-                  <view class="flex-view-item">
-                    <view class="ziti3">2000元/2月</view>
+                  <view class="ziti2">
+                    <text decode='true'>{{filterTool.filter_N(item.businesstime)}}</text>
+                  </view>
+                  <view class="ziti1">场馆优惠：</view>
+                </view>
+
+                <van-cell center icon="vip-card" title=" 篮球次卡" value="25/次起" label=" 10次 20次 40次" />
+                <van-cell center icon="vip-card" title=" 充值卡" label=" 充值赠送储值" />
+
+                <view class="container" wx:if="{{item.facilityname.length>0}}">
+                  <view class="ziti1">场地设施 ：</view>
+                  <view class="allCourtType">
+                    <view wx:for="{{item.facilityname}}">
+                      <view class="oneCourtType">
+                        <image class="courtTypeImg" src="../../images/icon/facility/{{item[1]}}.png" />
+                        <view class="courtTypeText">{{item[0]}}</view>
+                      </view>
+                    </view>
                   </view>
                 </view>
-              </view>
-              <view slot="desc">
-                零基础，幼儿园中、大班
-                1小时/次，10课时
-              </view>
-            </van-card>
 
-            <van-card thumb="/images/3.jpg">
-              <view slot="title">
-                <view class="classname" style="display:flex;">
-                  <view class="flex-view-item">
-                    篮球启蒙\t\t
+                <view class="container">
+                  <view class="ziti1">
+                    场地规格 ：
                   </view>
-                  <view class="flex-view-item">
-                    <view class="ziti3">2000元/2月</view>
+                  <view class="ziti2">
+                    {{item.specifications}}
                   </view>
                 </view>
-              </view>
-              <view slot="desc">
-                零基础，幼儿园中、大班
-                1小时/次，10课时
-              </view>
-            </van-card>
-          </view>
 
+                <view class="container">
+                  <view class="ziti1">
+                    课程服务 ：
+                  </view>
+                  <van-card thumb="/images/3.jpg">
+                    <view slot="title">
+                      <view class="classname" style="display:flex;">
+                        <view class="flex-view-item">
+                          篮球启蒙\t\t
+                        </view>
+                        <view class="flex-view-item">
+                          <view class="ziti3">2000元/2月</view>
+                        </view>
+                      </view>
+                    </view>
+                    <view slot="desc">
+                      零基础，幼儿园中、大班
+                      1小时/次，10课时
+                    </view>
+                  </van-card>
+                </view>
+              </van-tab>
+
+
+            </view>
+          </van-tabs>
         </van-tab>
       </view>
     </van-tabs>

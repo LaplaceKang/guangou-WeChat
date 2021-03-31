@@ -20,7 +20,7 @@ from wx.util.db import *
 """
 @csrf_exempt
 def getIndexVenue(request: HttpRequest):
-    res = {'data': []}
+    res = {'data': []} 
     data = res['data']
     pageNum = 4  # 一页显示的数量
     if request.method != 'GET':

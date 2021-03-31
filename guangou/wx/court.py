@@ -26,16 +26,22 @@ def getCourtDetail(request: HttpRequest):
     venueid = request.GET.get("venueid")
     courttypeid = request.GET.get("courttypeid")
 
-    court=models.Court.objects.filter(venueid=venueid,courttypeid=courttypeid).values('courtid','specifications','businesstime')
+    court=models.Court.objects.filter(venueid=venueid,courttypeid=courttypeid).values('courtid','specifications','businesstime','courtname')
     print(court)
-    court=list(court)[0] #第一个场馆
 
-    facilityid=getCourtFacility(court['courtid'])
+
+    # court=list(court)[0] #第一个场馆
+
     
-    res_court = {
-        'specifications': court['specifications'], 'facilityid': facilityid,'businesstime':court['businesstime']}
+    for index,item in enumerate(court):
+        facilityid=getCourtFacility(item['courtid'])
+        res_court = {
+        'specifications': item['specifications'], 'facilityid': facilityid,'businesstime':item['businesstime'],'courtname':item['courtname']}
+        data.append(res_court)
+
     
-    res['data'] = {'court':res_court}
+    
+    # res['data'] = {'court':data}
 
     res['code'] = 1
     res['message'] = 'success'
