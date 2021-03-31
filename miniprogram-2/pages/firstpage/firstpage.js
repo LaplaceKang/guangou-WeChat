@@ -6,6 +6,7 @@ import {
 import {
   Map_CourtType
 } from '../../utils/typeMap.js'
+import Toast from '../../miniprogram/miniprogram_npm/weapp/toast/toast';
 
 Page({
   /**
@@ -50,7 +51,8 @@ Page({
       success: function (res) {
         that.setData({
           venue: that.data.venue.concat(res.data.data),
-          showAll: res.data.showAll
+          showAll: res.data.showAll,
+          showLoading: false //隐藏加载中Toast
         })
         console.log(res.data)
         // console.log(res.data.showAll)
@@ -81,7 +83,6 @@ Page({
   toStadium(event) {
     var that = this
     let index = parseInt(event.currentTarget.dataset.index) //获取点击的运动类型的下标
-    console.log(that.data.courttype[index].courttypename)
     wx.navigateTo({ //跳转页面
       url: '/pages/stadium/stadium?courttypeid=' + that.data.courttype[index].courttypeid + '&longitude=' + that.data.longitude + '&latitude=' + that.data.latitude + '&cityid=' + that.data.cityid
     })
@@ -128,10 +129,23 @@ Page({
       url: '/pages/index/index'
     })
   },
+  //显示加载中Toast
+  showToast() {
+    this.setData({
+      showLoading: true //显示加载中Toast
+    })
+    Toast.loading({
+      message: '加载中...',
+      forbidClick: true,
+      loadingType: 'spinner',
+      duration: 0,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.showToast()
     this.getVenue()
     this.getCourtType()
   },
@@ -180,6 +194,7 @@ Page({
     // console.log(seedTitle)
     var that = this
     if (that.data.showAll != 1) {
+      this.showToast()
       that.data.page = that.data.page + 1;
       // this.getWorks();
       console.log(that.data.page)
@@ -188,7 +203,6 @@ Page({
     } else {
       console.log("已加载完")
     }
-
   },
 
   /**

@@ -22,7 +22,7 @@ from wx.util.db import *
 def getIndexVenue(request: HttpRequest):
     res = {'data': []}
     data = res['data']
-    pageNum = 2  # 一页显示的数量
+    pageNum = 4  # 一页显示的数量
     if request.method != 'GET':
         res['code'] = 0
         res['message'] = "bad request"
@@ -57,8 +57,7 @@ def getIndexVenue(request: HttpRequest):
 
     # print(venueSortedID)
 
-    
-    showVenueList(venueSortedID,pageNum,page,res,data)#总场馆信息列表展示
+    showVenueList(venueSortedID, pageNum, page, res, data)  # 总场馆信息列表展示
 
     res['code'] = 1
     res['message'] = 'success'
@@ -97,7 +96,7 @@ def getCourtType(request: HttpRequest):
     # for i in courtType:
     #     i['courttypename'] = Map_CourtType[i['courttypeid']]
     #     data.append(i)
-    res['data']=courtType
+    res['data'] = courtType
     res['code'] = 1
     res['message'] = 'success'
     return JsonResponse(res)
@@ -108,10 +107,11 @@ def getCourtType(request: HttpRequest):
  @apiName /venue/filterCourtType
  @apiGroup Venue
 
- @apiParam {int} courttypeid 运动类型ID
- @apiParam {int} cityid 用户所在城市ID
- @apiParam {decimal} longitude 用户所在位置的经度
- @apiParam {decimal} latitude  用户所在位置的纬度
+ @apiParam {int} courttypeid 运动类型ID（如：1）
+ @apiParam {int} cityid 用户所在城市ID（如：1）
+ @apiParam {decimal} longitude 用户所在位置的经度(如：116.346352)
+ @apiParam {decimal} latitude  用户所在位置的纬度(如：39.960501)
+ @apiParam {int} page  页码
 
  @apiSampleRequest /wx/venue/filterCourtType
 """
@@ -119,6 +119,7 @@ def getCourtType(request: HttpRequest):
 def filterCourtType(request: HttpRequest):
     res = {'data': []}
     data = res['data']
+    pageNum = 4  # 一页显示的数量
     if request.method != 'GET':
         res['code'] = 0
         res['message'] = "bad request"
@@ -128,6 +129,7 @@ def filterCourtType(request: HttpRequest):
     cityid = request.GET.get("cityid")
     longitude = request.GET.get("longitude")
     latitude = request.GET.get("latitude")
+    page = int(request.GET.get("page"))  # 获取页码
     if not courttypeid:
         res['code'] = 0
         res['message'] = "Please enter the courttypeid"
@@ -135,29 +137,52 @@ def filterCourtType(request: HttpRequest):
 
     venueidList = courtTypeToVenue(courttypeid)  # 根据场馆运动类型id筛选出总场馆
 
+    # 判断有无下一页
+    if len(venueidList) < pageNum*(page-1)+1:
+        res['code'] = 0
+        res['message'] = "There is no next page"
+        res['showAll'] = 1
+        return JsonResponse(res)
+
     venue = []
     for i in venueidList:
         cityid_FK = models.VenueCity.objects.get(cityid=cityid)  # 获取cityid这个外键
         oneVenue = models.Venue.objects.filter(venueid=i['venueid'],
                                                cityid=cityid_FK).values('venueid', 'longitude', 'latitude', 'venuename', 'addressshort')
-        if oneVenue: #如果这个总场馆在这个城市
-            oneVenue=list(oneVenue)
+        if oneVenue:  # 如果这个总场馆在这个城市
+            oneVenue = list(oneVenue)
             venue.append(oneVenue[0])
 
-    venueSort=venueDistanceSort(venue, latitude, longitude)
+    venueSort = venueDistanceSort(venue, latitude, longitude)  # 按距离排序
     print(venueSort)
-    for i in venueSort:
-        courttype=VenueCourtType(i['venueid']) #获取总场馆运动类型
+
+    res['showAll'] = 0 #默认没有显示完
+    for index in range(pageNum*(page-1), pageNum*page):
+        if index > len(venueSort)-1:  # 如果查询的数量超过已有数量
+            res['showAll'] = 1
+            break
+        i=venueSort[index]
+        courttype = VenueCourtType(i['venueid'])  # 获取总场馆运动类型
         res_venue = {'venueid': i['venueid'], 'venuename': i['venuename'], 'addressshort': i['addressshort'],
-                     'longitude': i['longitude'], 'latitude': i['latitude'],'distance': str(round(i['distance']))+'m', 'courttype': courttype}
-        lowestprice=venueidToLowestPrice(i['venueid'])#获取最低价格
+                     'longitude': i['longitude'], 'latitude': i['latitude'], 'distance': str(round(i['distance']))+'m', 'courttype': courttype}
+        lowestprice = venueidToLowestPrice(i['venueid'])  # 获取最低价格
         res_venue['lowestprice'] = lowestprice
         # print(res_venue)
         data.append(res_venue)
 
+    # for i in venueSort:  # 展示信息
+    #     courttype = VenueCourtType(i['venueid'])  # 获取总场馆运动类型
+    #     res_venue = {'venueid': i['venueid'], 'venuename': i['venuename'], 'addressshort': i['addressshort'],
+    #                  'longitude': i['longitude'], 'latitude': i['latitude'], 'distance': str(round(i['distance']))+'m', 'courttype': courttype}
+    #     lowestprice = venueidToLowestPrice(i['venueid'])  # 获取最低价格
+    #     res_venue['lowestprice'] = lowestprice
+    #     # print(res_venue)
+    #     data.append(res_venue)
+
     res['code'] = 1
     res['message'] = 'success'
     return JsonResponse(res)
+
 
 """
  @api {get} /wx/venue/getVenueDetail 根据总场馆id获取其具体信息
@@ -180,11 +205,8 @@ def getVenueDetail(request: HttpRequest):
 
     # venue=models.Venue.objects.filter(venueid=venueid).values('information','address','phonenumber')
     # venue=list(venue)
-    venue=models.Venue.objects.get(venueid=venueid)
+    venue = models.Venue.objects.get(venueid=venueid)
     # print(venue.information)
-
-   
-    
 
     # res_court=getCourtDetail(court['courtid'])
     # models.CourtDiscountCard.objects.filter(courtid=court['courtid']).values('discountcardname','specifications')
@@ -194,16 +216,15 @@ def getVenueDetail(request: HttpRequest):
     # for i in facility:
     #     facilityid.append(i['facilityid'])
 
-    res_venue={'information': venue.information,'address': venue.address, 'phonenumber': venue.phonenumber,}
-    
+    res_venue = {'information': venue.information,
+                 'address': venue.address, 'phonenumber': venue.phonenumber, }
+
     # print(facility)
-    res['data'] = {'venue':res_venue}
+    res['data'] = {'venue': res_venue}
 
     res['code'] = 1
     res['message'] = 'success'
     return JsonResponse(res)
-
-
 
 
 # def getCourtFacility(request: HttpRequest):

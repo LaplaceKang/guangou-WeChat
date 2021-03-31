@@ -144,7 +144,7 @@ def venueidToLowestPrice(venueid):
 
 
 def showVenueList(venueSortedID, pageNum, page, res, data):
-    res['showAll'] = 0
+    res['showAll'] = 0 #默认没有显示完
     for index in range(pageNum*(page-1), pageNum*page):
         if index > len(venueSortedID)-1:  # 如果查询的数量超过已有数量
             res['showAll'] = 1

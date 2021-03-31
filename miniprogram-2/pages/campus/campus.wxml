@@ -1,4 +1,6 @@
-<!--pages/campus/campus.wxml-->
+<!--导入换行wxs模块-->
+<wxs src="../../utils/filter.wxs" module="nFilter"/>
+
 <view class="container">
   <van-notice-bar left-icon="volume-o" text="{{venue.information}}" />
   <swiper>
@@ -47,8 +49,7 @@
               营业时间：
             </view>
             <view class="ziti2">
-              <view>周一到周五 18：30~21：00</view>
-              <view>周六到周日 11：30~20：30</view>
+              <text decode='true'>{{nFilter.filter_N(court.businesstime)}}</text>
             </view>
             <view class="ziti1">场馆优惠：</view>
           </view>

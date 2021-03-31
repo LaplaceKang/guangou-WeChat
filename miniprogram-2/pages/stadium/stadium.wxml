@@ -1,12 +1,12 @@
 <!--pages/stadium/stadium.wxml-->
 <van-dropdown-menu>
   <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
-  <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+  <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" bind:change="changeType"/>
   <van-dropdown-item value="{{ value3 }}" options="{{ option3 }}" />
   <van-dropdown-item value="{{ value4 }}" options="{{ option4 }}" />
 </van-dropdown-menu>
 
-<view wx:for="{{venue}}" data-index="{{index}}">
+<view wx:for="{{venue}}" data-index="{{index}}" bindtap="toCampus">
   <van-card tag="" desc="\n" thumb="../../../../images/venue/{{item['venueid']}}.jpeg" thumb-mode="aspectFill">
     <view slot="title">
       {{item['venuename']}}
@@ -14,9 +14,6 @@
     <view slot="tags">
       <text>\n</text>
       <van-tag round type="primary" wx:for="{{item['courttype']}}"> {{item['courttypename']}} </van-tag>
-      <!-- <van-tag round type="success"> 篮球 </van-tag> 
-          <van-tag round type="danger"> 乒乓球 </van-tag>
-          <van-tag round type="warning"> 跆拳道</van-tag>  -->
     </view>
     <view slot="bottom">
       <van-icon name="location" />
@@ -30,24 +27,4 @@
   <van-divider />
 </view>
 
-
-<!-- <van-card tag="" desc="\n" thumb="/images/3.jpg">
-  <view slot="title">
-    北京大学体育馆
-  </view>
-  <view slot="tags">
-    <text>\n</text>
-    <van-tag round type="primary"> 足球 </van-tag>
-    <van-tag round type="success"> 篮球 </van-tag>
-    <van-tag round type="danger"> 乒乓球 </van-tag>
-    <van-tag round type="warning"> 跆拳道</van-tag>
-  </view>
-  <view slot="bottom">
-    <van-icon name="location" />
-    <text>畅春园</text>
-  </view>
-  <view slot="footer">
-    <text>1500m</text>
-  </view>
-</van-card>
-<van-divider /> -->
+<van-toast id="van-toast" wx:if="{{showLoading}}" />

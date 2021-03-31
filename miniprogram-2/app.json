@@ -24,6 +24,7 @@
     "navigationBarTextStyle":"white"
   },
   "sitemapLocation": "sitemap.json",
+  "enablePullDownRefresh": true,
   "usingComponents": {
     "van-button": "./miniprogram/miniprogram_npm/weapp/button/index",
     "van-cell": "./miniprogram/miniprogram_npm//weapp/cell/index",

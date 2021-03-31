@@ -15,8 +15,8 @@ const formatNumber = n => {
 }
 
 // Django请求路径的地址
-// let DjangoURL='http://127.0.0.1:8000/'
-let DjangoURL='http://192.168.43.139:8000/'
+let DjangoURL='http://127.0.0.1:8000/'
+// let DjangoURL='http://192.168.43.139:8000/'
 
 
 module.exports = {

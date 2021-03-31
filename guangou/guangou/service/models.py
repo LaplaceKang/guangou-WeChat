@@ -51,27 +51,28 @@ class AdminCourt(models.Model):
 class Court(models.Model):
     courtid = models.AutoField(db_column='courtID', primary_key=True)  # Field name made lowercase.
     courtname = models.CharField(db_column='courtName', max_length=50)  # Field name made lowercase.
-    courttypeid = models.ForeignKey('CourtType', models.DO_NOTHING, db_column='courtTypeID', related_name='%(class)s_courttypeid')  # Field name made lowercase.
+    courttypeid = models.ForeignKey('CourtType', models.DO_NOTHING, db_column='courtTypeID')  # Field name made lowercase.
     lowestprice = models.DecimalField(db_column='lowestPrice', max_digits=10, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
-    venueid = models.ForeignKey('Venue', models.DO_NOTHING, db_column='venueID', related_name='%(class)s_venueid')  # Field name made lowercase.
+    venueid = models.ForeignKey('Venue', models.DO_NOTHING, db_column='venueID')  # Field name made lowercase.
     starttime = models.TimeField(db_column='startTime', blank=True, null=True)  # Field name made lowercase.
     endtime = models.TimeField(db_column='endTime', blank=True, null=True)  # Field name made lowercase.
+    businesstime = models.TextField(db_column='businessTime', blank=True, null=True)  # Field name made lowercase.
     specifications = models.TextField(blank=True, null=True)
     bookingrules = models.TextField(db_column='bookingRules', blank=True, null=True)  # Field name made lowercase.
     validperiod = models.TextField(db_column='validPeriod', blank=True, null=True)  # Field name made lowercase.
     cancelrule = models.TextField(db_column='cancelRule', blank=True, null=True)  # Field name made lowercase.
     userule = models.TextField(db_column='useRule', blank=True, null=True)  # Field name made lowercase.
-    isusable = models.IntegerField(db_column='isUsable')  # Field name made lowercase.
+    isusable = models.TextField(db_column='isUsable')  # Field name made lowercase. This field type is a guess.
     closingstartdate = models.DateTimeField(db_column='closingStartDate', blank=True, null=True)  # Field name made lowercase.
     closingenddate = models.DateTimeField(db_column='closingEndDate', blank=True, null=True)  # Field name made lowercase.
     closingreason = models.TextField(db_column='closingReason', blank=True, null=True)  # Field name made lowercase.
-    havingmeasuredcard = models.IntegerField(db_column='havingMeasuredCard', blank=True, null=True)  # Field name made lowercase.
-    havingrechargecard = models.IntegerField(db_column='havingRechargeCard', blank=True, null=True)  # Field name made lowercase.
-    havingperiodcard = models.IntegerField(db_column='havingPeriodCard', blank=True, null=True)  # Field name made lowercase.
+    havingmeasuredcard = models.TextField(db_column='havingMeasuredCard', blank=True, null=True)  # Field name made lowercase. This field type is a guess.     
+    havingrechargecard = models.TextField(db_column='havingRechargeCard', blank=True, null=True)  # Field name made lowercase. This field type is a guess.     
+    havingperiodcard = models.TextField(db_column='havingPeriodCard', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
     timeinterval = models.TimeField(db_column='timeInterval', blank=True, null=True)  # Field name made lowercase.
     minrentaltime = models.TimeField(db_column='minRentalTime', blank=True, null=True)  # Field name made lowercase.
     siteidentification = models.CharField(db_column='siteIdentification', max_length=10, blank=True, null=True)  # Field name made lowercase.
-    minreservationmethodid = models.ForeignKey('CourtMinReservationMethod', models.DO_NOTHING, db_column='minReservationMethodID', blank=True, null=True, related_name='%(class)s_minreservationmethodid')  # Field name made lowercase.
+    minreservationmethodid = models.ForeignKey('CourtMinReservationMethod', models.DO_NOTHING, db_column='minReservationMethodID', blank=True, null=True)  # Field name made lowercase.
     orderadvancedays = models.IntegerField(db_column='orderAdvanceDays', blank=True, null=True)  # Field name made lowercase.
     orderstarttime = models.TimeField(db_column='orderStartTime', blank=True, null=True)  # Field name made lowercase.
 

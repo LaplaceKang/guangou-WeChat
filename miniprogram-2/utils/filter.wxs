@@ -1,0 +1,14 @@
+//数据库中 \n，转json后会变成\\n，所以不会换行。但是你看不到，因为前端拿到的时候这个都是\n。
+var nFilter = function(text){
+  if(text){
+    console.log(text);
+    var pattern = "\\\\n";
+    var target = "\n";
+    var reg = getRegExp(pattern, "g");
+    return text.replace(reg, target);
+  }
+}
+
+module.exports = {
+  filter_N:nFilter,
+}

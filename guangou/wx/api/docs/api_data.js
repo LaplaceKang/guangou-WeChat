@@ -209,28 +209,35 @@ define({ "api": [
             "type": "int",
             "optional": false,
             "field": "courttypeid",
-            "description": "<p>运动类型ID</p>"
+            "description": "<p>运动类型ID（如：1）</p>"
           },
           {
             "group": "Parameter",
             "type": "int",
             "optional": false,
             "field": "cityid",
-            "description": "<p>用户所在城市ID</p>"
+            "description": "<p>用户所在城市ID（如：1）</p>"
           },
           {
             "group": "Parameter",
             "type": "decimal",
             "optional": false,
             "field": "longitude",
-            "description": "<p>用户所在位置的经度</p>"
+            "description": "<p>用户所在位置的经度(如：116.346352)</p>"
           },
           {
             "group": "Parameter",
             "type": "decimal",
             "optional": false,
             "field": "latitude",
-            "description": "<p>用户所在位置的纬度</p>"
+            "description": "<p>用户所在位置的纬度(如：39.960501)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "page",
+            "description": "<p>页码</p>"
           }
         ]
       }

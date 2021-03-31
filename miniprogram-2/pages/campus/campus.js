@@ -1,4 +1,3 @@
-// pages/campus/campus.js
 import Toast from '../../miniprogram/miniprogram_npm/weapp/toast/toast';
 import {
   Map_Facility
@@ -57,7 +56,7 @@ Page({
         // console.log(court)
         that.setData({
           court: court,
-          showLoading: false
+          showLoading: false//隐藏加载中Toast
         })
       }
     })
@@ -98,7 +97,8 @@ Page({
     Toast.loading({
       message: '加载中...',
       forbidClick: true,
-      loadingType: 'spinner'
+      loadingType: 'spinner',
+      duration:0,
     });
   },
 

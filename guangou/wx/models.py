@@ -56,6 +56,7 @@ class Court(models.Model):
     venueid = models.ForeignKey('Venue', models.DO_NOTHING, db_column='venueID', related_name='%(class)s_venueid')  # Field name made lowercase.
     starttime = models.TimeField(db_column='startTime', blank=True, null=True)  # Field name made lowercase.
     endtime = models.TimeField(db_column='endTime', blank=True, null=True)  # Field name made lowercase.
+    businesstime = models.TextField(db_column='businessTime', blank=True, null=True)  # Field name made lowercase.
     specifications = models.TextField(blank=True, null=True)
     bookingrules = models.TextField(db_column='bookingRules', blank=True, null=True)  # Field name made lowercase.
     validperiod = models.TextField(db_column='validPeriod', blank=True, null=True)  # Field name made lowercase.

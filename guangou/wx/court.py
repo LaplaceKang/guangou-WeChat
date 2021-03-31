@@ -26,14 +26,14 @@ def getCourtDetail(request: HttpRequest):
     venueid = request.GET.get("venueid")
     courttypeid = request.GET.get("courttypeid")
 
-    court=models.Court.objects.filter(venueid=venueid,courttypeid=courttypeid).values('courtid','specifications')
-    # print(court)
+    court=models.Court.objects.filter(venueid=venueid,courttypeid=courttypeid).values('courtid','specifications','businesstime')
+    print(court)
     court=list(court)[0] #第一个场馆
 
     facilityid=getCourtFacility(court['courtid'])
     
     res_court = {
-        'specifications': court['specifications'], 'facilityid': facilityid}
+        'specifications': court['specifications'], 'facilityid': facilityid,'businesstime':court['businesstime']}
     
     res['data'] = {'court':res_court}
 
