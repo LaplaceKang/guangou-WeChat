@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/firstpage/firstpage",
     "pages/index/index",
     "pages/certification/certification",
@@ -17,11 +17,11 @@
     "pages/used/used",
     "pages/book/book"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "馆够",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json",
   "enablePullDownRefresh": true,
@@ -51,5 +51,23 @@
     "van-dialog": "./miniprogram/miniprogram_npm/weapp/dialog/index",
     "van-switch": "./miniprogram/miniprogram_npm/weapp/switch/index",
     "van-toast": "./miniprogram/miniprogram_npm/weapp/toast/index"
+  },
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "red",
+    "borderStyle": "black",
+    "backgroundColor": "gray",
+    "position": "bottom",
+    "list": [{
+        "text": "首页",
+        "pagePath": "pages/firstpage/firstpage",
+        "iconPath": "./images/icon/tabbar",
+        "selectedIconPath": "image/wechatHL.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/index/index"
+      }
+    ]
   }
 }

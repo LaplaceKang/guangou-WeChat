@@ -77,10 +77,12 @@
   <van-divider />
 </view>
 
+<!--
 <van-tabbar>
   <van-tabbar-item icon="wap-home">首页</van-tabbar-item>
   <van-tabbar-item icon="search" bindtap='toCourse'>课程</van-tabbar-item>
   <van-tabbar-item icon="manager" bindtap='toMy'>我的</van-tabbar-item>
 </van-tabbar>
+-->
 
 <van-toast id="van-toast" wx:if="{{showLoading}}" />
