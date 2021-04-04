@@ -61,12 +61,20 @@
     "list": [{
         "text": "首页",
         "pagePath": "pages/firstpage/firstpage",
-        "iconPath": "./images/icon/tabbar",
-        "selectedIconPath": "image/wechatHL.png"
+        "iconPath": "./images/icon/tabbar/running.png",
+        "selectedIconPath": "./images/icon/tabbar/running.png"
+      },
+      {
+        "text": "课程",
+        "pagePath": "pages/course/course",
+        "iconPath": "./images/icon/tabbar/hat.png",
+        "selectedIconPath": "./images/icon/tabbar/hat.png"
       },
       {
         "text": "我的",
-        "pagePath": "pages/index/index"
+        "pagePath": "pages/index/index",
+        "iconPath": "./images/icon/tabbar/person.png",
+        "selectedIconPath": "./images/icon/tabbar/person.png"
       }
     ]
   }
