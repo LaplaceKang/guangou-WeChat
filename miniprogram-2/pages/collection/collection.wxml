@@ -1,19 +1,17 @@
 <!--pages/collection/collection.wxml-->
 
-
 <van-tabs swipeable>
   <van-tab title="场地">
-    <view wx:for="{{venue}}" data-index="{{index}}">
+    <view wx:for="{{venue}}" data-index="{{index}}" bindtap="toCampus">
       <van-card thumb="../../../../images/venue/{{item['venueid']}}.jpeg" thumb-mode="aspectFill">
         <view slot="title">
           {{item['venuename']}}
         </view>
-        <view slot="tags">
-          <text>\n</text>
-          <van-tag round type="primary" wx:for="{{item['courttype']}}"> {{item.courttypename}} </van-tag>
-          <!-- <van-tag round type="success"> 篮球 </van-tag> 
-          <van-tag round type="danger"> 乒乓球 </van-tag>
-          <van-tag round type="warning"> 跆拳道</van-tag>  -->
+        <view slot="tags" class="courttype">
+          <view wx:for="{{item['courttype']}}">
+            <van-tag round color="{{item.courtTypeColor[0]}}" text-color="{{item.courtTypeColor[1]}}">
+              {{item.courttypename}} </van-tag>
+          </view>
         </view>
         <view slot="bottom">
           <van-icon name="location" />

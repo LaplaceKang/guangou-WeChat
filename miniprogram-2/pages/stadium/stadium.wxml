@@ -11,9 +11,11 @@
     <view slot="title">
       {{item['venuename']}}
     </view>
-    <view slot="tags">
-      <text>\n</text>
-      <van-tag round type="primary" wx:for="{{item['courttype']}}"> {{item['courttypename']}} </van-tag>
+    <view slot="tags" class="courttype">
+      <view wx:for="{{item['courttype']}}"  >
+        <van-tag round color="{{item.courtTypeColor[0]}}" text-color="{{item.courtTypeColor[1]}}">
+          {{item.courttypename}} </van-tag>
+      </view>
     </view>
     <view slot="bottom">
       <van-icon name="location" />

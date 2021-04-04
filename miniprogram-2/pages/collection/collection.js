@@ -29,6 +29,18 @@ Page({
     })
   },
 
+  //跳转到场馆详情页
+  toCampus(event) {
+    var that = this
+    let index = parseInt(event.currentTarget.dataset.index) //获取点击的场馆的下标
+    console.log(that.data.venue[index].venueid)
+    let courttype = JSON.stringify(that.data.venue[index].courttype)
+    // console.log(courttype)
+    wx.navigateTo({ //跳转页面
+      url: '/pages/campus/campus?venueid=' + that.data.venue[index].venueid + '&courttype=' + courttype + '&venuename=' + that.data.venue[index].venuename + '&longitude=' + that.data.venue[index].longitude + '&latitude=' + that.data.venue[index].latitude
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

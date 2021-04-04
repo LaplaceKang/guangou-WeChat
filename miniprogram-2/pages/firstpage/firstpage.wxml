@@ -26,7 +26,7 @@
     <view class="nav-bar-wrap">
       <block wx:for="{{courttype}}" wx:key='key'>
         <view class="nav-bar-item" bindtap="toStadium" data-index="{{index}}">
-          <image src="../../images/icon/orange/{{item['eName']}}.png" style="width:80%"/>
+          <image src="../../images/icon/orange/{{item['eName']}}.png"/>
           <text>{{item['name']}}</text>
         </view>
       </block>

@@ -1,4 +1,6 @@
 <!--导入换行wxs模块-->
+<wxs src="../../utils/filter.wxs" module="filterTool" />
+
 <view class="container">
   <van-notice-bar left-icon="volume-o" text="{{filterTool.filter_delN(venue.information)}}" bindtap="showInformation" />
   <van-dialog id="van-dialog" />
@@ -6,23 +8,15 @@
     <swiper-item wx:for="{{imgUrls}}">
       <image src='{{item}}' width="70rpx" height="50rpx" class="img1" style="display:justify-content;margin-top" />
     </swiper-item>
-
   </swiper>
 
-  <!--
-<view class="img1" style="display:justify-content;margin-top">
-<van-image
-  width="16rem"
-  height="10rem"
-  src="/images/4.jpg"
-  fit="fill"
-/>
-</view>
--->
   <view class="list-title">
     <view class="left">{{venuename}}
-      <view>
-        <van-tag round type="primary" wx:for="{{courttype}}">{{item.courttypename}}</van-tag>
+      <view slot="tags" class="courttype">
+        <view wx:for="{{courttype}}">
+          <van-tag round color="{{item.courtTypeColor[0]}}" text-color="{{item.courtTypeColor[1]}}">
+            {{item.courttypename}} </van-tag>
+        </view>
       </view>
     </view>
     <view class="right">
@@ -42,10 +36,11 @@
       <!-- 一个总场馆有多个运动类型 -->
       <view wx:for="{{courttype}}">
         <van-tab title="{{item.courttypename}}">
-          <van-tabs active="{{ active }}" bind:change="selectCourtChild" type="card" swipe-threshold="2" color="#ff9502" v-if="show">
+          <van-tabs active="{{ active }}" bind:change="selectCourtChild" type="card" swipe-threshold="2" color="#ff9502"
+            v-if="show">
             <!-- 同一个运动类型有多个场馆 -->
             <view wx:for="{{court}}">
-              <van-tab title="{{item.courtname}}" >
+              <van-tab title="{{item.courtname}}">
                 <view class="img1" style="display:justify-content;margin-top">
                   <van-image width="16rem" height="10rem" src="/images/4.jpg" fit="fill" />
                 </view>
@@ -105,8 +100,6 @@
                   </van-card>
                 </view>
               </van-tab>
-
-
             </view>
           </van-tabs>
         </van-tab>

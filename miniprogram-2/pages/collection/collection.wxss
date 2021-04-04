@@ -1,1 +1,8 @@
 /* pages/collection/collection.wxss */
+
+.courttype{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
