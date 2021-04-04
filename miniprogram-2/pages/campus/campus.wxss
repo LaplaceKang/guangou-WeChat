@@ -104,3 +104,25 @@
   bottom: 70rpx;
 }
 
+.image {
+  width: 746rpx;
+}
+ 
+.image-parent {
+  height: 20rpx; 
+  position: relative;
+}
+ 
+.child {
+  width: 120px;
+  height: 24px;  
+  position: relative;
+  left: 0;
+  top: 120rpx;
+  right: 10rpx;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  background: yellowgreen;
+}  
+ 

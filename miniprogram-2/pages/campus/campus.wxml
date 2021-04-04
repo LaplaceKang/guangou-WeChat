@@ -1,8 +1,4 @@
 <!--导入换行wxs模块-->
-<wxs src="../../utils/filter.wxs" module="filterTool" />
-
-
-
 <view class="container">
   <van-notice-bar left-icon="volume-o" text="{{filterTool.filter_delN(venue.information)}}" bindtap="showInformation" />
   <van-dialog id="van-dialog" />
@@ -10,6 +6,7 @@
     <swiper-item wx:for="{{imgUrls}}">
       <image src='{{item}}' width="70rpx" height="50rpx" class="img1" style="display:justify-content;margin-top" />
     </swiper-item>
+
   </swiper>
 
   <!--
@@ -119,7 +116,7 @@
 </view>
 
 <view bindtap="toOrder" class="but">
-<van-button type="primary" size="large" color="black">去预定</van-button>
+  <van-button type="primary" size="large" color="black">去预定</van-button>
 </view>
 
 <van-toast id="van-toast" wx:if="{{showLoading}}" />
