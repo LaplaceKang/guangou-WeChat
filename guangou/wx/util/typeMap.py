@@ -42,3 +42,12 @@ Map_Facility = {
     8: '厕所',
     9: 'WIFI',
 }
+
+# 场馆类型标签颜色、字体颜色
+Map_CourtTypeColor={
+  0:['#cce6ff','#0581fe'],#蓝
+  1:['#caffd7','#34c758'],#绿
+  2:['#e6fffb','#36cfc9'],#青
+  3:['#feffe6','#fadb14'],#黄
+  4:['#fff7e6','#ffa940'],#橙
+}

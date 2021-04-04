@@ -93,6 +93,7 @@ Page({
   changeType(value) {
     // console.log(value.detail)
     this.data.venue = [] //先清空之前的数据
+    this.data.page=1
     this.showToast()
     this.getVenue(value.detail)
   },

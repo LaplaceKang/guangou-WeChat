@@ -71,6 +71,16 @@ Page({
       }
     })
   },
+  //显示加载中动画
+  showToast(){
+    this.data.showLoading=true
+    Toast.loading({
+      message: '加载中...',
+      forbidClick: true,
+      loadingType: 'spinner',
+      duration: 0,
+    });
+  },
   //切换场馆类型
   selectCourtType(event) {
     let that = this
@@ -81,7 +91,8 @@ Page({
     // console.log(event.detail.index)
     // console.log(that.data.allCourt[index])
     if (that.data.allCourt[index] == null) {
-      this.getCourtDetail(event.detail.index)
+      that.showToast()
+      that.getCourtDetail(event.detail.index)
     } else {
       that.setData({
         court: that.data.allCourt[index]
@@ -112,12 +123,7 @@ Page({
       allCourt: new Array(courttype.length)
     })
     this.getVenueDetail()
-    Toast.loading({
-      message: '加载中...',
-      forbidClick: true,
-      loadingType: 'spinner',
-      duration: 0,
-    });
+    this.showToast()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

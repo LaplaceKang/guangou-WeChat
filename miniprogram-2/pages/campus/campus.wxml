@@ -38,14 +38,14 @@
   </view>
 
   <view class="container">
-    <van-tabs active="{{ active }}" bind:change="selectCourtType">
+    <van-tabs active="{{ active }}" bind:change="selectCourtType" color="#ff9502">
       <!-- 一个总场馆有多个运动类型 -->
       <view wx:for="{{courttype}}">
         <van-tab title="{{item.courttypename}}">
-          <van-tabs active="{{ active }}" bind:change="selectCourtChild">
+          <van-tabs active="{{ active }}" bind:change="selectCourtChild" type="card" swipe-threshold="2" color="#ff9502" v-if="show">
             <!-- 同一个运动类型有多个场馆 -->
             <view wx:for="{{court}}">
-              <van-tab title="{{item.courtname}}" type="card">
+              <van-tab title="{{item.courtname}}" >
                 <view class="img1" style="display:justify-content;margin-top">
                   <van-image width="16rem" height="10rem" src="/images/4.jpg" fit="fill" />
                 </view>

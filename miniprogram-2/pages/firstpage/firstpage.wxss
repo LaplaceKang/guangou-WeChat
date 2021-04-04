@@ -104,3 +104,10 @@ scroll-view {
   position: absolute;
   left: 60.48%;
 }
+
+.courttype{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}

@@ -101,9 +101,10 @@ def VenueCourtType(venueid):
     courttypeid = models.VenueCourtType.objects.filter(
         venueid=venueid).values('courttypeid')  # 总场馆的运动类型
     courttype = []
-    for j in list(courttypeid):
-        courttypeOne = {'courttypeid': j['courttypeid'],
-                        'courttypename': Map_CourtType[j['courttypeid']]}
+    for index,item in enumerate(courttypeid):
+        # print(index)
+        courttypeOne = {'courttypeid': item['courttypeid'],
+                        'courttypename': Map_CourtType[item['courttypeid']],'courtTypeColor':Map_CourtTypeColor[index%5]}
         courttype.append(courttypeOne)  # 将所有运动类型放入数组中
     return courttype
 

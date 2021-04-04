@@ -4,7 +4,7 @@ import {
 } from '../../utils/util.js'
 //导入场馆运动类型
 import {
-  Map_CourtType
+  Map_CourtType,courtTypeColor
 } from '../../utils/typeMap.js'
 import Toast from '../../miniprogram/miniprogram_npm/weapp/toast/toast';
 
