@@ -115,6 +115,10 @@
     </van-tabs>
   </view>
 </view>
-<van-button type="primary" size="large" color="black" bindtap="toOrder">去预定</van-button>
+
+<view bindtap="toOrder" class="but">
+<van-button type="primary" size="large" color="black">去预定</van-button>
+</view>
+
 <van-toast id="van-toast" wx:if="{{showLoading}}" />
 <!--轻提示-->

@@ -1,12 +1,13 @@
 /* pages/campus/campus.wxss */
 .img1 {
-  margin-top:10rpx;
-  display:flex;
+  margin-top: 10rpx;
+  display: flex;
   justify-content: center;
 }
-.container{
-  padding:20rpx;
-  line-height:25px;
+
+.container {
+  padding: 20rpx;
+  line-height: 25px;
 }
 
 .list-title {
@@ -15,41 +16,48 @@
   justify-content: space-between;
 }
 
-.line{
-    margin: 0 auto;
-    background-color: #272727;
+.line {
+  margin: 0 auto;
+  background-color: #272727;
 }
-.ziti1{
+
+.ziti1 {
   font-weight: bold;
-  font-size:medium;
+  font-size: medium;
 }
-.ziti2{
-  font-size:small;
+
+.ziti2 {
+  font-size: small;
 }
-.color1{
+
+.color1 {
   background-color: #AE0000;
 }
-.ziti3{
-  color:red;
-  text-align:right;
-padding-right:30rpx;
+
+.ziti3 {
+  color: red;
+  text-align: right;
+  padding-right: 30rpx;
 }
-.classname{
+
+.classname {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
-.img{
-  width:80%
+
+.img {
+  width: 80%
 }
 
 .nav-bar-wrap {
   display: flex;
   flex-direction: row;
-  flex-wrap:  wrap ;
+  flex-wrap: wrap;
   justify-content: flex-start;
   height: 330rpx;
 }
+
 .nav-bar-item {
   width: 125rpx;
   display: flex;
@@ -79,12 +87,19 @@ padding-right:30rpx;
   width: 48rpx;
   height: 48rpx;
   background-color: rgb(232, 232, 232);
-  border:3rpx solid rgb(173, 173, 173);
-  border-radius:50%;
+  border: 3rpx solid rgb(173, 173, 173);
+  border-radius: 50%;
   overflow: hidden;
 }
 
 .courtTypeText {
   font-size: 24rpx;
-  color:rgb(137, 137, 137)
+  color: rgb(137, 137, 137)
+}
+
+.but {
+  position: fixed;
+  width: 750rpx;
+  height: 45rpx;
+  bottom: 70rpx;
 }
