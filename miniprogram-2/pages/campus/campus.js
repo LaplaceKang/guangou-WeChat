@@ -7,7 +7,7 @@ import {
 import {
   DjangoURL
 } from '../../utils/util.js'
-
+const app = getApp()
 Page({
   /**
    * 页面的初始数据
@@ -26,7 +26,12 @@ Page({
   toupper: function () {
     console.log("触发了toupper");
   },
-  //获取总场馆信息
+  toOrder:function(){
+    wx.navigateTo({ //跳转页面
+      url: '/pages/order/order'
+    })
+  },
+
   getVenueDetail() {
     var that = this
     wx.request({
