@@ -126,21 +126,3 @@
 </van-card>
 <van-divider/>  
 
-<van-tabbar >
-  <van-tabbar-item icon="wap-home"bindtap='toFirst' >首页</van-tabbar-item>
-  <van-tabbar-item icon="search">课程</van-tabbar-item>
-  <van-tabbar-item icon="manager" bindtap='toMy'>我的</van-tabbar-item>
-</van-tabbar>
-
-
-
-
-
-
-
-
-
-
-
-
-
