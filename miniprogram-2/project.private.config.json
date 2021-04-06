@@ -65,6 +65,11 @@
           "pathName": "pages/submit/submit",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/mycards/mycards",
+          "pathName": "pages/mycards/mycards",
+          "scene": null
         }
       ]
     }
