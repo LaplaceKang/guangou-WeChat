@@ -132,3 +132,20 @@
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+.bluebox{
+  background-color:	#E1FFFF;
+  margin-top: 30rpx;
+}
+.flex-view-item{
+  padding:15rpx;
+  line-height:60rpx;
+}
+.list-title {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.redbox{
+  background-color:	#FFEFD5;
+  margin-top: 30rpx;
+}

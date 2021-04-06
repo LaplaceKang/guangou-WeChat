@@ -47,6 +47,7 @@
   },
   "scripts": {},
   "isGameTourist": false,
+  "appid": "wx9a3377455576ee6a",
   "condition": {
     "search": {
       "list": []
