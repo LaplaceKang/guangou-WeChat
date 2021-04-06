@@ -69,6 +69,12 @@
         {
           "name": "pages/mycards/mycards",
           "pathName": "pages/mycards/mycards",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
           "scene": null
         }
       ]

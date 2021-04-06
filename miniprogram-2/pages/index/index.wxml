@@ -1,18 +1,26 @@
 <!--index.wxml-->
-<view class="container">
-  <van-cell is-link title="{{nickname}}" link-type="navigateTo" url="/pages/certification/certification" center
-    icon="checked" value="您已在馆够打卡{{checkintimes}}次" label=" 校内认证" />
-  <text>\n</text>
-  <van-cell title="我的订单" is-link />
-  <van-cell title="我的课程" is-link />
-  <van-cell title="我的卡包" is-link url="/pages/mycards/mycards" />
-  <van-cell title="我的活动" is-link />
-  <text>\n</text>
-  <van-cell title="我的收藏" is-link url="/pages/collection/collection" />
-  <text>\n</text>
-  <van-cell title="客服" is-link value="XXXXX" />
-  <van-cell title="版本号" is-link value="1.1.1" />
-  <text>\n</text>
-  <van-button plain type="default" block>切换角色</van-button>
-
+<view class="blackbox">
+  <view class="flex-row" style="display:flex;">
+    <view class="flex-view-item">
+      <image src='/images/person.png'
+        style="width:100rpx; height:90rpx;display: flex;align-items: center;justify-content: center"></image>
+    </view>
+    <view class="flex-view-item">
+      <view style="font-size:medium;color:white;font-weight: bold;">爱运动的小刘</view>
+      <view style="font-size:small;color:grey;">你已在馆够打卡5次</view>
+    </view>
+    <view class="flex-view-item" style="font-size:small;color:	#FFA500;">校内认证</view>
+  </view>
 </view>
+<text>\n</text>
+<van-cell title="我的订单" is-link />
+<van-cell title="我的课程" is-link />
+<van-cell title="我的卡包" is-link url="/pages/mycards/mycards" />
+<van-cell title="我的活动" is-link />
+<text>\n</text>
+<van-cell title="我的收藏" is-link url="/pages/collection/collection" />
+<text>\n</text>
+<van-cell title="客服" is-link value="XXXXX" />
+<van-cell title="版本号" is-link value="1.1.1" />
+<text>\n</text>
+<van-button plain type="default" block>切换角色</van-button>

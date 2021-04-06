@@ -58,7 +58,7 @@
 
 <view wx:for="{{venue}}" data-index="{{index}}" bindtap="toCampus">
   <van-card thumb="../../../../images/venue/{{item['venueid']}}.jpeg" thumb-mode="aspectFill">
-    <view slot="title" style="font-size:28rpx ;font-weight: bold">
+    <view slot="title" style="font-size:28rpx ;font-weight: bold;line-height:60rpx;">
       {{item['venuename']}}
     </view>
     <view slot="tags" class="courttype">
