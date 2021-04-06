@@ -29,14 +29,11 @@ def getCourtDetail(request: HttpRequest):
     court=models.Court.objects.filter(venueid=venueid,courttypeid=courttypeid).values('courtid','specifications','businesstime','courtname')
     # print(court)
 
-
-    # court=list(court)[0] #第一个场馆
-
-    
     for index,item in enumerate(court):
         facilityid=getCourtFacility(item['courtid'])
+        discountcardtypename=getcourtDiscountCardTypeInf(item['courtid'])
         res_court = {
-        'specifications': item['specifications'], 'facilityid': facilityid,'businesstime':item['businesstime'],'courtname':item['courtname']}
+        'specifications': item['specifications'], 'facilityid': facilityid,'businesstime':item['businesstime'],'courtname':item['courtname'],'discountcardtypename': discountcardtypename}
         data.append(res_court)
     # res['data'] = {'court':data}
 

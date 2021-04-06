@@ -181,3 +181,16 @@ def getCourtFacility(courtid):
     for i in facility:
         facilityid.append(i['facilityid'])
     return facilityid
+
+
+'''
+根据场馆id获取优惠卡类型介绍
+courtid 场馆id(如：2)
+'''
+def getcourtDiscountCardTypeInf(courtid):
+    # print(courtid)
+    discountcardtypename=models.CourtCourtDiscountCardType.objects.filter(
+        courtid=courtid).values('discountcardtypeid__discountcardtypename','discountcardintroduction','lowestprice')
+    
+    print(list(discountcardtypename))
+    return list(discountcardtypename)

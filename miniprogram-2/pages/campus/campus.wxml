@@ -54,8 +54,20 @@
                   <view class="ziti1">场馆优惠：</view>
                 </view>
 
-                <van-cell center icon="vip-card" title=" 篮球次卡" value="25/次起" label=" 10次 20次 40次" />
-                <van-cell center icon="vip-card" title=" 充值卡" label=" 充值赠送储值" />
+                <view wx:for="{{item['discountcardtypename']}}" data-index="{{index}}">
+                  <view wx:if="{{item['discountcardtypeid__discountcardtypename']=='次卡'}}">
+                    <van-cell center icon="vip-card" title="{{item['discountcardtypeid__discountcardtypename']}}"
+                      value="{{item['lowestprice']}} 元/次起" label="{{item['discountcardintroduction']}}" />
+                  </view>
+                  <view wx:if="{{item['discountcardtypeid__discountcardtypename']=='充值卡'}}">
+                    <van-cell center icon="vip-card" title="{{item['discountcardtypeid__discountcardtypename']}}"
+                      value="{{item['lowestprice']}} 元起" label="{{item['discountcardintroduction']}}" />
+                  </view>
+                  <view wx:if="{{item['discountcardtypeid__discountcardtypename']=='时段卡'}}">
+                    <van-cell center icon="vip-card" title="{{item['discountcardtypeid__discountcardtypename']}}"
+                      value="{{item['lowestprice']}} 元起" label="{{item['discountcardintroduction']}}" />
+                  </view>
+                </view>
 
                 <view class="container" wx:if="{{item.facilityname.length>0}}">
                   <view class="ziti1">场地设施 ：</view>
