@@ -54,8 +54,35 @@
                   <view class="ziti1">场馆优惠：</view>
                 </view>
 
-                <van-cell center icon="vip-card" title=" 篮球次卡" value="25/次起" label=" 10次 20次 40次" />
-                <van-cell center icon="vip-card" title=" 充值卡" label=" 充值赠送储值" />
+                <view class="redbox">
+                  <view class="flex-row" style="display:flex;">
+                    <view class="flex-view-item">
+                      <image src='/images/icon/card.png'
+                        style="width:80rpx; height:80rpx;display: flex;align-items: center;justify-content: center">
+                      </image>
+                    </view>
+                    <view class="flex-view-item" style="font-size:small;">
+                      北京邮电大学健身房30次卡
+                      <view style="font-size:small;color:grey;">北京邮电大学健身房</view>
+                    </view>
+                    <view class="flex-view-item" style="font-size:small;color:	#FF8C00;">剩余23次</view>
+                  </view>
+                </view>
+
+                <view class="bluebox">
+                  <view class="flex-row" style="display:flex;">
+                    <view class="flex-view-item">
+                      <image src='/images/icon/card.png'
+                        style="width:80rpx; height:80rpx;display: flex;align-items: center;justify-content: center">
+                      </image>
+                    </view>
+                    <view class="flex-view-item" style="font-size:small;">
+                      北京邮电大学健篮球场充300送50
+                      <view style="font-size:small;color:grey;">北京邮电大学健身房</view>
+                    </view>
+                    <view class="flex-view-item" style="font-size:small;color:	#1E90FF;">剩余260.00元</view>
+                  </view>
+                </view>
 
                 <view class="container" wx:if="{{item.facilityname.length>0}}">
                   <view class="ziti1">场地设施 ：</view>

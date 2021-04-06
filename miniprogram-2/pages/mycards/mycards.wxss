@@ -1,22 +1,25 @@
 /* pages/mycards/mycards.wxss */
-.redbox{
-  background-color:	#FFEFD5;
-  margin-top: 30rpx;
-}
+
 page{
   padding: 30rpx;
   padding-right: 50rpx;
   width:90%;
+  line-height:60rpx;
 }
-.flex-view-item{
-  padding:15rpx;
-}
+
 .bluebox{
   background-color:	#E1FFFF;
   margin-top: 30rpx;
+}
+.flex-view-item{
+  padding:15rpx;
 }
 .list-title {
   padding: 20px;
   display: flex;
   justify-content: space-between;
+}
+.redbox{
+  background-color:	#FFEFD5;
+  margin-top: 30rpx;
 }
