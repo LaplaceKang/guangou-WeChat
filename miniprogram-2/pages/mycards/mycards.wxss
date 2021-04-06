@@ -11,13 +11,23 @@ page{
   background-color:	#E1FFFF;
   margin-top: 30rpx;
 }
-.flex-view-item{
+.flex-image{
+  padding:15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-image image{
+  width:80rpx; 
+  height:80rpx;
+}
+.flex-title{
   padding:15rpx;
 }
-.list-title {
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
+.flex-remain{
+  padding:15rpx;
+  font-size:small;
+  color:#FF8C00;
 }
 .redbox{
   background-color:	#FFEFD5;

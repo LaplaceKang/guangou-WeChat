@@ -16,27 +16,27 @@ title="     篮球40+20次卡" value="剩余35次" label=" MVP体育馆" /> -->
 -->
 
 <view class="redbox">
-  <view class="flex-row" style="display:flex;">
-    <view class="flex-view-item">
-      <image src='/images/icon/card.png' style="width:80rpx; height:80rpx;display: flex;align-items: center;justify-content: center"></image>
+  <view style="display:flex;">
+    <view class="flex-image">
+      <image src='/images/icon/card.png'></image>
     </view>
-    <view class="flex-view-item" style="font-size:small;">
+    <view class="flex-title" style="font-size:small;">
       北京邮电大学健身房30次卡
       <view style="font-size:small;color:grey;">北京邮电大学健身房</view>
     </view>
-    <view class="flex-view-item" style="font-size:small;color:	#FF8C00;">剩余23次</view>
+    <view class="flex-remain">剩余23次</view>
   </view>
 </view>
 
 <view class="bluebox">
-  <view class="flex-row" style="display:flex;">
-    <view class="flex-view-item">
-      <image src='/images/icon/card.png' style="width:80rpx; height:80rpx;display: flex;align-items: center;justify-content: center"></image>
+  <view style="display:flex;">
+    <view class="flex-image">
+      <image src='/images/icon/card.png'></image>
     </view>
-    <view class="flex-view-item" style="font-size:small;">
+    <view class="flex-title" style="font-size:small;">
       北京邮电大学健篮球场充300送50
       <view style="font-size:small;color:grey;">北京邮电大学健身房</view>
     </view>
-    <view class="flex-view-item" style="font-size:small;color:	#1E90FF;">剩余260.00元</view>
+    <view class="flex-remain">剩余23次</view>
   </view>
 </view>

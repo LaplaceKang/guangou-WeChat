@@ -1,6 +1,7 @@
 <!--导入换行wxs模块-->
 <wxs src="../../utils/filter.wxs" module="filterTool" />
-
+<van-toast id="van-toast" wx:if="{{showLoading}}" />
+<!--轻提示-->
 <view class="container">
   <van-notice-bar left-icon="volume-o" text="{{filterTool.filter_delN(venue.information)}}" bindtap="showInformation" />
   <van-dialog id="van-dialog" />
@@ -123,6 +124,3 @@
 <view bindtap="toOrder" class="but">
   <van-button type="primary" size="large" color="black">去预定</van-button>
 </view>
-
-<van-toast id="van-toast" wx:if="{{showLoading}}" />
-<!--轻提示-->
