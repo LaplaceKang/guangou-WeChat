@@ -1,6 +1,7 @@
 <!--导入换行wxs模块-->
 <wxs src="../../utils/filter.wxs" module="filterTool" />
-
+<van-toast id="van-toast" wx:if="{{showLoading}}" />
+<!--轻提示-->
 <view class="container">
   <van-notice-bar left-icon="volume-o" text="{{filterTool.filter_delN(venue.information)}}" bindtap="showInformation" />
   <van-dialog id="van-dialog" />
@@ -54,33 +55,18 @@
                   <view class="ziti1">场馆优惠：</view>
                 </view>
 
-                <view class="redbox">
-                  <view class="flex-row" style="display:flex;">
-                    <view class="flex-view-item">
-                      <image src='/images/icon/card.png'
-                        style="width:80rpx; height:80rpx;display: flex;align-items: center;justify-content: center">
-                      </image>
-                    </view>
-                    <view class="flex-view-item" style="font-size:small;">
-                      北京邮电大学健身房30次卡
-                      <view style="font-size:small;color:grey;">北京邮电大学健身房</view>
-                    </view>
-                    <view class="flex-view-item" style="font-size:small;color:	#FF8C00;">剩余23次</view>
+                <view wx:for="{{item['discountcardtypename']}}" data-index="{{index}}">
+                  <view wx:if="{{item['discountcardtypeid__discountcardtypename']=='次卡'}}">
+                    <van-cell center icon="vip-card" title="{{item['discountcardtypeid__discountcardtypename']}}"
+                      value="{{item['lowestprice']}} 元/次起" label="{{item['discountcardintroduction']}}" />
                   </view>
-                </view>
-
-                <view class="bluebox">
-                  <view class="flex-row" style="display:flex;">
-                    <view class="flex-view-item">
-                      <image src='/images/icon/card.png'
-                        style="width:80rpx; height:80rpx;display: flex;align-items: center;justify-content: center">
-                      </image>
-                    </view>
-                    <view class="flex-view-item" style="font-size:small;">
-                      北京邮电大学健篮球场充300送50
-                      <view style="font-size:small;color:grey;">北京邮电大学健身房</view>
-                    </view>
-                    <view class="flex-view-item" style="font-size:small;color:	#1E90FF;">剩余260.00元</view>
+                  <view wx:if="{{item['discountcardtypeid__discountcardtypename']=='充值卡'}}">
+                    <van-cell center icon="vip-card" title="{{item['discountcardtypeid__discountcardtypename']}}"
+                      value="{{item['lowestprice']}} 元起" label="{{item['discountcardintroduction']}}" />
+                  </view>
+                  <view wx:if="{{item['discountcardtypeid__discountcardtypename']=='时段卡'}}">
+                    <van-cell center icon="vip-card" title="{{item['discountcardtypeid__discountcardtypename']}}"
+                      value="{{item['lowestprice']}} 元起" label="{{item['discountcardintroduction']}}" />
                   </view>
                 </view>
 
@@ -138,6 +124,3 @@
 <view bindtap="toOrder" class="but">
   <van-button type="primary" size="large" color="black">去预定</van-button>
 </view>
-
-<van-toast id="van-toast" wx:if="{{showLoading}}" />
-<!--轻提示-->

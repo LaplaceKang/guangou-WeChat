@@ -80,6 +80,15 @@ class Court(models.Model):
         managed = False
         db_table = 'court'
 
+class CourtCourtDiscountCardType(models.Model):
+    courtid = models.ForeignKey(Court, models.DO_NOTHING, db_column='courtID')  # Field name made lowercase.
+    discountcardtypeid = models.ForeignKey('CourtDiscountCardType', models.DO_NOTHING, db_column='discountCardTypeID')  # Field name made lowercase.       
+    discountcardintroduction = models.CharField(db_column='discountCardIntroduction', max_length=255)  # Field name made lowercase.
+    lowestprice = models.DecimalField(db_column='lowestPrice', max_digits=10, decimal_places=2, blank=True, null=True)  # Field name made lowercase.       
+
+    class Meta:
+        managed = False
+        db_table = 'court-court_discount_card_type'
 
 class CourtCourtFacility(models.Model):
     courtid = models.ForeignKey(Court, models.DO_NOTHING, db_column='courtID', related_name='%(class)s_courtid')  # Field name made lowercase.
