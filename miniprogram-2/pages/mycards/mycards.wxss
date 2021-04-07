@@ -40,8 +40,8 @@ page{
 .courtnameText{
   font-size:small;
   color:grey;
-  width: 385rpx;
+  width: 400rpx;
 }
 .discountcardnameText{
-  width: 385rpx;
+  width: 400rpx;
 }

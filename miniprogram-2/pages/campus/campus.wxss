@@ -171,3 +171,44 @@ page{
   background-color:		#FFFFFF;
   margin-bottom: 20rpx;
 }
+
+.flex-image{
+  padding:15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.flex-image image{
+  width:80rpx; 
+  height:80rpx;
+}
+.flex-title{
+  padding:15rpx 0 15rpx 0;
+  width: 380rpx;
+  font-size:small;
+  position: relative;
+  left: 10rpx;
+}
+.flex-remain{
+  padding:15rpx;
+  font-size:small;
+  color:#FF8C00;
+  position: relative;
+  left: 10rpx;
+  width: 140rpx;
+}
+.box{
+  margin-top: 30rpx;
+  display:flex;
+  position: relative;
+  width: 680rpx;
+}
+.courtnameText{
+  font-size:small;
+  color:grey;
+  width: 380rpx;
+}
+.discountcardnameText{
+  width: 380rpx;
+}

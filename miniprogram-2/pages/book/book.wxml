@@ -22,6 +22,7 @@
       <!-- 右侧表格滚动 -->
       <scroll-view class="scroll-box" scroll-x="true">
         <view class="scroll-view-item" wx:for="{{fruitList}}" wx:for-index="bigindex" wx:key="{{index}}">
+          <!-- 上方场地名称 -->
           <view class='company-name'>
             <view class="ziti1">{{item.name}}</view>
             <view>五人制真草</view>
