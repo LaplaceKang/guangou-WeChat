@@ -31,9 +31,9 @@ Page({
       }
     ],
     imgUrls: [
-      "/images/3.jpg",
-      "/images/3.jpg",
-      "/images/3.jpg"
+      "/images/ad/1.jpeg",
+      "/images/ad/1.jpeg",
+      "/images/ad/1.jpeg"
     ],
     venue: [],
     longitude: 116.346352,

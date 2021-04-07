@@ -39,9 +39,11 @@
 </view>
 
 
-<view class="img1" style="display:justify-content;margin-top">
-  <van-image width="14rem" height="8rem" src="" fit="fill" alt="wenben" src="../../../../images/ad/1.jpeg" />
-</view>
+<swiper style="display: flex;align-items:center;justify-content: center;margin-top:30rpx;margin-left:100rpx;z-index: 1;">
+  <swiper-item wx:for="{{imgUrls}}">
+    <van-image width="15rem" height="9rem" src="" fit="fill" alt="wenben" src='{{item}}' />
+  </swiper-item>
+</swiper>
 
 <view class="contain">
   <view class="container">
