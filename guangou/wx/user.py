@@ -196,21 +196,29 @@ def getUserDiscountCard(request: HttpRequest):
         return JsonResponse(res)
 
     userid = models.User.objects.get(openid=openid).userid
-    cardid = models.UserDiscountCard.objects.filter(userid=userid).values(
-        'userdiscountcardid', 'discountcardid', 'courtid', 'remainingtimes', 'remainingprice')
-    cardid_list = list(cardid)  # queryset转list，便于操作
-    # print(cardid_list[0].discountcardid)
 
-    for i in cardid_list:
-        discountcardname = models.CourtDiscountCard.objects.get(
-            discountcardid=i['discountcardid']).discountcardname  # 从场馆优惠卡表获取优惠卡名
-        # print(discountcardname)
-        courtname = models.Court.objects.get(courtid=i['courtid']).courtname
-        # print(courtname)
-        res_card = {'discountcardname': discountcardname, 'courtname': courtname,
-                    'remainingtimes': i['remainingtimes'], 'remainingprice': i['remainingprice']}
-        data.append(res_card)
-        # print(res_card)
+    card=models.UserDiscountCard.objects.filter(userid=userid).values('discountcardid__discountcardname','discountcardid__discountcardtypeid','courtid__courtname','remainingtimes','remainingprice')
+
+    print(list(card))
+    res['data']=list(card)
+
+
+
+    # cardid = models.UserDiscountCard.objects.filter(userid=userid).values(
+    #     'userdiscountcardid', 'discountcardid', 'courtid', 'remainingtimes', 'remainingprice')
+    # cardid_list = list(cardid)  # queryset转list，便于操作
+    # # print(cardid_list[0].discountcardid)
+
+    # for i in cardid_list:
+    #     discountcardname = models.CourtDiscountCard.objects.get(
+    #         discountcardid=i['discountcardid']).discountcardname  # 从场馆优惠卡表获取优惠卡名
+    #     # print(discountcardname)
+    #     courtname = models.Court.objects.get(courtid=i['courtid']).courtname
+    #     # print(courtname)
+    #     res_card = {'discountcardname': discountcardname, 'courtname': courtname,
+    #                 'remainingtimes': i['remainingtimes'], 'remainingprice': round(i['remainingprice'])}
+    #     data.append(res_card)
+    #     # print(res_card)
 
     res['code'] = 1
     res['message'] = 'success'

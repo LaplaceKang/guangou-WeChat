@@ -2,32 +2,23 @@
 <!-- <van-cell center 
 icon="vip-card"
 title="     篮球40+20次卡" value="剩余35次" label=" MVP体育馆" /> -->
-<!-- 
-<view wx:for="{{card}}" data-index="{{index}}">
-  <view wx:if="{{item['remainingprice']!=null}}">
-    <van-cell center icon="vip-card" title="{{item['discountcardname']}}" value="剩余{{item['remainingprice']}}元"
-      label="{{item['courtname']}}" />
-  </view>
-  <view wx:if="{{item['remainingtimes']!=null}}">
-    <van-cell center icon="vip-card" title="{{item['discountcardname']}}" value="剩余{{item['remainingtimes']}}次"
-      label="{{item['courtname']}}" />
-  </view>
-</view>
--->
 
-<view class="redbox">
-  <view style="display:flex;justify-content: space-between;">
+<view wx:for="{{card}}" data-index="{{index}}">
+  <view class="box" style="background-color:{{item.color[0]}};">
     <view class="flex-image">
       <image src='/images/icon/card.png'></image>
     </view>
-    <view class="flex-title" style="font-size:small;">
-      北京邮电大学健身房30次卡
-      <view style="font-size:small;color:grey;">北京邮电大学健身房</view>
+    <view class="flex-title">
+      <view class="discountcardnameText">{{item['discountcardid__discountcardname']}}</view>
+      <view class="courtnameText">{{item['courtid__courtname']}}</view>
     </view>
-    <view class="flex-remain">剩余23次</view>
+    <view class="flex-remain" wx:if="{{item['remainingtimes']!=null}}" style="color:{{item.color[1]}};">剩余{{item['remainingtimes']}}次</view>
+    <view class="flex-remain" wx:if="{{item['remainingprice']!=null}}" style="color:{{item.color[1]}};">剩余{{item['remainingprice']}}元</view>
   </view>
 </view>
 
+
+<!-- 
 <view class="bluebox">
   <view style="display:flex;">
     <view class="flex-image">
@@ -39,4 +30,4 @@ title="     篮球40+20次卡" value="剩余35次" label=" MVP体育馆" /> -->
     </view>
     <view class="flex-remain">剩余260.00元</view>
   </view>
-</view>
+</view> -->

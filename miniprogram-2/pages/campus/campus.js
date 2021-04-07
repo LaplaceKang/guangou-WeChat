@@ -1,7 +1,8 @@
 import Toast from '../../miniprogram/miniprogram_npm/weapp/toast/toast';
 import Dialog from '../../miniprogram/miniprogram_npm/weapp/dialog/dialog';
 import {
-  Map_Facility
+  Map_Facility,
+  Map_DiscountCardColor
 } from '../../utils/typeMap.js'
 //导入要请求的DjangoURL
 import {
@@ -26,7 +27,7 @@ Page({
   toupper: function () {
     console.log("触发了toupper");
   },
-  toOrder:function(){
+  toOrder: function () {
     wx.navigateTo({ //跳转页面
       url: '/pages/order/order'
     })
@@ -54,14 +55,21 @@ Page({
       url: DjangoURL + 'wx/court/getCourtDetail?venueid=' + that.data.venueid + '&courttypeid=' + that.data.courttype[courtTypeIndex].courttypeid,
       method: "GET",
       success: function (res) {
-        console.log(res.data.data)
+        // console.log(res.data.data)
         let court = res.data.data
         for (let k = 0; k < court.length; k++) {
+          //添加场馆设施
           court[k].facilityname = []
           for (let i = 0; i < court[k].facilityid.length; i++) {
             //根据facilityid的值来添加，而不是下标
             court[k].facilityname.push(Map_Facility[court[k].facilityid[i] + ''])
           }
+
+          //添加优惠卡颜色
+          court[k].discountcardtypename.forEach(element => {
+            element['color'] = Map_DiscountCardColor[element['discountcardtypeid']]
+            // console.log(element['color'])
+          });
         }
         that.data.allCourt[courtTypeIndex] = court
         that.setData({
@@ -72,8 +80,8 @@ Page({
     })
   },
   //显示加载中动画
-  showToast(){
-    this.data.showLoading=true
+  showToast() {
+    this.data.showLoading = true
     Toast.loading({
       message: '加载中...',
       forbidClick: true,

@@ -13,6 +13,10 @@
     justify-content: space-between;
     align-items: center;
 }
+.right {
+  color: orange;
+  xfont-size:small;
+}
 
 .img1 {
   margin-top: 10rpx;

@@ -2,6 +2,9 @@
 import {
   DjangoURL
 } from '../../utils/util.js'
+import {
+  Map_DiscountCardColor
+} from '../../utils/typeMap.js'
 
 Page({
   /**
@@ -20,10 +23,14 @@ Page({
       url: DjangoURL+'wx/user/getUserDiscountCard?openid=' + that.data.openid,
       method: "GET",
       success: function (res) {
+        let card=res.data.data
+        card.forEach(element => {
+          element['color']=Map_DiscountCardColor[element['discountcardid__discountcardtypeid']]
+          // console.log(element['color'])
+        });
         that.setData({
-          card: res.data.data
+          card:card
         })
-        console.log(res.data.data)
       }
     })
   },
