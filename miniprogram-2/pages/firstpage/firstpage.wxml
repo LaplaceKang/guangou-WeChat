@@ -68,7 +68,7 @@
       <view wx:for="{{item['courttype']}}">
         <van-tag round color="{{item.courtTypeColor[0]}}" text-color="{{item.courtTypeColor[1]}}">
           {{item.courttypename}}</van-tag>
-          <text decode="{{true}}" >&nbsp;&nbsp;</text>
+        <text decode="{{true}}">&nbsp;&nbsp;</text>
       </view>
     </view>
     <view slot="bottom">

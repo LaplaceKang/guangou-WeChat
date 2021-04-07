@@ -16,7 +16,7 @@ title="     篮球40+20次卡" value="剩余35次" label=" MVP体育馆" /> -->
 -->
 
 <view class="redbox">
-  <view style="display:flex;">
+  <view style="display:flex;justify-content: space-between;">
     <view class="flex-image">
       <image src='/images/icon/card.png'></image>
     </view>

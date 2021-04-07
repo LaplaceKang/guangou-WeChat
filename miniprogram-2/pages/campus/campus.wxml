@@ -54,7 +54,6 @@
                   </view>
                   <view class="ziti1">场馆优惠：</view>
                 </view>
-
                 <view wx:for="{{item['discountcardtypename']}}" data-index="{{index}}">
                   <view wx:if="{{item['discountcardtypeid__discountcardtypename']=='次卡'}}">
                     <van-cell center icon="vip-card" title="{{item['discountcardtypeid__discountcardtypename']}}"
