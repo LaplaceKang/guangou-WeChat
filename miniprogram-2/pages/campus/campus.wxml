@@ -65,6 +65,8 @@
                     </view>
                   </view>
                 </view>
+
+                
                 <view wx:for="{{item['discountcardtypename']}}" data-index="{{index}}">
                   <view class="box" style="background-color:{{item.color[0]}};">
                     <view class="flex-image">
