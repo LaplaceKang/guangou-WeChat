@@ -111,7 +111,8 @@ Page({
   showInformation() {
     let that = this
     Dialog.alert({
-      message: that.data.venue.information
+      message: that.data.venue.information,
+      theme: 'round-button',
     })
     // console.log(that.data.venue.facilityname)
   },

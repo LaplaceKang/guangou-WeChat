@@ -4,31 +4,40 @@
 <!--轻提示-->
 <view class="container">
   <van-notice-bar left-icon="volume-o" text="{{filterTool.filter_delN(venue.information)}}" bindtap="showInformation" />
-  <van-dialog id="van-dialog" />
+  <van-dialog id="van-dialog" mconfirm-button-color="#7CFC00" />
   <swiper>
     <swiper-item wx:for="{{imgUrls}}">
       <image src='{{item}}' width="70rpx" height="50rpx" class="img1" style="display:justify-content;margin-top" />
     </swiper-item>
   </swiper>
 
-  <view class="list-title">
-    <view class="left">{{venuename}}
-      <view slot="tags" class="courttype">
-        <view wx:for="{{courttype}}">
-          <van-tag round color="{{item.courtTypeColor[0]}}" text-color="{{item.courtTypeColor[1]}}">
-            {{item.courttypename}} </van-tag>
+  <view class="contain">
+    <van-icon name="star" color="#FF0000" size="60rpx" />
+  </view>
+
+  <view class="box">
+    <view class="list-title">
+      <view class="left">{{venuename}}
+        <view slot="tags" class="courttype">
+          <view wx:for="{{courttype}}">
+            <van-tag round color="{{item.courtTypeColor[0]}}" text-color="{{item.courtTypeColor[1]}}">
+              {{item.courttypename}} </van-tag>
+          </view>
         </view>
       </view>
-    </view>
-    <view class="right">
-      <van-icon name="phone" size="50rpx" />
+      <view class="right">
+        <van-icon name="phone" size="50rpx" />
+      </view>
     </view>
   </view>
 
-  <view class="list-title">
-    <view class="left">{{venue.address}}</view>
-    <view class="right">
-      <van-icon name="location" size="50rpx" />
+
+  <view class="box">
+    <view class="list-title">
+      <view class="left">{{venue.address}}</view>
+      <view class="right">
+        <van-icon name="location" size="50rpx" />
+      </view>
     </view>
   </view>
 
@@ -45,14 +54,16 @@
                 <view class="img1" style="display:justify-content;margin-top">
                   <van-image width="16rem" height="10rem" src="/images/4.jpg" fit="fill" />
                 </view>
-                <view class="container">
-                  <view class="ziti1">
-                    营业时间：
+
+                <view class="box">
+                  <view class="container">
+                    <view class="ziti1" style="padding:10rpx;">
+                      营业时间：
+                    </view>
+                    <view class="ziti2">
+                      <text decode='true'>{{filterTool.filter_N(item.businesstime)}}</text>
+                    </view>
                   </view>
-                  <view class="ziti2">
-                    <text decode='true'>{{filterTool.filter_N(item.businesstime)}}</text>
-                  </view>
-                  <view class="ziti1">场馆优惠：</view>
                 </view>
                 <view wx:for="{{item['discountcardtypename']}}" data-index="{{index}}">
                   <view class="box" style="background-color:{{item.color[0]}};">
@@ -70,47 +81,54 @@
                   </view>
                 </view>
 
-                <view class="container" wx:if="{{item.facilityname.length>0}}">
-                  <view class="ziti1">场地设施 ：</view>
-                  <view class="allCourtType">
-                    <view wx:for="{{item.facilityname}}">
-                      <view class="oneCourtType">
-                        <image class="courtTypeImg" src="../../images/icon/facility/{{item[1]}}.png" />
-                        <view class="courtTypeText">{{item[0]}}</view>
+
+                <view class="box">
+                  <view class="container" wx:if="{{item.facilityname.length>0}}">
+                    <view class="ziti1">场地设施 ：</view>
+                    <view class="allCourtType">
+                      <view wx:for="{{item.facilityname}}">
+                        <view class="oneCourtType">
+                          <image class="courtTypeImg" src="../../images/icon/facility/{{item[1]}}.png" />
+                          <view class="courtTypeText">{{item[0]}}</view>
+                        </view>
                       </view>
                     </view>
                   </view>
                 </view>
 
-                <view class="container">
-                  <view class="ziti1">
-                    场地规格 ：
-                  </view>
-                  <view class="ziti2">
-                    {{item.specifications}}
+                <view class="box">
+                  <view class="container">
+                    <view class="ziti1">
+                      场地规格 ：
+                    </view>
+                    <view class="ziti2">
+                      {{item.specifications}}
+                    </view>
                   </view>
                 </view>
 
-                <view class="container">
-                  <view class="ziti1">
-                    课程服务 ：
-                  </view>
-                  <van-card thumb="/images/3.jpg">
-                    <view slot="title">
-                      <view class="classname" style="display:flex;">
-                        <view class="flex-view-item">
-                          篮球启蒙\t\t
-                        </view>
-                        <view class="flex-view-item">
-                          <view class="ziti3">2000元/2月</view>
+                <view class="box">
+                  <view class="container">
+                    <view class="ziti1">
+                      课程服务 ：
+                    </view>
+                    <van-card thumb="/images/3.jpg">
+                      <view slot="title">
+                        <view class="classname" style="display:flex;">
+                          <view class="flex-view-item">
+                            篮球启蒙\t\t
+                          </view>
+                          <view class="flex-view-item">
+                            <view class="ziti3">2000元/2月</view>
+                          </view>
                         </view>
                       </view>
-                    </view>
-                    <view slot="desc">
-                      零基础，幼儿园中、大班
-                      1小时/次，10课时
-                    </view>
-                  </van-card>
+                      <view slot="desc">
+                        零基础，幼儿园中、大班
+                        1小时/次，10课时
+                      </view>
+                    </van-card>
+                  </view>
                 </view>
               </van-tab>
             </view>
