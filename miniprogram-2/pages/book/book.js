@@ -61,7 +61,6 @@ Page({
       "typeName": "18：00"
     },
   ],
-
     fruitList:[
     {
     "name":"A",
@@ -109,12 +108,187 @@ Page({
       {
         "pkId": 1,
         "price": "0",
-      },  
+      }, 
+      {
+        "pkId": 1,
+        "price": "0",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },        
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },         
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      }, 
+      {
+        "pkId": 1,
+        "price": "0",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },        
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },         
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },{
+        "pkId": 1,
+        "price": "0",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },        
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },         
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },
     ]
     },
     {
       "name":"B",
       "list":[
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },        
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },         
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        }, 
         {
           "pkId": 1,
           "price": "0",
@@ -159,11 +333,143 @@ Page({
           "pkId": 1,
           "price": "0",
         },  
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },        
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },         
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },        
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },         
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },
       ]
     },
     {
     "name":"C",
     "list":[
+      {
+        "pkId": 1,
+        "price": "0",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },        
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },         
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      }, 
       {
         "pkId": 1,
         "price": "0",
@@ -208,11 +514,231 @@ Page({
         "pkId": 1,
         "price": "0",
       }, 
+      {
+        "pkId": 1,
+        "price": "0",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },        
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },         
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },        
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },         
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "40",
+      },
+      {
+        "pkId": 1,
+        "price": "0",
+      },
     ]
     },
     {
       "name":"D",
       "list":[
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },        
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },         
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        }, 
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },        
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },         
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },        
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },         
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },
         {
           "pkId": 1,
           "price": "0",
@@ -270,6 +796,138 @@ Page({
           "pkId": 1,
           "price": "0",
         },        
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },         
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        }, 
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },    
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },        
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },         
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },        
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },         
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "40",
+        },
+        {
+          "pkId": 1,
+          "price": "0",
+        },    
         {
           "pkId": 1,
           "price": "40",
