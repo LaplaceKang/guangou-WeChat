@@ -1,49 +1,58 @@
 /* pages/book/book.wxss */
 .table {
   border: 0px solid darkgray;
- }
- .tr {
+}
+
+.tr {
   display: flex;
   width: 100%;
   justify-content: center;
   height: 3rem;
   align-items: center;
- }
- .td {
-  width:40%;
+}
+
+.td {
+  width: 40%;
   justify-content: center;
   text-align: center;
- }
- .bg-w{
+}
+
+.bg-w {
   background: snow;
- }
- .bg-g{
+}
+
+.bg-g {
   background: #E6F3F9;
- }
- .th {
+}
+
+.th {
   width: 40%;
   justify-content: center;
   color: rgb(14, 12, 12);
   display: flex;
   height: 3rem;
   align-items: center;
- }
-.ziti1{
-  color:#FF9136;
+}
+
+.ziti1 {
+  color: #FF9136;
 }
 
 page {
   background: #f3f3f3;
 }
+
 .table-module {
   display: flex;
   margin-top: 2vh;
   background: white;
 }
+
 .left-policy-type {
   width: 25vw;
   height: auto;
 }
+
 .empty-box {
   width: 25vw;
   height: 8vh;
@@ -61,29 +70,36 @@ page {
   border-right: 1rpx solid #e5e5e5;
   border-bottom: 1rpx solid #e5e5e5;
 }
+
 .scroll-box {
   height: atuo;
-  white-space: nowrap; /*它会防止元素中的文本换行，除非使用了一个br元素。*/
+  white-space: nowrap;
+  /*它会防止元素中的文本换行，除非使用了一个br元素。*/
   display: flex;
   width: 75vw;
 }
-.limit-scroll{
+
+.limit-scroll {
   height: auto;
 }
-.top-scroll-box{
+
+.top-scroll-box {
   width: 100vw;
   height: auto;
   /* height: 16.9vh; */
 }
-.top-scroll-add{
+
+.top-scroll-add {
   width: 100vw;
- height: 16.9vh;
+  height: 16.9vh;
 }
+
 .scroll-view-item {
   width: 25vw;
   display: inline-block;
   height: 30rpx;
 }
+
 .company-name {
   display: flex;
   align-items: center;
@@ -93,8 +109,8 @@ page {
   height: 8vh;
   font-weight: bolder;
   color: rgb(226, 91, 29);
-  border-right: 0.1rpx solid #e5e5e5; 
-   border-bottom: 0.1rpx solid #e5e5e5;
+  border-right: 0.1rpx solid #e5e5e5;
+  border-bottom: 0.1rpx solid #e5e5e5;
 }
 
 .price-box {
@@ -105,30 +121,33 @@ page {
   align-items: center;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  border-right:  #e5e5e5;
-  border-bottom:   0.1rpx solid #e5e5e5;
+  border-right: #e5e5e5;
+  border-bottom: 0.1rpx solid #e5e5e5;
 }
+
 .price {
   width: 100%;
   height: 2vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color:    #7c2929;
+  color: #7c2929;
   font-size: 28rpx;
   border-right: 1rpx solid #e5e5e5;
-  border-bottom:  0.1rpx solid #e5e5e5;
+  border-bottom: 0.1rpx solid #e5e5e5;
   letter-spacing: 1rpx;
 }
-.classname{
+
+.classname {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
+
 .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding:30rpx;
+  padding: 30rpx;
 }
