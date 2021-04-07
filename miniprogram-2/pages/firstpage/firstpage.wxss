@@ -13,9 +13,6 @@
     justify-content: space-between;
     align-items: center;
 }
-.right {
-  
-}
 
 .img1 {
   margin-top: 10rpx;
@@ -25,13 +22,18 @@
 
 .container {
   background-color: #E0E0E0;
-  width: 14rem;
+  width: 15rem;
   margin-top: 1rpx;
 }
 
 .contain {
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 9;
+  top:-98rpx;
+  opacity: 0.8;
+  left:5rpx;
 }
 
 .ziti1 {
