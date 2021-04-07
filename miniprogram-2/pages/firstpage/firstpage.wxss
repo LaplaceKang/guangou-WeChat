@@ -14,7 +14,8 @@
     align-items: center;
 }
 .right {
-  
+  color: orange;
+  xfont-size:small;
 }
 
 .img1 {

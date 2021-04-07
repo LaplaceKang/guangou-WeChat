@@ -11,7 +11,7 @@ page{
 }
 
 .container {
-  padding: 20rpx 20rpx 0 20rpx;
+  padding: 15rpx 15rpx 0 15rpx;
   line-height: 25px;
   margin-bottom: 45rpx;
 }
@@ -151,7 +151,44 @@ page{
   display: flex;
   justify-content: space-between;
 }
-.redbox{
-  background-color:	#FFEFD5;
-  margin-top: 30rpx;
+
+.flex-image{
+  padding:15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.flex-image image{
+  width:80rpx; 
+  height:80rpx;
+}
+.flex-title{
+  padding:15rpx 0 15rpx 0;
+  width: 400rpx;
+  font-size:small;
+  position: relative;
+  left: 10rpx;
+}
+.flex-remain{
+  padding:15rpx;
+  font-size:small;
+  color:#FF8C00;
+  position: relative;
+  left: 10rpx;
+  width: 150rpx;
+}
+.box{
+  /* margin-top: 30rpx; */
+  display:flex;
+  position: relative;
+  width: 690rpx;
+}
+.courtnameText{
+  font-size:small;
+  color:grey;
+  width: 385rpx;
+}
+.discountcardnameText{
+  width: 385rpx;
 }

@@ -39,8 +39,6 @@
 </view>
 
 
-
-
 <view class="img1" style="display:justify-content;margin-top">
   <van-image width="14rem" height="8rem" src="" fit="fill" alt="wenben" src="../../../../images/ad/1.jpeg" />
 </view>
@@ -61,7 +59,7 @@
     <view slot="title" style="font-size:28rpx ;font-weight: bold;line-height:60rpx;">
       <view class="box">
         <text class="left"> {{item['venuename']}}</text>
-        <text class="right" style="color: orange;xfont-size:small;">{{item['lowestprice']}}元起</text>
+        <text class="right" wx:if="{{item['lowestprice']}}">{{item['lowestprice']}}元起</text>
       </view>
     </view>
     <view slot="tags" class="courttype">
@@ -77,7 +75,7 @@
           <van-icon name="location" />
           <text>{{item['addressshort']}}</text>
         </view>
-        <view class="right">{{item['distance']}}</view>
+        <view>{{item['distance']}}</view>
       </view>
     </view>
   </van-card>
