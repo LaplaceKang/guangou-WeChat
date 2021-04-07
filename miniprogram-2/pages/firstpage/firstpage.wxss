@@ -7,6 +7,15 @@
   justify-content: space-between;
   padding:30rpx;
 }
+.box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.right {
+  
+}
 
 .img1 {
   margin-top: 10rpx;

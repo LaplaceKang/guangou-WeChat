@@ -26,7 +26,7 @@
     <view class="nav-bar-wrap">
       <block wx:for="{{courttype}}" wx:key='key'>
         <view class="nav-bar-item" bindtap="toStadium" data-index="{{index}}">
-          <image src="../../images/icon/orange/{{item['eName']}}.png"/>
+          <image src="../../images/icon/orange/{{item['eName']}}.png" />
           <text>{{item['name']}}</text>
         </view>
       </block>
@@ -59,21 +59,26 @@
 <view wx:for="{{venue}}" data-index="{{index}}" bindtap="toCampus">
   <van-card thumb="../../../../images/venue/{{item['venueid']}}.jpeg" thumb-mode="aspectFill">
     <view slot="title" style="font-size:28rpx ;font-weight: bold;line-height:60rpx;">
-      {{item['venuename']}}
+      <view class="box">
+        <text class="left"> {{item['venuename']}}</text>
+        <text class="right" style="color: orange;xfont-size:small;">{{item['lowestprice']}}元起</text>
+      </view>
     </view>
     <view slot="tags" class="courttype">
-      <view wx:for="{{item['courttype']}}"  >
+      <view wx:for="{{item['courttype']}}">
         <van-tag round color="{{item.courtTypeColor[0]}}" text-color="{{item.courtTypeColor[1]}}">
           {{item.courttypename}} </van-tag>
       </view>
     </view>
+
+
     <view slot="bottom">
-      <van-icon name="location" />
-      <text>{{item['addressshort']}}</text>
-    </view>
-    <view slot="footer">
-      <text>{{item['distance']}}</text>
-      <text wx:if="{{item['lowestprice']}}">\n{{item['lowestprice']}}元起</text>
+      <view class="box">
+        <text class="left">
+          <van-icon name="location" />
+          <text>{{item['addressshort']}}</text></text>
+        <text class="right"><text>{{item['distance']}}</text></text>
+      </view>
     </view>
   </van-card>
   <van-divider />
