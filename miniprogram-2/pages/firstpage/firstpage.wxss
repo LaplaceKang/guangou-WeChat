@@ -4,7 +4,8 @@
   flex-wrap: wrap;
   align-items: center;
   background-color: black;
-  justify-content: center;
+  justify-content: space-between;
+  padding:30rpx;
 }
 
 .img1 {

@@ -6,7 +6,7 @@
     </navigator>
   </view>
   <view>
-    <van-search value="{{ value }}" placeholder="请输入搜索关键词" shape="round" background="black" />
+    <van-search value="{{ value }}" placeholder="搜索场馆名称/课程服务" shape="round" background="black" />
   </view>
 </view>
 
