@@ -141,6 +141,6 @@
   </view>
 </view>
 
-<view bindtap="toOrder" class="but">
+<view bindtap="toBook" class="but">
   <van-button type="primary" size="large" color="black">去预定</van-button>
 </view>
