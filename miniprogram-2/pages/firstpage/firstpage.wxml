@@ -67,17 +67,17 @@
     <view slot="tags" class="courttype">
       <view wx:for="{{item['courttype']}}">
         <van-tag round color="{{item.courtTypeColor[0]}}" text-color="{{item.courtTypeColor[1]}}">
-          {{item.courttypename}} </van-tag>
+          {{item.courttypename}}</van-tag>
+          <text decode="{{true}}" >&nbsp;&nbsp;</text>
       </view>
     </view>
-
-
     <view slot="bottom">
       <view class="box">
-        <text class="left">
+        <view class="left">
           <van-icon name="location" />
-          <text>{{item['addressshort']}}</text></text>
-        <text class="right"><text>{{item['distance']}}</text></text>
+          <text>{{item['addressshort']}}</text>
+        </view>
+        <view class="right">{{item['distance']}}</view>
       </view>
     </view>
   </van-card>
