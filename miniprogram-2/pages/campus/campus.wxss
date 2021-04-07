@@ -2,6 +2,7 @@
 page{
   height: 100%;
   width: 100%;
+  background-color: 	#F5F5F5;
 }
 
 .img1 {
@@ -11,7 +12,7 @@ page{
 }
 
 .container {
-  padding: 20rpx 20rpx 0 20rpx;
+  padding: 30rpx 20rpx 0 20rpx;
   line-height: 25px;
   margin-bottom: 45rpx;
 }
@@ -164,4 +165,9 @@ page{
   top:-70rpx;
   opacity: 1;
   left:300rpx;
+}
+
+.box{
+  background-color:		#FFFFFF;
+  margin-bottom: 20rpx;
 }
