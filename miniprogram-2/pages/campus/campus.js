@@ -27,9 +27,9 @@ Page({
   toupper: function () {
     console.log("触发了toupper");
   },
-  toOrder: function () {
+  toBook: function () {
     wx.navigateTo({ //跳转页面
-      url: '/pages/order/order'
+      url: '/pages/book/book'
     })
   },
 
