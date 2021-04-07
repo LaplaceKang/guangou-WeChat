@@ -35,7 +35,7 @@
   justify-content: center;
   position: relative;
   z-index: 9;
-  top:-98rpx;
+  top:-80rpx;
   opacity: 0.8;
   left:5rpx;
 }
