@@ -21,7 +21,9 @@ Page({
     ],
     selectCourtIndex: 0,
     showLoading: true,
-    court: []
+    court: [],
+    openid: 'wx9a3377455576ee6a',
+    collectIcon:0
   },
   //事件处理函数
   toupper: function () {
@@ -116,6 +118,37 @@ Page({
     })
     // console.log(that.data.venue.facilityname)
   },
+  //改变此场馆的收藏状态
+  changeCollectState(){
+    let that = this
+    if(that.data.collectIcon){
+    }else{
+      wx.request({
+        url: DjangoURL + 'wx/court/toCollectCourt?venueid=' + that.data.venueid + '&openid=' + that.data.openid,
+        method: "GET",
+        success: function (res) {
+          console.log(res.data.data)
+          that.setData({
+            collectIcon:1
+          })
+        }
+      })
+    }
+  },
+  //这个场馆是否被收藏
+  isCollected() {
+    let that = this
+    wx.request({
+      url: DjangoURL + 'wx/court/isCourtCollected?venueid=' + that.data.venueid + '&openid=' + that.data.openid,
+      method: "GET",
+      success: function (res) {
+        console.log(res.data.data)
+        that.setData({
+          collectIcon:res.data.data
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -133,6 +166,7 @@ Page({
     })
     this.getVenueDetail()
     this.showToast()
+    this.isCollected()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

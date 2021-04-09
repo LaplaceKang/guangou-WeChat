@@ -698,6 +698,7 @@ class User(models.Model):
     checkintimes = models.IntegerField(db_column='checkInTimes', blank=True, null=True)  # Field name made lowercase.
     isvaild = models.IntegerField(db_column='isVaild', blank=True, null=True)  # Field name made lowercase.
 
+    # usercollectedvenue=models.ManyToManyField(to='UserCollectedVenue')
     class Meta:
         managed = False
         db_table = 'user'

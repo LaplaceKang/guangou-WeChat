@@ -80,17 +80,17 @@ def isCourtCollected(request: HttpRequest):
 
 
 """
- @api {get} /wx/court/toCollectCourt 收藏这个场馆
- @apiName /Court/toCollectCourt
+ @api {get} /wx/court/changeCollectCourt 改变场馆的收藏状态
+ @apiName /Court/changeCollectCourt
  @apiGroup Court
 
  @apiParam {int} venueid 总场馆ID(如：1)
  @apiParam {String} openid 用户openid (如：'wx9a3377455576ee6a','wx9a3377455576ee6b')
 
- @apiSampleRequest /wx/court/toCollectCourt
+ @apiSampleRequest /wx/court/changeCollectCourt
 """
 @csrf_exempt
-def toCollectCourt(request: HttpRequest):
+def changeCollectCourt(request: HttpRequest):
     res = {}
     if request.method != 'GET':
         res['code'] = 0

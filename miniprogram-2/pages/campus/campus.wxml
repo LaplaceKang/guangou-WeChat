@@ -12,8 +12,9 @@
     </swiper-item>
   </swiper>
 
-  <view class="contain">
-    <van-icon name="star" color="#FF0000" size="60rpx" />
+  <view class="contain" bindtap="changeCollectState">
+    <van-icon name="star" color="#FF0000" size="60rpx" wx:if="{{collectIcon}}"/>
+    <van-icon name="star" color="white" size="60rpx" wx:else/>
   </view>
 
   <view class="box">
@@ -67,7 +68,7 @@
                   </view>
                 </view>
 
-                <view class="newbox">
+                <view class="newbox" wx:if="{{item['discountcardtypename'].length>0}}">
                   <view class="container">
                     <view class="ziti1" style="padding:10rpx;">
                       场馆优惠：

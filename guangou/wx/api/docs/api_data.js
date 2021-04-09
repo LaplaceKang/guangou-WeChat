@@ -1,6 +1,41 @@
 define({ "api": [
   {
     "type": "get",
+    "url": "/wx/court/changeCollectCourt",
+    "title": "改变场馆的收藏状态",
+    "name": "_Court_changeCollectCourt",
+    "group": "Court",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "venueid",
+            "description": "<p>总场馆ID(如：1)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "openid",
+            "description": "<p>用户openid (如：'wx9a3377455576ee6a','wx9a3377455576ee6b')</p>"
+          }
+        ]
+      }
+    },
+    "sampleRequest": [
+      {
+        "url": "/wx/court/changeCollectCourt"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "wx/court.py",
+    "groupTitle": "Court"
+  },
+  {
+    "type": "get",
     "url": "/wx/court/getCourtDetail",
     "title": "根据总场馆id与运动类型id获取其具体信息",
     "name": "_Court_getCourtDetail",
@@ -28,6 +63,41 @@ define({ "api": [
     "sampleRequest": [
       {
         "url": "/wx/court/getCourtDetail"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "wx/court.py",
+    "groupTitle": "Court"
+  },
+  {
+    "type": "get",
+    "url": "/wx/court/isCourtCollected",
+    "title": "该场馆是否被用户收藏",
+    "name": "_Court_isCourtCollected",
+    "group": "Court",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "venueid",
+            "description": "<p>总场馆ID(如：1)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "openid",
+            "description": "<p>用户openid (如：'wx9a3377455576ee6a','wx9a3377455576ee6b')</p>"
+          }
+        ]
+      }
+    },
+    "sampleRequest": [
+      {
+        "url": "/wx/court/isCourtCollected"
       }
     ],
     "version": "0.0.0",

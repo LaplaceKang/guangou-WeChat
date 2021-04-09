@@ -62,13 +62,14 @@ page {
 
 .left-col-list {
   width: 25vw;
-  height: 8vh;
+  height: 101rpx;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  /* border-top: 1rpx solid #e5e5e5; */
   border-right: 1rpx solid #e5e5e5;
-  border-bottom: 1rpx solid #e5e5e5;
+  border-bottom: 3rpx solid #e5e5e5;
 }
 
 .scroll-box {
@@ -114,7 +115,7 @@ page {
 }
 
 .price-box {
-  height: 2vh;
+  height: 24rpx;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -122,7 +123,7 @@ page {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   border-right: #e5e5e5;
-  border-bottom: 0.1rpx solid #e5e5e5;
+  border-bottom: 1rpx solid #e5e5e5;
 }
 
 .price {
