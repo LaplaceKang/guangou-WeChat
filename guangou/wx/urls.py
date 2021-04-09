@@ -17,4 +17,7 @@ urlpatterns = [
         path('venue/filterCourtType',venue.filterCourtType,name='filterCourtType'),
         path('venue/getVenueDetail',venue.getVenueDetail,name='getVenueDetail'),
         path('court/getCourtDetail',court.getCourtDetail,name='getCourtDetail'),
+        path('court/isCourtCollected',court.isCourtCollected,name='isCourtCollected'),
+        path('court/toCollectCourt',court.toCollectCourt,name='toCollectCourt'),
+        path('court/delCollectCourt',court.delCollectCourt,name='delCollectCourt'),
 ]
