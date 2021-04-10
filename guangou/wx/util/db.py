@@ -192,5 +192,5 @@ def getcourtDiscountCardTypeInf(courtid):
     discountcardtypename=models.CourtCourtDiscountCardType.objects.filter(
         courtid=courtid).values('discountcardtypeid__discountcardtypename','discountcardtypeid','discountcardintroduction','lowestprice')
     
-    print(list(discountcardtypename))
+    # print(list(discountcardtypename))
     return list(discountcardtypename)

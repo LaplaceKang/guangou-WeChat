@@ -23,7 +23,7 @@ Page({
     showLoading: true,
     court: [],
     openid: 'wx9a3377455576ee6a',
-    collectIcon:0
+    collectIcon: false
   },
   //事件处理函数
   toupper: function () {
@@ -119,21 +119,18 @@ Page({
     // console.log(that.data.venue.facilityname)
   },
   //改变此场馆的收藏状态
-  changeCollectState(){
+  changeCollectState() {
     let that = this
-    if(that.data.collectIcon){
-    }else{
-      wx.request({
-        url: DjangoURL + 'wx/court/toCollectCourt?venueid=' + that.data.venueid + '&openid=' + that.data.openid,
-        method: "GET",
-        success: function (res) {
-          console.log(res.data.data)
-          that.setData({
-            collectIcon:1
-          })
-        }
-      })
-    }
+    wx.request({
+      url: DjangoURL + 'wx/court/changeCollectCourt?venueid=' + that.data.venueid + '&openid=' + that.data.openid,
+      method: "GET",
+      success: function (res) {
+        // console.log(res.data.isCollected)
+        that.setData({
+          collectIcon: res.data.isCollected
+        })
+      }
+    })
   },
   //这个场馆是否被收藏
   isCollected() {
@@ -144,7 +141,7 @@ Page({
       success: function (res) {
         console.log(res.data.data)
         that.setData({
-          collectIcon:res.data.data
+          collectIcon: res.data.data
         })
       }
     })

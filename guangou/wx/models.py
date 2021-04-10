@@ -6,7 +6,7 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
-
+from django_mysql import models as extends
 
 class Admin(models.Model):
     adminid = models.AutoField(db_column='adminID', primary_key=True)  # Field name made lowercase.
@@ -720,6 +720,7 @@ class UserChargeRecord(models.Model):
 class UserCollectedVenue(models.Model):
     userid = models.ForeignKey(User, models.DO_NOTHING, db_column='userID')  # Field name made lowercase.
     venueid = models.ForeignKey('Venue', models.DO_NOTHING, db_column='venueID')  # Field name made lowercase.
+    isdeleted = extends.Bit1BooleanField(db_column='isDeleted')  # Field name made lowercase. This field type is a guess.
 
     class Meta:
         managed = False

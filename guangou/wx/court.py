@@ -65,14 +65,15 @@ def isCourtCollected(request: HttpRequest):
     openid = request.GET.get("openid")
 
     collectedVenueID = models.User.objects.filter(
-        openid=openid).values('usercollectedvenue__venueid')
+        openid=openid).values('usercollectedvenue__venueid', 'usercollectedvenue__isdeleted')
     collectedVenueID = list(collectedVenueID)
     # print(collectedVenueID)
 
+    res['data'] = False
     for i in collectedVenueID:
         # print(i['usercollectedvenue__venueid'])
-        if int(venueid) == i['usercollectedvenue__venueid']:
-            res['data'] = 1
+        if int(venueid) == i['usercollectedvenue__venueid'] and i['usercollectedvenue__isdeleted'] == False:
+            res['data'] = True
 
     res['code'] = 1
     res['message'] = 'success'
@@ -92,6 +93,7 @@ def isCourtCollected(request: HttpRequest):
 @csrf_exempt
 def changeCollectCourt(request: HttpRequest):
     res = {}
+    # data = res['data']
     if request.method != 'GET':
         res['code'] = 0
         res['message'] = "bad request"
@@ -99,18 +101,42 @@ def changeCollectCourt(request: HttpRequest):
     venueid = request.GET.get("venueid")
     openid = request.GET.get("openid")
 
-    # 获取用户的userid
-    userid = models.User.objects.get(
-        openid=openid).userid
+    userid = models.User.objects.filter(openid=openid).values(
+        'usercollectedvenue__venueid', 'usercollectedvenue__isdeleted', 'userid')
+    userid = list(userid)
     # print(userid)
 
-    # 收藏此场馆
+    # 若用户之前已收藏过，则将删除标志取反（即改变收藏状态）
+    for i in userid:
+        if i['usercollectedvenue__venueid'] == int(venueid):
+            # print(i['usercollectedvenue__isdeleted'])
+            if i['usercollectedvenue__isdeleted']:
+                models.UserCollectedVenue.objects.filter(userid=i['userid'], venueid=venueid).update(
+                    isdeleted=False
+                )
+                res['isCollected'] = True
+                res['code'] = 1
+                res['message'] = 'success'
+                return JsonResponse(res)
+            else:
+                models.UserCollectedVenue.objects.filter(userid=i['userid'], venueid=venueid).update(
+                    isdeleted=True
+                )
+                res['isCollected'] = False
+                res['code'] = 1
+                res['message'] = 'success'
+                return JsonResponse(res)
+        else:
+            pass
+
+    # 若用户之前没收藏过，则收藏
     models.UserCollectedVenue.objects.update_or_create(
-        userid_id=userid,
-        venueid_id=venueid
+        userid_id=userid[0]['userid'],
+        venueid_id=venueid,
+        isdeleted=False
     )
-    
-    res['data'] = 1
+    res['isCollected'] = True
+
     res['code'] = 1
     res['message'] = 'success'
     return JsonResponse(res)
