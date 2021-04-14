@@ -276,3 +276,6 @@ def getOrderSite(request: HttpRequest):
     res['code'] = 1
     res['message'] = 'success'
     return JsonResponse(res)
+
+
+

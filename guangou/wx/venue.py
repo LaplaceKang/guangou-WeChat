@@ -271,7 +271,7 @@ def searchVenue(request: HttpRequest):
     # venue = models.Venue.objects.filter(
     #     venuename__contains=searchName,cityid=cityid).values("venueid", 'longitude', 'latitude')
     venue = models.VenueCourtType.objects.filter(
-        venueid__venuename__contains=searchName, venueid__cityid=cityid, courttypeid=courttypeid).values("venueid", 'longitude', 'latitude')
+        venueid__venuename__contains=searchName, venueid__cdcityid=cityid, courttypeid=courttypeid).values("venueid", 'longitude', 'latitude')
 
 
    # 判断有无下一页
