@@ -48,30 +48,6 @@ def venueDistanceSort(venue, latitude, longitude):
     return venueSortedID
 
 
-'''
-根据城市id筛选出总场馆
-'''
-
-
-def cityToVenue(cityid):
-    cityid_FK = models.VenueCity.objects.get(cityid=cityid)  # 获取VenueCity的外键
-    venue = models.Venue.objects.filter(cityid=cityid_FK).values(
-        'venueid', 'longitude', 'latitude')  # 筛选符合城市ID的总场馆
-    return list(venue)  # queryset转list，便于操作
-
-
-'''
-根据场馆运动类型id筛选出总场馆
-'''
-
-
-def courtTypeToVenue(courttypeid):
-    courttypeid_FK = models.CourtType.objects.get(
-        courttypeid=courttypeid)  # 获取VenueCity的外键
-    venueid = models.VenueCourtType.objects.filter(
-        courttypeid=courttypeid_FK).values('venueid')  # 筛选符合运动类型的总场馆
-    return list(venueid)  # queryset转list，便于操作
-
 
 '''
 根据总场馆id得到总场馆信息（venueid, longitude, latitude）

@@ -1,0 +1,32 @@
+<!--pages/stadium/stadium.wxml-->
+<van-dropdown-menu>
+  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+  <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" bind:change="changeType"/>
+  <van-dropdown-item value="{{ value3 }}" options="{{ option3 }}" />
+  <van-dropdown-item value="{{ value4 }}" options="{{ option4 }}" />
+</van-dropdown-menu>
+
+<view wx:for="{{venue}}" data-index="{{index}}" bindtap="toCampus">
+  <van-card tag="" desc="\n" thumb="../../../../images/venue/{{item['venueid']}}.jpeg" thumb-mode="aspectFill">
+    <view slot="title">
+      {{item['venuename']}}
+    </view>
+    <view slot="tags" class="courttype">
+      <view wx:for="{{item['courttype']}}"  >
+        <van-tag round color="{{item.courtTypeColor[0]}}" text-color="{{item.courtTypeColor[1]}}">
+          {{item.courttypename}} </van-tag>
+      </view>
+    </view>
+    <view slot="bottom">
+      <van-icon name="location" />
+      <text>{{item['addressshort']}}</text>
+    </view>
+    <view slot="footer">
+      <text>{{item['distance']}}</text>
+      <text wx:if="{{item['lowestprice']}}">\n{{item['lowestprice']}}元起</text>
+    </view>
+  </van-card>
+  <van-divider />
+</view>
+
+<van-toast id="van-toast" wx:if="{{showLoading}}" />

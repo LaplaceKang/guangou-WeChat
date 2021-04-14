@@ -4,7 +4,8 @@ import {
 } from '../../utils/util.js'
 //导入场馆运动类型
 import {
-  Map_CourtType,courtTypeColor
+  Map_CourtType,
+  courtTypeColor
 } from '../../utils/typeMap.js'
 import Toast from '../../miniprogram/miniprogram_npm/weapp/toast/toast';
 
@@ -46,7 +47,7 @@ Page({
   getVenue() {
     var that = this
     wx.request({
-      url: DjangoURL+'wx/venue/getIndexVenue?cityid=' + that.data.cityid + '&longitude=' + that.data.longitude + '&latitude=' + that.data.latitude + '&page=' + that.data.page,
+      url: DjangoURL + 'wx/venue/getIndexVenue?cityid=' + that.data.cityid + '&longitude=' + that.data.longitude + '&latitude=' + that.data.latitude + '&page=' + that.data.page,
       method: "GET",
       success: function (res) {
         that.setData({
@@ -63,14 +64,14 @@ Page({
   getCourtType() {
     var that = this
     wx.request({
-      url: DjangoURL+'wx/venue/getCourtType?cityid=' + that.data.cityid,
+      url: DjangoURL + 'wx/venue/getCourtType?cityid=' + that.data.cityid,
       method: "GET",
       success: function (res) {
-        let courtType=res.data.data
-        for(let i=0;i<res.data.data.length;i++){
+        let courtType = res.data.data
+        for (let i = 0; i < res.data.data.length; i++) {
           //根据courttypeid的值来增加，而不是下标
-          courtType[i]['name']=Map_CourtType[courtType[i].courttypeid+''][0]
-          courtType[i]['eName']=Map_CourtType[courtType[i].courttypeid+''][1]
+          courtType[i]['name'] = Map_CourtType[courtType[i].courttypeid + ''][0]
+          courtType[i]['eName'] = Map_CourtType[courtType[i].courttypeid + ''][1]
         }
         that.setData({
           courttype: courtType
@@ -139,6 +140,14 @@ Page({
       forbidClick: true,
       loadingType: 'spinner',
       duration: 0,
+    })
+  },
+  //搜索场馆
+  onSearch(e) {
+    let that = this
+    console.log(e.detail)
+    wx.navigateTo({ //跳转页面
+      url: '/pages/search/search?searchName=' + e.detail + '&longitude=' + that.data.longitude + '&latitude=' + that.data.latitude + '&cityid=' + that.data.cityid
     })
   },
   /**

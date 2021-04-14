@@ -425,5 +425,61 @@
     "version": "0.0.0",
     "filename": "wx/venue.py",
     "groupTitle": "Venue"
+  },
+  {
+    "type": "get",
+    "url": "/wx/venue/searchVenue",
+    "title": "搜索总场馆",
+    "name": "_venue_searchVenue",
+    "group": "Venue",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "searchName",
+            "description": "<p>搜索的总场馆名称</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "cityid",
+            "description": "<p>用户所在城市ID(如：1)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "decimal",
+            "optional": false,
+            "field": "longitude",
+            "description": "<p>用户所在位置的经度(如：116.346352)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "decimal",
+            "optional": false,
+            "field": "latitude",
+            "description": "<p>用户所在位置的纬度(如：39.960501)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "page",
+            "description": "<p>页码</p>"
+          }
+        ]
+      }
+    },
+    "sampleRequest": [
+      {
+        "url": "/wx/venue/searchVenue"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "wx/venue.py",
+    "groupTitle": "Venue"
   }
 ]

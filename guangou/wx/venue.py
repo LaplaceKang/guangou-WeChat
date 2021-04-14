@@ -20,7 +20,7 @@ from wx.util.db import *
 """
 @csrf_exempt
 def getIndexVenue(request: HttpRequest):
-    res = {'data': []} 
+    res = {'data': []}
     data = res['data']
     pageNum = 4  # 一页显示的数量
     if request.method != 'GET':
@@ -41,7 +41,8 @@ def getIndexVenue(request: HttpRequest):
         res['message'] = "Page Error"
         return JsonResponse(res)
 
-    venue = cityToVenue(cityid)  # 根据城市id筛选出总场馆
+    venue = models.Venue.objects.filter(cityid_id=cityid).values(
+        'venueid', 'longitude', 'latitude')  # 筛选符合城市ID的总场馆
 
     # 判断有无下一页
     if len(venue) < pageNum*(page-1)+1:
@@ -87,9 +88,9 @@ def getCourtType(request: HttpRequest):
         res['code'] = 0
         res['message'] = "Please enter the cityid"
         return JsonResponse(res)
-    cityid_FK = models.VenueCity.objects.get(cityid=cityid)  # 获取cityid这个外键
+
     courtType = models.VenueCityCourtType.objects.filter(
-        cityid=cityid_FK).values('courttypeid')  # 筛选符合城市ID的总场馆
+        cityid_id=cityid).values('courttypeid')  # 筛选符合城市ID的总场馆
     courtType = list(courtType)  # queryset转list，便于操作
     # print(courtType)
 
@@ -135,7 +136,9 @@ def filterCourtType(request: HttpRequest):
         res['message'] = "Please enter the courttypeid"
         return JsonResponse(res)
 
-    venueidList = courtTypeToVenue(courttypeid)  # 根据场馆运动类型id筛选出总场馆
+    venueidList = models.VenueCourtType.objects.filter(
+        courttypeid_id=courttypeid).values('venueid')  # 根据场馆运动类型id筛选出总场馆
+    venueidList = list(venueidList)
 
     # 判断有无下一页
     if len(venueidList) < pageNum*(page-1)+1:
@@ -146,9 +149,8 @@ def filterCourtType(request: HttpRequest):
 
     venue = []
     for i in venueidList:
-        cityid_FK = models.VenueCity.objects.get(cityid=cityid)  # 获取cityid这个外键
         oneVenue = models.Venue.objects.filter(venueid=i['venueid'],
-                                               cityid=cityid_FK).values('venueid', 'longitude', 'latitude', 'venuename', 'addressshort')
+                                               cityid_id=cityid).values('venueid', 'longitude', 'latitude', 'venuename', 'addressshort')
         if oneVenue:  # 如果这个总场馆在这个城市
             oneVenue = list(oneVenue)
             venue.append(oneVenue[0])
@@ -156,12 +158,12 @@ def filterCourtType(request: HttpRequest):
     venueSort = venueDistanceSort(venue, latitude, longitude)  # 按距离排序
     print(venueSort)
 
-    res['showAll'] = 0 #默认没有显示完
+    res['showAll'] = 0  # 默认没有显示完
     for index in range(pageNum*(page-1), pageNum*page):
         if index > len(venueSort)-1:  # 如果查询的数量超过已有数量
             res['showAll'] = 1
             break
-        i=venueSort[index]
+        i = venueSort[index]
         courttype = VenueCourtType(i['venueid'])  # 获取总场馆运动类型
         res_venue = {'venueid': i['venueid'], 'venuename': i['venuename'], 'addressshort': i['addressshort'],
                      'longitude': i['longitude'], 'latitude': i['latitude'], 'distance': str(round(i['distance']))+'m', 'courttype': courttype}
@@ -221,6 +223,72 @@ def getVenueDetail(request: HttpRequest):
 
     # print(facility)
     res['data'] = {'venue': res_venue}
+
+    res['code'] = 1
+    res['message'] = 'success'
+    return JsonResponse(res)
+
+
+"""
+ @api {get} /wx/venue/searchVenue 搜索总场馆
+ @apiName /venue/searchVenue
+ @apiGroup Venue
+
+ @apiParam {string} searchName 搜索的总场馆名称
+ @apiParam {int} cityid 用户所在城市ID(如：1)
+ @apiParam {decimal} longitude 用户所在位置的经度(如：116.346352)
+ @apiParam {decimal} latitude  用户所在位置的纬度(如：39.960501)
+ @apiParam {int} courttypeid 运动类型ID（如：1）
+ @apiParam {int} page  页码
+
+ @apiSampleRequest /wx/venue/searchVenue
+"""
+@csrf_exempt
+def searchVenue(request: HttpRequest):
+    res = {'data': []}
+    data = res['data']
+    pageNum = 4  # 一页显示的数量
+    if request.method != 'GET':
+        res['code'] = 0
+        res['message'] = "bad request"
+        return JsonResponse(res)
+
+    searchName = request.GET.get("searchName")
+    courttypeid = request.GET.get("courttypeid")
+    cityid = request.GET.get("cityid")
+    longitude = request.GET.get("longitude")
+    latitude = request.GET.get("latitude")
+    page = int(request.GET.get("page"))  # 获取页码
+    if not(longitude or latitude or cityid):
+        res['code'] = 0
+        res['message'] = "Please enter the parameters"
+        return JsonResponse(res)
+    if page < 0:
+        res['code'] = 0
+        res['message'] = "Page Error"
+        return JsonResponse(res)
+
+    # venue = models.Venue.objects.filter(
+    #     venuename__contains=searchName,cityid=cityid).values("venueid", 'longitude', 'latitude')
+    venue = models.Venue.objects.filter(
+        venuename__contains=searchName, cityid=cityid, venueid__courttypeid=courttypeid).values("venueid", 'longitude', 'latitude')
+
+
+   # 判断有无下一页
+    if len(venue) < pageNum*(page-1)+1:
+        res['code'] = 0
+        res['message'] = "There is no next page"
+        res['showAll'] = 1
+        return JsonResponse(res)
+
+    # print(venue)
+
+    venueSortedID = venueDistanceSort(
+        venue, latitude, longitude)  # 根据用户与总场馆的距离远近进行排序
+
+    # print(venueSortedID)
+
+    showVenueList(venueSortedID, pageNum, page, res, data)  # 总场馆信息列表展示
 
     res['code'] = 1
     res['message'] = 'success'

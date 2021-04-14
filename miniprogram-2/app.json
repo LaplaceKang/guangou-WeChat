@@ -15,7 +15,8 @@
     "pages/order/order",
     "pages/detailed/detailed",
     "pages/used/used",
-    "pages/book/book"
+    "pages/book/book",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -58,7 +59,8 @@
     "borderStyle": "black",
     "backgroundColor": "gray",
     "position": "bottom",
-    "list": [{
+    "list": [
+      {
         "text": "首页",
         "pagePath": "pages/firstpage/firstpage",
         "iconPath": "./images/icon/tabbar/running.png",
