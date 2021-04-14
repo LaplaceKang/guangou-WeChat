@@ -6,3 +6,31 @@
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+
+.classname {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: black;
+  justify-content: space-between;
+  padding: 30rpx;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right {
+  color: orange;
+  font-size: small;
+}
+
+.courttype {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}

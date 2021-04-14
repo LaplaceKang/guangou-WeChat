@@ -95,7 +95,8 @@ Page({
   changeType(value) {
     // console.log(value.detail)
     this.data.venue = [] //先清空之前的数据
-    this.data.page=1
+    this.data.page=1 //初始化页面
+    this.data.value2=value.detail //设置此时的场馆类型
     this.showToast()
     this.getVenue(this.data.searchName,value.detail)
   },
@@ -122,6 +123,16 @@ Page({
       url: '/pages/campus/campus?venueid=' + that.data.venue[index].venueid + '&courttype=' + courttype + '&venuename=' + that.data.venue[index].venuename + '&longitude=' + that.data.venue[index].longitude + '&latitude=' + that.data.venue[index].latitude
     })
   },
+  //搜索场馆
+  onSearch(e) {
+    let that = this
+    console.log(e.detail)
+    that.data.venue = [] //先清空之前的数据
+    that.data.page=1 //初始化页面
+    that.data.searchName=e.detail //保存搜索的名称
+    that.getVenue(e.detail,that.data.value2)
+    that.showToast()
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -134,7 +145,9 @@ Page({
       latitude: options.latitude,
       longitude: options.longitude,
       cityid: options.cityid,
-      searchName:options.searchName
+      searchName:options.searchName,
+      inputValue:options.searchName,
+      value2:0
     })
     that.getAllCourtType()
     that.getVenue(options.searchName,0)

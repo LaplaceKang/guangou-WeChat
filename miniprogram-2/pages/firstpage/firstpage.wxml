@@ -1,5 +1,5 @@
 <view class="classname">
-  <view class="flex-row" style="display:flex;">
+  <view style="display:flex;">
     <van-icon name="location" color="white" />
     <navigator url="/pages/location/location">
       <view style="color:white">北京</view>
@@ -60,7 +60,7 @@
   <van-card thumb="../../../../images/venue/{{item['venueid']}}.jpeg" thumb-mode="aspectFill">
     <view slot="title" style="font-size:28rpx ;font-weight: bold;line-height:60rpx;">
       <view class="box">
-        <text class="left"> {{item['venuename']}}</text>
+        <text> {{item['venuename']}}</text>
         <text class="right" wx:if="{{item['lowestprice']}}">{{item['lowestprice']}}元起</text>
       </view>
     </view>
@@ -73,7 +73,7 @@
     </view>
     <view slot="bottom">
       <view class="box">
-        <view class="left">
+        <view>
           <van-icon name="location" />
           <text>{{item['addressshort']}}</text>
         </view>
