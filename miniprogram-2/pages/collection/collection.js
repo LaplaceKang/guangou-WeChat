@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    openid: 'wx9a3377455576ee6b',
+    openid: 'wx9a3377455576ee6a',
     longitude:116.346352,
     latitude:39.960501,
     page:1
